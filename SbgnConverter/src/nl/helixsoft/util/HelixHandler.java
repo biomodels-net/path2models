@@ -6,6 +6,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+/**
+ * SaxHandler for reading in an Xml file as nl.helixsoft.util.Xml. 
+ */
 public class HelixHandler extends DefaultHandler 
 {
 	Xml root = null;
