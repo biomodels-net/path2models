@@ -8,9 +8,24 @@
 
 == Tuesday 11th metabolic session ==
 
+We revisited the issue of representations of metabolic models from KEGG. This followed a
+[http://groups.google.com/group/path2models/browse_thread/thread/f760aca9b85ab145?hl=en discussion thread] started with a [http://code.google.com/p/path2models/source/browse/trunk/documents/AlternativeK2S.png summary of the possibilities] discussed the previous day. Based on the responses by Andreas Draeger and Neil Swainston, and long discussions in the morning sessions, the 
+[http://code.google.com/p/path2models/source/browse/trunk/documents/AlternativeK2S-2nd.png remaining options] are proposed:
+
+* The only curated information we find in the KEGG map correspond to solution A, i.e. no pools for the catalysts, only an annotation of the reaction mentioning the catalytic activity. All the remaining information in the KGML is coming from external resources. However, the solution A causes problems if we want to derive a quantitative model, except maybe if we add adequate SBO terms. Also we would like to make the most of the information available, even if not super-reliable.
+
+* Solution D', i.e. creating species for all the proteins and listing all the possible enzyme in the listOfModifiers, was eliminated because the semantics is different. The only thing we know is that proteins displaying a certain catalytic activity are modifying the reaction. Putting all of them as modifiers means they are all involved in all instances of the reaction.
+
+* Solution B, was just solution C without annotation.
+
+* We decided that solution C' would be the best by default. A pool is created, with a certain name. It represents the instances of all the proteins catalysing the reaction. It contains three annotations.
+# hasProperty EC number; This says that all the instances of the pool have this catalytic activity. Note that some reactions have several EC code. ONLY ONE POOL IS CREATED.
+# hasVersion a list of proteins, or isEncodedBy a list of genes. Of course, we do not know for sure, and ideally would have a qualifier "hasPossiblyVersion". But see below.
+# hasProperty a term from the evidence code ontology. At the moment, the most suitable seems to be ECO:0000313 "imported information used in automatic assertion".
+
 == Tuesday 11th qual session ==
 
-Table of conversion
+*Table of conversion between KEGG relations and SBO*:
 
 || *KEGG*              || *SBO ID*    || *SBO name*  || *Comments* ||
 || compound            ||             ||             || Not sure why ||
