@@ -34,8 +34,8 @@ We revisited the issue of representations of metabolic models from KEGG. This fo
 *Table of conversion between KEGG relations and SBO*:
 
 || *KEGG*              || *KEGG* value                                            || *ECrel* || *PPrel* || *GErel*  || *Explanation*                                                                                     || *SBO ID*    || *SBO name*  || *Comments* ||
-|| compound            || Entry element id attribute value for compound.        || *     || *     ||        || shared with two successive reactions (ECrel) or intermediate of two interacting proteins (PPrel)||             ||             || Not sure why ||
-|| hidden compound     || Entry element id attribute value for hidden compound.	|| *	 ||       ||	    || shared with two successive reactions but not displayed in the pathway map                       ||             ||             || those are relations ||
+|| compound            || Entry element id attribute value for compound.        || *     || *     ||        || shared with two successive reactions (ECrel) or intermediate of two interacting proteins (PPrel)||             ||             || Those are relations ||
+|| hidden compound     || Entry element id attribute value for hidden compound.	|| *	 ||       ||	    || shared with two successive reactions but not displayed in the pathway map                       ||             ||             || between processes ||
 ||                     ||             ||             ||            ||
 || activation          || -->	                                                || 	 || *     ||        || positive and negative effects which may be associated with molecular information below          || SBO:0000170 || stimulation ||            ||
 || inhibition          || --|	 						||	 || *	  ||	    || positive and negative effects which may be associated with molecular information below          || SBO:0000169 || inhibition  ||            ||
@@ -54,4 +54,4 @@ We revisited the issue of representations of metabolic models from KEGG. This fo
 || methylation         || +m							||	 || *	  ||        || molecular events                                                                                || SBO:0000214 || methylation || process, not relation ||
 
 
-For the qual package activation, inhibition, expression, repression, indirect effect, and state change should be included.
+For the qual package activation, inhibition, expression, repression, indirect effect, and state change should be included. Activation and expression should be transformed into sign="positive" while inhibition and repression should be transformed into sign="negative". Indirect effect and state change should be transformed into sigb="unknown". The processual relations should be used to generated MIRIAM annotations using SBO (in the form of Identifiers.org URIs). The Maprel could be used to add annotations on QualitativeSpecies in the form of "PartOf" KEGG pathways.
