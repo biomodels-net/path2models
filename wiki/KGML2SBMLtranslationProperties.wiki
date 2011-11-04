@@ -24,10 +24,11 @@ Basically every property may be changed/ discussed; Properties have been modifie
 ||Species||enzyme||14 NLN: should be 245||enzyme NLN: should be "macromolecule"||
 ||Species||gene||243 NLN: should be 354||gene NLN: should be "informational molecule segment"||
 ||Species||group (spec says "MOSTLY a protein complex")||253||non-covalent complex||
-||Species||map ("pathway references")||291 NLN: should be SBO:New||empty set NLN: Should be "denotement"||
+||Species||map ("pathway references")||291 NLN: should be 552||empty set NLN: Should be "reference annotation" (see below)||
 ||Species||ortholog (same as gene, but in orthologous pathways)||243NLN: should be 354||gene NLN: should be "informational molecule segment"||
 ||Species||other||285||material entity of unspecified nature||
 
+NB: SBO:0000552 "reference annotation" must be analysed within the context to generated the SBGN. Within an sboTerm attribute, it should be converted into a "tag", within a MIRIAM annotation, it should be converted into an annotation glyph. We are going to create a proper term for tag.
 
 == List of MIRIAM URNs that are added to SPECIES ==
 _Note: We think of all species as proteins or final chemical compounds. Qualifiers are choosen from this point of view._
