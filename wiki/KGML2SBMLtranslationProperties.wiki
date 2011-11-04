@@ -84,5 +84,30 @@ KGML-Code, covering the group node and the shown relation:
 
 Solution: besides adding the CellDesigner annotation complexSpeciesAlias (I don't like CD-Tags) and writing the contained genes into human-readable notes, a MIRIAM identifier "BQB_HAS_PART" is created and all KEGG IDs of contained elements are added. However, I'm happy for better suggestions and want to leave this property for further discussion.
 
-Clemens
+Translated SBML for this group nodes looks like this:
+{{{
+      <species id="undefined" initialAmount="1" name="undefined" metaid="meta_undefined" sboTerm="SBO:0000253" substanceUnits="substance" compartment="default">
+<notes><body xmlns="http://www.w3.org/1999/xhtml"><a href="">Original Kegg Entry</a><br/>
+<p>This species is a group, consisting of 3 components:<br/><ul><li>Srf</li><li>Elk4</li><li>Elk1</li></ul></p></body></notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#meta_undefined">
+              <bqbiol:hasPart>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:mmu%3A20807"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:mmu%3A13714"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:mmu%3A13712"/>
+                </rdf:Bag>
+              </bqbiol:hasPart>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+}}}
 
+Clemens
