@@ -1,0 +1,88 @@
+#labels Phase-Design
+#Properties of initial KGML2SBML translation
+
+_NOTE: Written by Clemens Wrzodek, I just can not create wiki pages with my own google-account :-(_
+
+*Please also E-Mail changes and suggestions to me in person, because I can't check this page frequently enough.*
+Basically every property may be changed/ discussed!
+
+= Properties of initial KGML2SBML translation =
+
+== List of SBO terms used in KEGGtranslator ==
+||*SBML object*||*Condition*||*SBO*||*SBO name*||
+||Reaction||All reactions||176||biochemical reaction||
+||||||||||
+||ModifierSpeciesReference||Dependent on KEGG entry type of corresponding species: enzyme, gene, group (spec says "MOSTLY a protein complex"), ortholog (same as gene, but in orthologous pathways)||460||enzymatic catalyst||
+||ModifierSpeciesReference||All other entry types (compound (is "small molecule"), map ("pathway references"), other) => definively no enzyme||13||catalyst||
+||||||||||
+||SpeciesReference||Substrates||15||substrate||
+||SpeciesReference||Products||11||product||
+||||||||||
+||Species||Dependent on KEGG entry type:||See below:||||
+||Species||compound (is "small molecule")||247||simple chemical||
+||Species||enzyme||14||enzyme||
+||Species||gene||243||gene||
+||Species||group (spec says "MOSTLY a protein complex")||253||non-covalent complex||
+||Species||map ("pathway references")||291||empty set||
+||Species||ortholog (same as gene, but in orthologous pathways)||243||gene||
+||Species||other||285||material entity of unspecified nature||
+
+
+== List of MIRIAM URNs that are added to SPECIES ==
+_Note: We think of all species as proteins or final chemical compounds. Qualifiers are choosen from this point of view._
+
+||*Identifier Type*||*Biological type (meaning of identifier, not contained in the SBML)*||*Qualifier Type*||*BiologicalQualifierType*||*Notes*||
+||KEGG ID(s)||Anything||BIOLOGICAL_QUALIFIER||BQB_IS / BQB_HAS_VERSION||If species corresponds to ONE id => Is, for MULTIPLE ids => has version; Actual miriam URN depdens on entry type (gene, enzyme, pathway, compound, etc.)||
+||Entrez Gene||Gene||BIOLOGICAL_QUALIFIER||BQB_IS_ENCODED_BY||||
+||Omim||"OMIM focuses on the relationship between phenotype and genotype"||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||Ensembl (Ensembl Gene)||Gene||BIOLOGICAL_QUALIFIER||BQB_IS_ENCODED_BY||||
+||Uniprot||Protein||BIOLOGICAL_QUALIFIER||BQB_IS / BQB_HAS_VERSION||If species corresponds to ONE protein => Is, for MULTIPLE proteins => has version||
+||Chebi||Chemical Entities||BIOLOGICAL_QUALIFIER||BQB_IS / BQB_HAS_VERSION||If species corresponds to ONE id => Is, for MULTIPLE ids => has version||
+||Drugbank||"The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information. "||BIOLOGICAL_QUALIFIER||BQB_IS / BQB_HAS_VERSION||If species corresponds to ONE id => Is, for MULTIPLE ids => has version||
+||GO||Gene ontology… describing terms for the gene or protein||BIOLOGICAL_QUALIFIER||BQB_IS_DESCRIBED_BY||||
+||HGNC||HGNC gene symbol||BIOLOGICAL_QUALIFIER||BQB_IS_ENCODED_BY||||
+||PubChem||Chemical Entities (structures)||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||3DMet||Chemical Entities (3D structures)||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||Reaction ID (KEGG)||Takes part in the named reaction||BIOLOGICAL_QUALIFIER||BQB_OCCURS_IN||I'm very unsure about this one. Actually "TAKES_PART_IN" would be nice…||
+||Taxonomy ID||NCBI Taxon ID of the parent organism||BIOLOGICAL_QUALIFIER||BQB_OCCURS_IN||Is not set always! Only if kegg api returns an explicit and specific taxonomy field.||
+||PDBeChem||Chemical Entities||BIOLOGICAL_QUALIFIER||BQB_IS / BQB_HAS_VERSION||If species corresponds to ONE id => Is, for MULTIPLE ids => has version||
+||GlycomeDB||Certain Chemical Entities (structures)||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||LipidBank||Certain Chemical Entities (structures)||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||ECNumbers||Enzymes||BIOLOGICAL_QUALIFIER||BQB_HAS_PROPERTY||||
+||ECO_CODE||Static reference to an ECO Code||BIOLOGICAL_QUALIFIER||BQB_UNKNOWN||Fixed to ECO:0000313 ("imported information used in automatic assertion")||
+
+
+== List of MIRIAM URNs that are added to SBML objects other than species ==
+
+||*SBML object*||*Identifier Type*||*Biological type (meaning of identifier, not contained in the SBML)*||*Qualifier Type*||*BiologicalQualifierType*||
+||Model||KEGG PATHWAY ID||Pathway||MODEL_QUALIFIER||BQM_IS||
+||Model||NCBI Taxonomy||Organism||BIOLOGICAL_QUALIFIER||BQB_OCCURS_IN||
+||Model||Gene ontology||Describing terms for the pathway||BIOLOGICAL_QUALIFIER||BQB_IS_DESCRIBED_BY||
+||||||||||||
+||Reaction||KEGG reaction ID||reaction||BIOLOGICAL_QUALIFIER||BQB_IS||
+||Reaction||KEGG PATHWAY ID||reaction occurs in …||BIOLOGICAL_QUALIFIER||BQB_OCCURS_IN||
+
+== Group nodes ==
+Group nodes are a construct that is currently not supported by SBML. Example for group nodes:
+
+http://www.ra.cs.uni-tuebingen.de/mitarb/wrzodek/temp/group_node.jpg
+
+KGML-Code, covering the group node and the shown relation:
+{{{
+    <entry id="137" name="undefined" type="group">
+        <graphics fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="946" y="311" width="110" height="39"/>
+        <component id="130"/>
+        <component id="132"/>
+        <component id="133"/>
+    </entry>
+
+    <relation entry1="137" entry2="129" type="GErel">
+        <subtype name="expression" value="--&gt;"/>
+    </relation>
+}}}
+
+Solution: besides adding the CellDesigner annotation complexSpeciesAlias (I don't like CD-Tags) and writing the contained genes into human-readable notes, a MIRIAM identifier "BQB_HAS_PART" is created and all KEGG IDs of contained elements are added. However, I'm happy for better suggestions and want to leave this property for further discussion.
+
+Clemens
+
