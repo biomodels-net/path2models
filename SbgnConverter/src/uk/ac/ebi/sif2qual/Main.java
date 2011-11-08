@@ -17,7 +17,6 @@ public class Main
 		qual.fromSif (network);
 		System.out.println (qual.toString());
 		
-		ToSbgn toSbgn = new ToSbgn();
-		toSbgn.toSbgn(network, new File("/home/martijn/Desktop/sifExample.sbgn"));
+                network.toSbgn(new File("/home/martijn/Desktop/sifExample.sbgn"));
 	}
 }
