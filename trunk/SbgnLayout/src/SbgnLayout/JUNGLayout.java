@@ -7,20 +7,20 @@ package SbgnLayout;
 import edu.uci.ics.jung.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung.algorithms.layout.Layout;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
-import edu.uci.ics.jung.visualization.BasicVisualizationServer;
-import java.awt.Dimension;
-import javax.swing.JFrame;
 import SbgnLayout.Network.Node;
 import SbgnLayout.Network.Edge;
+import edu.uci.ics.jung.visualization.BasicVisualizationServer;
+import java.awt.geom.Point2D;
+import javax.swing.JFrame;
 
 /**
  *
  * @author mschu
  */
 public class JUNGLayout {
-    DirectedSparseMultigraph<Node, Edge> graph;
-    Layout<Integer, String> layout;
-    Network net;
+    private DirectedSparseMultigraph<Node, Edge> graph;
+    private Layout<Node, Point2D> layout;
+    private Network net;
     
     public JUNGLayout(Network net) {
         this.net = net;
@@ -33,20 +33,24 @@ public class JUNGLayout {
     
     public void applyCircle() {
         layout = new CircleLayout(graph);
+        writeLayoutToNetwork();
+    }
+    
+    private void writeLayoutToNetwork() {
+        // TODO: write positional information back to network
+
+        for (Node node : net.getNodes()) {
+            Point2D coord = layout.transform(node);
+            node.setPos((float)coord.getX(), (float)coord.getY());
+        }
         
-   //     for (Node node : net.getNodes()) {
-   //         layout.transform(0);
-   //         layout.
-   //     }
-        
-        // TODO: write positional information back to network!!!
+        // TODO: do the same for the edges
     }
     
     public void renderGraph() {
-        // The BasicVisualizationServer<V,E> is parameterized by the edge types
-        layout.setSize(new Dimension(300,300)); // sets the initial size of the space
-        BasicVisualizationServer<Integer,String> vv = new BasicVisualizationServer<Integer,String>(layout);
-        vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
+        //layout.setSize(new Dimension(300,300)); // sets the initial size of the space
+        BasicVisualizationServer<Node, Point2D> vv = new BasicVisualizationServer<Node, Point2D>(layout);
+        //vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
         
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
