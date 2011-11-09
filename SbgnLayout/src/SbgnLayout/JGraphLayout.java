@@ -5,9 +5,13 @@
 package SbgnLayout;
 
 import SbgnLayout.Network.Edge;
+import SbgnLayout.Network.Node;
+import com.mxgraph.layout.hierarchical.model.mxGraphHierarchyNode;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFrame;
 
 /**
@@ -16,14 +20,26 @@ import javax.swing.JFrame;
  */
 public class JGraphLayout {
     private mxGraph graph;
+    private Network net;
+    private HashMap<Node, Object> nodeLookup;
     
     public JGraphLayout(Network net) {
-        graph = new mxGraph();
+        this.net = net;
+        this.graph = new mxGraph();
         Object parent = graph.getDefaultParent();
 
         try {
+            this.nodeLookup = new HashMap<Node, Object>();
+            for (Node node : net.getNodes()) {
+                // insert: name, x, y, w, h
+                Object graphNode = graph.insertVertex(parent, null, node.getId(), 0, 0, 0, 0);
+                nodeLookup.put(node, graphNode);
+            }
+            
             for (Edge e : net.getEdges()) {
-                graph.insertEdge(parent, null, e.getId(), (Object)e.getSrc(), (Object)e.getDest());
+                Object sourceNode = nodeLookup.get(e.getSrc());
+                Object targetNode = nodeLookup.get(e.getDest());
+                graph.insertEdge(parent, null, e.getId(), sourceNode, targetNode);
             }
         }
         finally {
@@ -31,26 +47,19 @@ public class JGraphLayout {
         }  
     }
     
-    public JGraphLayout() { // for testing purposes
-        graph = new mxGraph();
-        Object parent = graph.getDefaultParent();
-        
-        graph.getModel().beginUpdate();
-        try { // insert: x, y, width, height
-            Object v1 = graph.insertVertex(parent, null, "Hello", 20, 20, 80, 30);
-            Object v2 = graph.insertVertex(parent, null, "World!", 240, 150, 80, 30);
-            graph.insertEdge(parent, null, "", v1, v2);
-        }
-        finally {
-            graph.getModel().endUpdate();
-        }        
-    }
-    
     public void applyHierarchical() {
         mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
         layout.execute(graph.getDefaultParent());
         
-        // TODO: write positional information back to network
+        // write layout information back to network
+        Map<Object, mxGraphHierarchyNode> vertexMapper = layout.getModel().getVertexMapper();
+        for (Node node : this.net.getNodes()) {
+            Object graphNode = nodeLookup.get(node);
+            mxGraphHierarchyNode hn = vertexMapper.get(graphNode);
+            node.setPos((float)hn.x[0], (float)hn.y[0]);
+        }
+        
+        // TODO: do the same for the edges
     }
     
     public void renderGraph() {

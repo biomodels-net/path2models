@@ -19,14 +19,15 @@ public class Main {
             
             SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
 
-    /*        JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
+            JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
             jgf.applyHierarchical();
             jgf.renderGraph();
-            // missing: apply graph to sbgn map
-*/
+            sbgnIO.writeToFile(new File("layoutJGraph.sbgn"));
+
             JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
             jung.applyCircle();
             jung.renderGraph();
+            sbgnIO.writeToFile(new File("layoutJung.sbgn"));
         }
         catch (Exception e) {
             e.printStackTrace();
