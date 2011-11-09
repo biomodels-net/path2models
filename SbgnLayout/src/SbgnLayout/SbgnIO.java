@@ -56,6 +56,8 @@ public class SbgnIO {
             Node node = lookupNode.get(g.getId());
             box.setX(node.getX());
             box.setY(node.getY());
+            box.setW(node.getW());
+            box.setH(node.getH());
         }
         
         // needs to be done via src+tgt bc no ids
@@ -88,6 +90,11 @@ public class SbgnIO {
         
         for (Glyph glyph : map.getGlyph()) {
             Node node = net.createOrGetNode(glyph.getId());
+            Bbox box = glyph.getBbox();
+            
+            node.setPos(box.getX(), box.getY());
+            node.setSize(box.getW(), box.getH());
+            
             lookupNode.put(node.getId(), node);
         }
         

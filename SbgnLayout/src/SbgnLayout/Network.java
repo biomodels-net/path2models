@@ -17,20 +17,26 @@ public class Network
         private String id;
         float x = 0;
         float y = 0;
+        float w = 0;
+        float h = 0;
+        
         private List<Edge> outgoing = new ArrayList<Edge>();
         private List<Edge> incoming = new ArrayList<Edge>();
 
         public List<Edge> getOutgoing() { return outgoing; }
         public List<Edge> getIncoming() { return incoming; }
 
-        public void setPos(float x, float y)
-        {
+        public void setPos(float x, float y) {
             this.x = x;
             this.y = y;
         }
+        
+        public void setSize(float w, float h) {
+            this.w = w;
+            this.h = h;
+        }
 
-        public Iterable<Node> getOutgoingNodes() 
-        {
+        public Iterable<Node> getOutgoingNodes() {
             List<Node> nodes = new ArrayList<Node>();
             for (Edge e : getOutgoing())
             {
@@ -39,8 +45,7 @@ public class Network
             return nodes;
         }
 
-        public Iterable<Node> getIncomingNodes()
-        {
+        public Iterable<Node> getIncomingNodes() {
             List<Node> nodes = new ArrayList<Node>();
             for (Edge e : getIncoming())
             {
@@ -54,6 +59,8 @@ public class Network
         public String getId() { return id; }
         public float getX() { return x; }
         public float getY() { return y; }
+        public float getW() { return w; }
+        public float getH() { return h; }
     }
 
     public static class Edge

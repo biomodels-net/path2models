@@ -31,8 +31,13 @@ public class JGraphLayout {
         try {
             this.nodeLookup = new HashMap<Node, Object>();
             for (Node node : net.getNodes()) {
-                // insert: name, x, y, w, h
-                Object graphNode = graph.insertVertex(parent, null, node.getId(), 0, 0, 0, 0);
+                Object graphNode = graph.insertVertex(parent, 
+                                                      null, 
+                                                      node.getId(), 
+                                                      node.getX(),
+                                                      node.getY(), 
+                                                      node.getW(), 
+                                                      node.getH());
                 nodeLookup.put(node, graphNode);
             }
             
@@ -51,7 +56,10 @@ public class JGraphLayout {
         mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
         layout.execute(graph.getDefaultParent());
         
-        // write layout information back to network
+        this.writeLayoutToNetwork(layout);
+    }
+    
+    private void writeLayoutToNetwork(mxHierarchicalLayout layout) {
         Map<Object, mxGraphHierarchyNode> vertexMapper = layout.getModel().getVertexMapper();
         for (Node node : this.net.getNodes()) {
             Object graphNode = nodeLookup.get(node);
