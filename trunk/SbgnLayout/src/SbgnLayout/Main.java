@@ -25,7 +25,7 @@ public class Main {
             sbgnIO.writeToFile(new File("layoutJGraph.sbgn"));
 
             JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
-            jung.applyCircle();
+            jung.applyDAG();
             jung.renderGraph();
             sbgnIO.writeToFile(new File("layoutJung.sbgn"));
         }
