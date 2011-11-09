@@ -23,7 +23,7 @@ public class JGraphLayout {
 
         try {
             for (Edge e : net.getEdges()) {
-                graph.insertEdge(parent, null, e, e.getSrc(), e.getDest());
+                graph.insertEdge(parent, null, e.getId(), (Object)e.getSrc(), (Object)e.getDest());
             }
         }
         finally {
