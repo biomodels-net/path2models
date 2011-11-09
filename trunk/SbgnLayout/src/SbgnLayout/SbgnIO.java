@@ -43,7 +43,7 @@ public class SbgnIO {
         // TODO
     }
     
-    public void applyNetworkToMap() {
+    public void writeToFile(File out) throws JAXBException {
         // get coordinates from network object
         // and set them to the map object // TODO
         
@@ -76,6 +76,10 @@ public class SbgnIO {
             en.setX(0);
             en.setY(0);
         }*/
+        
+        Sbgn sbgn = new Sbgn();
+        sbgn.setMap(this.map);
+        SbgnUtil.writeToFile(sbgn, out);
     }
     
     private void createNetworkFromMap() {
