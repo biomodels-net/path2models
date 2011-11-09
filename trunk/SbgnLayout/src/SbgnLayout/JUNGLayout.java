@@ -30,7 +30,7 @@ public class JUNGLayout {
         }
     }
 
-    public JUNGLayout() { // for testing purposes
+/*    public JUNGLayout() { // for testing purposes
         graph = new DirectedSparseMultigraph<Node, Edge>();
         // Create some MyNode objects to use as vertices
         Node n1 = new Node("1");
@@ -46,7 +46,7 @@ public class JUNGLayout {
         graph.addEdge(new Edge(n4, n2, ""), n4, n2); // from, to
         graph.addEdge(new Edge(n3, n1, ""), n3, n1); // DIRECTED is implicit
         graph.addEdge(new Edge(n2, n5, ""), n2, n5);
-    }
+    }*/
     
     public void applyCircle() {
         layout = new CircleLayout(graph);

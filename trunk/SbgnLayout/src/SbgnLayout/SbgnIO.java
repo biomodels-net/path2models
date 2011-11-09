@@ -4,22 +4,17 @@
  */
 package SbgnLayout;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import javax.xml.bind.JAXBException;
 import SbgnLayout.Network.Edge;
+import java.io.File;
+import javax.xml.bind.JAXBException;
 import SbgnLayout.Network.Node;
-import org.sbgn.ArcClazz;
-import org.sbgn.GlyphClazz;
-import org.sbgn.Language;
+import java.util.HashMap;
 import org.sbgn.SbgnUtil;
 import org.sbgn.bindings.Arc;
 import org.sbgn.bindings.Arc.End;
 import org.sbgn.bindings.Arc.Start;
 import org.sbgn.bindings.Bbox;
 import org.sbgn.bindings.Glyph;
-import org.sbgn.bindings.Label;
 import org.sbgn.bindings.Sbgn;
 
 /**
@@ -50,18 +45,54 @@ public class SbgnIO {
     
     public void applyNetworkToMap() {
         // get coordinates from network object
-        // and set them to the map object
+        // and set them to the map object // TODO
+        
+        HashMap<String, Node> lookupNode = new HashMap<String, Node>();
+        for (Node n : net.getNodes()) {
+            lookupNode.put(n.getId(), n);
+        }
+        for (Glyph g : map.getGlyph()) {
+            Bbox box = g.getBbox();
+            Node node = lookupNode.get(g.getId());
+            box.setX(node.getX());
+            box.setY(node.getY());
+        }
+        
+        // needs to be done via src+tgt bc no ids
+        // or: ids addded to edges
+        // maybe: calculate (x,y) by (source, target) [this would help with subglyphs]
+        //        [would this be redundant w/ layout algos? -> likely only in part]
+        /*
+        HashMap<String, Edge> lookupEdge = new HashMap<String, Edge>();
+        for (Edge e : net.getEdges()) {
+            lookupEdge.put(e., e); // ??
+        }
+        for (Arc a : map.getArc()) {
+            Start st = a.getStart();
+            st.setX(0);
+            st.setY(0);
+            
+            End en = a.getEnd();
+            en.setX(0);
+            en.setY(0);
+        }*/
     }
     
     private void createNetworkFromMap() {
         net = new Network();
+        HashMap<String, Node> lookupNode = new HashMap<String, Node>();
         
         for (Glyph glyph : map.getGlyph()) {
-            net.createOrGetNode(glyph.getId());
+            Node node = net.createOrGetNode(glyph.getId());
+            lookupNode.put(node.getId(), node);
         }
         
         for (Arc arc : map.getArc()) {
-            net.createEdge((Node)arc.getSource(), (Node)arc.getTarget(), "0");
+            Glyph source = (Glyph)arc.getSource();
+            Glyph target = (Glyph)arc.getTarget();
+            net.createEdge(arc.getId(),
+                           lookupNode.get(source.getId()),
+                           lookupNode.get(target.getId()), "0");
         }
     }
     

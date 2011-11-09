@@ -15,15 +15,15 @@ public class Network
     public static class Node
     {
         private String id;
-        double x = 0;
-        double y = 0;
+        float x = 0;
+        float y = 0;
         private List<Edge> outgoing = new ArrayList<Edge>();
         private List<Edge> incoming = new ArrayList<Edge>();
 
         public List<Edge> getOutgoing() { return outgoing; }
         public List<Edge> getIncoming() { return incoming; }
 
-        public void setPos (double x, double y)
+        public void setPos(float x, float y)
         {
             this.x = x;
             this.y = y;
@@ -52,22 +52,25 @@ public class Network
         public Node(String id) { this.id = id; }
 
         public String getId() { return id; }
-        public double getX() { return x; }
-        public double getY() { return y; }
+        public float getX() { return x; }
+        public float getY() { return y; }
     }
 
     public static class Edge
     {
+        private String id;
         private String predicate;
         private Node src;
         private Node dest;
 
+        public String getId() { return id; }
         public Node getDest() { return dest; }
         public Node getSrc() { return src; }
         public String getPredictate() { return predicate; }
 
-        public Edge(Node src, Node dest, String predicate)
+        public Edge(String id, Node src, Node dest, String predicate)
         {
+            this.id = id;
             this.src = src;
             this.dest = dest;
             this.predicate = predicate;
@@ -83,9 +86,9 @@ public class Network
     Map<String, Node> nodes = new HashMap<String, Node>();
     List<Edge> edges = new ArrayList<Edge>();
 
-    public void createEdge (Node src, Node dest, String predicate)
+    public void createEdge(String id, Node src, Node dest, String predicate)
     {
-        Edge e = new Edge (src, dest, predicate);
+        Edge e = new Edge (id, src, dest, predicate);
         edges.add(e);
         dest.incoming.add(e);
         src.outgoing.add(e);		

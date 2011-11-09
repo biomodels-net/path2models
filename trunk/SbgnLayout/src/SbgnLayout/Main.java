@@ -15,19 +15,18 @@ public class Main {
     public static void main(String[] args) {
         try {
             File f = new File("/tmp/activity-nodes.sbgn"); // read real sbgn file here and test
-            f.canRead();
-       //     SbgnUtil.readFromFile(f);
+            SbgnUtil.readFromFile(f);
             
-        /*    SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
+            SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
 
-            JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
+    /*        JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
             jgf.applyHierarchical();
             jgf.renderGraph();
             // missing: apply graph to sbgn map
-
+*/
             JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
             jung.applyCircle();
-            jung.renderGraph();*/
+            jung.renderGraph();
         }
         catch (Exception e) {
             e.printStackTrace();
