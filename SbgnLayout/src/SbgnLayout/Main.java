@@ -14,7 +14,7 @@ import org.sbgn.SbgnUtil;
 public class Main {
     public static void main(String[] args) {
         try {
-            File f = new File("/tmp/activity-nodes.sbgn"); // read real sbgn file here and test
+            File f = new File("activity-nodes.sbgn"); // read real sbgn file here and test
             SbgnUtil.readFromFile(f);
             
             SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
