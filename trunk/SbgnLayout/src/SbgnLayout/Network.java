@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.sbgn.bindings.Point;
 
 public class Network
 {
@@ -47,8 +48,7 @@ public class Network
 
         public Iterable<Node> getIncomingNodes() {
             List<Node> nodes = new ArrayList<Node>();
-            for (Edge e : getIncoming())
-            {
+            for (Edge e : getIncoming()) {
                 nodes.add(e.src);
             }
             return nodes;
@@ -69,23 +69,32 @@ public class Network
         private String predicate;
         private Node src;
         private Node dest;
+        private ArrayList<Point> pts;
 
         public String getId() { return id; }
         public Node getDest() { return dest; }
         public Node getSrc() { return src; }
         public String getPredictate() { return predicate; }
+        
+        public void addPoint(float x, float y) {
+            Point pt = new Point();
+            pt.setX(x);
+            pt.setY(y);
+            pts.add(pt);
+        }
+        public float getX(int index) { return (pts.get(index)).getX(); }
+        public float getY(int index) { return (pts.get(index)).getY(); }
 
-        public Edge(String id, Node src, Node dest, String predicate)
-        {
+        public Edge(String id, Node src, Node dest, String predicate) {
             this.id = id;
             this.src = src;
             this.dest = dest;
             this.predicate = predicate;
+            this.pts = new ArrayList<Point>();
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return  "Edge: " + src.getId() + " " + predicate + " " + dest.getId();
         }
     }
@@ -93,22 +102,18 @@ public class Network
     Map<String, Node> nodes = new HashMap<String, Node>();
     List<Edge> edges = new ArrayList<Edge>();
 
-    public void createEdge(String id, Node src, Node dest, String predicate)
-    {
+    public void createEdge(String id, Node src, Node dest, String predicate) {
         Edge e = new Edge (id, src, dest, predicate);
         edges.add(e);
         dest.incoming.add(e);
         src.outgoing.add(e);		
     }
 
-    public Node createOrGetNode (String name)
-    {
-        if (nodes.containsKey(name))
-        {
+    public Node createOrGetNode (String name) {
+        if (nodes.containsKey(name)) {
             return nodes.get(name);
         }
-        else
-        {
+        else {
             Node n = new Node(name);
             nodes.put (name, n);
             return n;
