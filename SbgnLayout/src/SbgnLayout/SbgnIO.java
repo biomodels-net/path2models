@@ -60,24 +60,21 @@ public class SbgnIO {
             box.setH(node.getH());
         }
         
-        // needs to be done via src+tgt bc no ids
-        // or: ids addded to edges
-        // maybe: calculate (x,y) by (source, target) [this would help with subglyphs]
-        //        [would this be redundant w/ layout algos? -> likely only in part]
-        /*
         HashMap<String, Edge> lookupEdge = new HashMap<String, Edge>();
         for (Edge e : net.getEdges()) {
-            lookupEdge.put(e., e); // ??
+            lookupEdge.put(e.getId(), e);
         }
         for (Arc a : map.getArc()) {
+            Edge edge = lookupEdge.get(a.getId());
+            
             Start st = a.getStart();
-            st.setX(0);
-            st.setY(0);
+            st.setX(edge.getX(0));
+            st.setY(edge.getY(0));
             
             End en = a.getEnd();
-            en.setX(0);
-            en.setY(0);
-        }*/
+            en.setX(edge.getX(1));
+            en.setY(edge.getY(1));
+        }
         
         Sbgn sbgn = new Sbgn();
         sbgn.setMap(this.map);
