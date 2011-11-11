@@ -9,13 +9,11 @@ import SbgnLayout.Network.Node;
 import com.mxgraph.layout.hierarchical.model.mxGraphHierarchyEdge;
 import com.mxgraph.layout.hierarchical.model.mxGraphHierarchyNode;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
-import com.mxgraph.model.mxCell;
-import com.mxgraph.model.mxGeometry;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxPoint;
+import com.mxgraph.view.mxCellState;
 import com.mxgraph.view.mxGraph;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.swing.JFrame;
 import org.apache.commons.collections15.map.LinkedMap;
@@ -63,7 +61,7 @@ public class JGraphLayout {
         }
         finally {
             graph.getModel().endUpdate();
-        }  
+        }
     }
     
     public void applyHierarchical() {
@@ -78,16 +76,14 @@ public class JGraphLayout {
         for (Node node : net.getNodes()) {
             Object graphNode = nodeLookup.get(node);
             mxGraphHierarchyNode hn = vertexMapper.get(graphNode);
-            node.setPos((float)hn.x[0], (float)hn.y[0]);
+            node.setPos((float)hn.x[0]-node.getW()/2, (float)hn.y[0]-node.getH()/2);
         }
         
         Map<Object, mxGraphHierarchyEdge> edgeMapper = layout.getModel().getEdgeMapper();
         for (Edge edge : net.getEdges()) {
             Object graphEdge = edgeLookup.get(edge.getSrc(), edge.getDest());
-            List<Object> edges = edgeMapper.get(graphEdge).edges;
-            mxGeometry g = ((mxCell)edges.get(0)).getGeometry();
-            List<mxPoint> pts = g.getPoints();
-            for (mxPoint pt : pts) {
+            mxCellState state = (mxCellState)graph.getView().getState(graphEdge);
+            for (mxPoint pt : state.getAbsolutePoints()) {
                 edge.addPoint((float)pt.getX(), (float)pt.getY());
             }
         }
@@ -96,6 +92,7 @@ public class JGraphLayout {
     public void renderGraph() {
         mxGraphComponent graphComponent = new mxGraphComponent(graph);
         JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(graphComponent);
         frame.pack();
         frame.setVisible(true);
