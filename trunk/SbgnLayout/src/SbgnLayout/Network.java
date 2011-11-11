@@ -82,8 +82,18 @@ public class Network
             pt.setY(y);
             pts.add(pt);
         }
-        public float getX(int index) { return (pts.get(index)).getX(); }
-        public float getY(int index) { return (pts.get(index)).getY(); }
+        public float getX(int index) {
+            if (index == -1) {
+                index = pts.size() - 1;
+            }
+            return (pts.get(index)).getX(); 
+        }
+        public float getY(int index) { 
+            if (index == -1) {
+                index = pts.size() - 1;
+            }
+            return (pts.get(index)).getY(); 
+        }
 
         public Edge(String id, Node src, Node dest, String predicate) {
             this.id = id;

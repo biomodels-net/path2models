@@ -14,7 +14,7 @@ import org.sbgn.SbgnUtil;
 public class Main {
     public static void main(String[] args) {
         try {
-            File f = new File("activity-nodes.sbgn");
+            File f = new File("two_edges_between_two_activities.sbgn");
             SbgnUtil.readFromFile(f);
             
             SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
@@ -25,7 +25,7 @@ public class Main {
             sbgnIO.writeToFile(new File("layoutJGraph.sbgn"));
 
             JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
-            jung.applyDAG();
+            jung.applyCircle();
             jung.renderGraph();
             sbgnIO.writeToFile(new File("layoutJung.sbgn"));
         }

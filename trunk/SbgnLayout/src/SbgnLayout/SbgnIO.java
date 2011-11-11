@@ -44,9 +44,6 @@ public class SbgnIO {
     }
     
     public void writeToFile(File out) throws JAXBException {
-        // get coordinates from network object
-        // and set them to the map object // TODO
-        
         HashMap<String, Node> lookupNode = new HashMap<String, Node>();
         for (Node n : net.getNodes()) {
             lookupNode.put(n.getId(), n);
@@ -72,8 +69,8 @@ public class SbgnIO {
             st.setY(edge.getY(0));
             
             End en = a.getEnd();
-            en.setX(edge.getX(1));
-            en.setY(edge.getY(1));
+            en.setX(edge.getX(-1));
+            en.setY(edge.getY(-1));
         }
         
         Sbgn sbgn = new Sbgn();

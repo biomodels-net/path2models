@@ -8,8 +8,10 @@ import edu.uci.ics.jung.algorithms.layout.Layout;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import SbgnLayout.Network.Node;
 import SbgnLayout.Network.Edge;
-import edu.uci.ics.jung.algorithms.layout.DAGLayout;
+import edu.uci.ics.jung.algorithms.layout.CircleLayout;
+import edu.uci.ics.jung.graph.util.Pair;
 import edu.uci.ics.jung.visualization.BasicVisualizationServer;
+import java.awt.Dimension;
 import java.awt.geom.Point2D;
 import javax.swing.JFrame;
 
@@ -31,26 +33,30 @@ public class JUNGLayout {
         }
     }
     
-    public void applyDAG() {
-        layout = new DAGLayout(graph);
+    public void applyCircle() {
+        layout = new CircleLayout(graph);
+        layout.setSize(new Dimension(500,500));
         writeLayoutToNetwork();
     }
     
     private void writeLayoutToNetwork() {
-        // TODO: write positional information back to network
-
         for (Node node : net.getNodes()) {
             Point2D coord = layout.transform(node);
             node.setPos((float)coord.getX(), (float)coord.getY());
         }
         
-        // TODO: do the same for the edges
+        for (Edge edge : net.getEdges()) { // issue: nodes are zero-size in JUNG
+            Pair<Node> pts = graph.getEndpoints(edge);
+            Node start = pts.getFirst();
+            edge.addPoint(start.getX(), start.getY());
+            Node end = pts.getSecond();
+            edge.addPoint(start.getX(), start.getY());
+        }
     }
     
     public void renderGraph() {
-        //layout.setSize(new Dimension(300,300)); // sets the initial size of the space
         BasicVisualizationServer<Node, Point2D> vv = new BasicVisualizationServer<Node, Point2D>(layout);
-        //vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
+        vv.setPreferredSize(layout.getSize());
         
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
