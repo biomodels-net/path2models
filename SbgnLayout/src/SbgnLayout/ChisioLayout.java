@@ -6,8 +6,6 @@ package SbgnLayout;
 
 import SbgnLayout.Network.Edge;
 import SbgnLayout.Network.Node;
-import com.mxgraph.util.mxPoint;
-import com.mxgraph.view.mxCellState;
 import java.util.HashMap;
 import org.ivis.layout.LEdge;
 import org.ivis.layout.LGraph;
@@ -16,7 +14,6 @@ import org.ivis.layout.LGraphObject;
 import org.ivis.layout.LNode;
 import org.ivis.layout.Layout;
 import org.ivis.layout.Updatable;
-import org.ivis.layout.cose.CoSELayout;
 import org.ivis.layout.sgym.SgymLayout;
 import org.ivis.util.PointD;
 
