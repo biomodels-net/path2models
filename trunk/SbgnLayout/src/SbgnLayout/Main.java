@@ -18,6 +18,10 @@ public class Main {
             SbgnUtil.readFromFile(f);
             
             SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
+            
+            ChisioLayout cl = new ChisioLayout(sbgnIO.getNetwork());
+            cl.renderGraph();
+            sbgnIO.writeToFile(new File("layoutChiLay.sbgn"));
 
             JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
             jgf.applyHierarchical();
