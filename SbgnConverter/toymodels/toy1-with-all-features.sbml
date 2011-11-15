@@ -5,29 +5,29 @@
 	  <compartment constant="true" id="comp1"/>
 	</listOfCompartments>
     <listOfQualitativeSpecies xmlns="http://www.sbml.org/sbml/level3/version1/qual/version1">
-      <qualitativeSpecies id="G0" name="" maxLevel="1" initialLevel="0" boundaryCondition="true" compartment="comp1" constant="false">
+      <qualitativeSpecies qual:id="G0" qual:name="" qual:maxLevel="1" qual:initialLevel="0" qual:boundaryCondition="true" qual:compartment="comp1" qual:constant="false">
 	    <listOfSymbolicValues>
-		  <symbolicValue id="val1" rank="1" name="inactive"/>
-		  <symbolicValue id="val1" rank="2" name="active"/>
+		  <symbolicValue qual:id="val1" qual:rank="1" qual:name="inactive"/>
+		  <symbolicValue qual:id="val1" qual:rank="2" qual:name="active"/>
 		</listOfSymbolicValues>
 	  </qualitativeSpecies>
-      <qualitativeSpecies id="G1" name="" maxLevel="1" initialLevel="0" boundaryCondition="false" compartment="comp1" constant="false"/>
-      <qualitativeSpecies id="G2" name="" maxLevel="1" initialLevel="0" boundaryCondition="false" compartment="comp1" constant="false"/>
-      <qualitativeSpecies id="G3" name="" maxLevel="1" initialLevel="0" boundaryCondition="false" compartment="comp1" constant="false"/>
+      <qualitativeSpecies qual:id="G1" qual:name="" qual:maxLevel="1" qual:initialLevel="0" qual:boundaryCondition="false" qual:compartment="comp1" qual:constant="false"/>
+      <qualitativeSpecies qual:id="G2" qual:name="" qual:maxLevel="1" qual:initialLevel="0" qual:boundaryCondition="false" qual:compartment="comp1" qual:constant="false"/>
+      <qualitativeSpecies qual:id="G3" qual:name="" qual:maxLevel="1" qual:initialLevel="0" qual:boundaryCondition="false" qual:compartment="comp1" qual:constant="false"/>
     </listOfQualitativeSpecies>
     <listOfTransitions xmlns="http://www.sbml.org/sbml/level3/version1/qual/version1">
-      <transition id="tr_G1" name="mytransition" temporisationType="sustain">
+      <transition qual:id="tr_G1" qual:name="mytransition" qual:temporisationType="sustain">
         <listOfInputs>
-          <input qualitativeSpecies="G0" transitionEffect="none" sign="SBO:0000459"/>
-          <input qualitativeSpecies="G2" transitionEffect="none" sign="SBO:0000459"/>
-          <input qualitativeSpecies="G3" transitionEffect="none" sign="SBO:0000020" tresholdSymbol="val1"/>
+          <input qual:qualitativeSpecies="G0" qual:transitionEffect="none" qual:sign="positive"/>
+          <input qual:qualitativeSpecies="G2" qual:transitionEffect="none" qual:sign="positive"/>
+          <input qual:qualitativeSpecies="G3" qual:transitionEffect="none" qual:sign="negative" qual:tresholdSymbol="val1"/>
         </listOfInputs>
         <listOfOutputs>
-          <output qualitativeSpecies="G1" transitionEffect="assignmentLevel"/>
+          <output qual:qualitativeSpecies="G1" qual:transitionEffect="assignmentLevel"/>
         </listOfOutputs>
         <listOfFunctionTerms>
-          <defaultTerm resultLevel="0"/>
-          <functionTerm resultLevel="1">
+          <defaultTerm qual:resultLevel="0"/>
+          <functionTerm qual:resultLevel="1">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
                 <or/>
@@ -54,17 +54,17 @@
           </functionTerm>
         </listOfFunctionTerms>
       </transition>
-      <transition id="tr_G2">
+      <transition qual:id="tr_G2">
         <listOfInputs>
-          <input qualitativeSpecies="G0" transitionEffect="none" sign="SBO:0000459"/>
-          <input qualitativeSpecies="G3" transitionEffect="none" sign="SBO:0000459"/>
+          <input qual:qualitativeSpecies="G0" qual:transitionEffect="none" qual:sign="positive"/>
+          <input qual:qualitativeSpecies="G3" qual:transitionEffect="none" qual:sign="positive"/>
         </listOfInputs>
         <listOfOutputs>
-          <output qualitativeSpecies="G2" transitionEffect="assignmentLevel"/>
+          <output qual:qualitativeSpecies="G2" qual:transitionEffect="assignmentLevel"/>
         </listOfOutputs>
         <listOfFunctionTerms>
-          <defaultTerm resultSymbol="val1"/>
-          <functionTerm resultLevel="1" temporisationValue="1.3e-01">
+          <defaultTerm qual:resultSymbol="val1"/>
+          <functionTerm qual:resultLevel="1" qual:temporisationValue="1.3e-01">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
                 <or/>
@@ -122,17 +122,17 @@
           </functionTerm>
         </listOfFunctionTerms>
       </transition>
-      <transition id="tr_G3">
+      <transition qual:id="tr_G3">
         <listOfInputs>
-          <input qualitativeSpecies="G0" transitionEffect="production" sign="SBO:0000020"/>
-          <input qualitativeSpecies="G1" transitionEffect="assignmentSymbol" sign="SBO:0000020"/>
+          <input qual:qualitativeSpecies="G0" qual:transitionEffect="consumption" qual:sign="negative"/>
+          <input qual:qualitativeSpecies="G1" qual:transitionEffect="none" qual:sign="negative"/>
         </listOfInputs>
         <listOfOutputs>
-          <output qualitativeSpecies="G3" transitionEffect="assignmentLevel" level="5"/>
+          <output qual:qualitativeSpecies="G3" qual:transitionEffect="assignmentLevel" qual:outputLevel="5"/>
         </listOfOutputs>
         <listOfFunctionTerms>
-          <defaultTerm resultLevel="0"/>
-          <functionTerm resultLevel="1">
+          <defaultTerm qual:resultLevel="0"/>
+          <functionTerm qual:resultLevel="1">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
                 <or/>
