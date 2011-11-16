@@ -72,6 +72,10 @@ public class JGraphLayout {
     }
     
     private void writeLayoutToNetwork(mxHierarchicalLayout layout) {
+        if (layout.getModel() == null) { // if layout on empty network
+            return;
+        }
+        
         Map<Object, mxGraphHierarchyNode> vertexMapper = layout.getModel().getVertexMapper();
         for (Node node : net.getNodes()) {
             Object graphNode = nodeLookup.get(node);

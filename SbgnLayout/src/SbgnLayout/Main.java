@@ -4,8 +4,8 @@
  */
 package SbgnLayout;
 
-import java.io.File;
-import org.sbgn.SbgnUtil;
+import org.sbml.jsbml.SBMLDocument;
+import org.sbml.jsbml.SBMLReader;
 
 /**
  *
@@ -21,17 +21,17 @@ public class Main {
             
             ChisioLayout cl = new ChisioLayout(sbgnIO.getNetwork());
             cl.renderGraph();
-            sbgnIO.writeToFile(new File("layoutChiLay.sbgn"));
+            sbgnIO.writeToFile("layoutChiLay.sbgn");
 
             JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
             jgf.applyHierarchical();
             jgf.renderGraph();
-            sbgnIO.writeToFile(new File("layoutJGraph.sbgn"));
+            sbgnIO.writeToFile("layoutJGraph.sbgn");
 
             JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
             jung.applyCircle();
             jung.renderGraph();
-            sbgnIO.writeToFile(new File("layoutJung.sbgn"));
+            sbgnIO.writeToFile("layoutJung.sbgn");
         }
         catch (Exception e) {
             e.printStackTrace();

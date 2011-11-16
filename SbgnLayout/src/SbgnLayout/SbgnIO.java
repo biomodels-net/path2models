@@ -51,7 +51,9 @@ public class SbgnIO {
         return sbgnIO;
     }
     
-    public void writeToFile(File out) throws JAXBException {
+    public void writeToFile(String filename) throws JAXBException {
+        File out = new File(filename);
+        
         HashMap<String, Node> lookupNode = new HashMap<String, Node>();
         for (Node n : net.getNodes()) {
             lookupNode.put(n.getId(), n);
