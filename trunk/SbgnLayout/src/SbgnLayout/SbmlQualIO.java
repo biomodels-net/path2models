@@ -6,10 +6,10 @@ package SbgnLayout;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import javax.swing.SwingUtilities;
 import javax.xml.stream.XMLStreamException;
 import org.sbgn.ArcClazz;
 import org.sbgn.GlyphClazz;
@@ -22,10 +22,12 @@ import org.sbgn.bindings.Label;
 import org.sbgn.bindings.Map;
 import org.sbgn.bindings.Point;
 import org.sbgn.bindings.Sbgn;
+import org.sbml.jsbml.Model;
 import org.sbml.jsbml.SBMLDocument;
 import org.sbml.jsbml.SBMLReader;
 import org.sbml.jsbml.ext.qual.Input;
 import org.sbml.jsbml.ext.qual.Output;
+import org.sbml.jsbml.ext.qual.QualConstant;
 import org.sbml.jsbml.ext.qual.QualitativeModel;
 import org.sbml.jsbml.ext.qual.QualitativeSpecies;
 import org.sbml.jsbml.ext.qual.Transition;
@@ -41,7 +43,8 @@ public class SbmlQualIO {
     public SbmlQualIO(String filename) throws XMLStreamException, IOException {
         SBMLReader sbmlRead = new SBMLReader();
         SBMLDocument sbmlDoc = sbmlRead.readSBMLFromFile(filename);
-        model = new QualitativeModel(sbmlDoc.getModel());
+        Model baseModel = sbmlDoc.getModel();
+        model = (QualitativeModel)baseModel.getExtension(QualConstant.namespaceURI);
     }
     
     public Sbgn createSBGN() {
@@ -50,10 +53,8 @@ public class SbmlQualIO {
         sbgn.setMap(map);
         List<Glyph> glyphs = map.getGlyph();
         
-        HashMap<String, String> qualId2Name = new HashMap<String, String>();
-        for (QualitativeSpecies qs : model.getListOfQualitativeSpecies()) {
-            qualId2Name.put(qs.getId(), qs.getName());
-            
+        HashMap<String, Glyph> glyphLookup = new HashMap<String, Glyph>();
+        for (QualitativeSpecies qs : model.getListOfQualitativeSpecies()) {            
             Glyph glyph = new Glyph();
             glyph.setId(qs.getId());
             glyph.setClazz(sbo2GlyphClazz(qs.getSBOTerm()));
@@ -70,6 +71,7 @@ public class SbmlQualIO {
             bbox.setH(pt.getY());
             glyph.setBbox(bbox);
             
+            glyphLookup.put(glyph.getId(), glyph);
             glyphs.add(glyph);
         }
         
@@ -77,8 +79,8 @@ public class SbmlQualIO {
             for (Output output : trans.getListOfOutputs()) {
                 for (Input input : trans.getListOfInputs()) {
                     Arc arc = new Arc();
-                    arc.setSource(input.getId());
-                    arc.setTarget(output.getId());
+                    arc.setSource(glyphLookup.get(input.getQualitativeSpecies()));
+                    arc.setTarget(glyphLookup.get(output.getQualitativeSpecies()));
                     arc.setClazz(sign2ArcClazz(input.getSign().toString()));
                     
                     Start start = new Start();
@@ -92,23 +94,6 @@ public class SbmlQualIO {
                     
                     arc.setId(trans.getId() + "_" + input.getId() + "_" + output.getId());
                     map.getArc().add(arc);
-		/*	a.setClazz(
-				e.getPredictate().equals ("-1") ? 
-					ArcClazz.NEGATIVE_INFLUENCE.getClazz() :
-					ArcClazz.POSITIVE_INFLUENCE.getClazz()
-				);
-			a.setSource(input.getId());
-			a.setTarget(glyphMap.get(e.getDest()));
-			Start start = new Start();
-			start.setX((float)e.getSrc().getX());
-			start.setY((float)e.getSrc().getY());
-			a.setStart(start);
-			End end = new End();
-			end.setX((float)e.getDest().getX());
-			end.setY((float)e.getDest().getY());
-			a.setEnd(end);
-			a.setId("id" + autoid++);
-			map.getArc().add(a);*/
                 }
             }
         }
@@ -117,14 +102,17 @@ public class SbmlQualIO {
     }
     
     private Point label2Size(String label) {
-        String lines[] = label.split("&#xA;");
-        int width = 0, height = lines.length*10 + 4;
+        Font font = new Font("Arial", Font.PLAIN, 10);  
+   //     FontMetrics metrics = new FontMetrics(font) {};
+        BufferedImage bi = new BufferedImage(5, 5, BufferedImage.TYPE_INT_RGB);
+        FontMetrics metrics = bi.getGraphics().getFontMetrics(font);
+
         
-        Font font = new Font("Verdana", Font.PLAIN, 10);  
-        FontMetrics metrics = new FontMetrics(font) {};
+        String lines[] = label.split("&#xA;");
+        int width = 0, height = lines.length*metrics.getHeight() + 4;
         
         for (String line : lines) {
-            int cur = SwingUtilities.computeStringWidth(metrics, line) + 6;
+            int cur = metrics.stringWidth(line);
             if (cur > width) {
                 width = cur;
             }
