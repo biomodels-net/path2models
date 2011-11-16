@@ -14,7 +14,7 @@ import org.ivis.layout.LGraphObject;
 import org.ivis.layout.LNode;
 import org.ivis.layout.Layout;
 import org.ivis.layout.Updatable;
-import org.ivis.layout.sgym.SgymLayout;
+import org.ivis.layout.spring.SpringLayout;
 import org.ivis.util.PointD;
 
 /**
@@ -41,7 +41,7 @@ public class ChisioLayout {
     public ChisioLayout(Network net) {
         this.net = net;
         //layout = new CoSELayout();
-        layout = new SgymLayout();
+        layout = new SpringLayout();
         LGraphManager gm = layout.getGraphManager();
         LGraph g1 = gm.addRoot();
         

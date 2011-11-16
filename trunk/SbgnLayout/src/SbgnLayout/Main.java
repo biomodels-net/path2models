@@ -14,10 +14,10 @@ import org.sbgn.SbgnUtil;
 public class Main {
     public static void main(String[] args) {
         try {
-            File f = new File("two_edges_between_two_activities.sbgn");
-            SbgnUtil.readFromFile(f);
+            // File f = new File("two_edges_between_two_activities.sbgn");
+            // SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
             
-            SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
+            SbgnIO sbgnIO = SbgnIO.fromSbmlQual("hsa04210.sbml.xml");
             
             ChisioLayout cl = new ChisioLayout(sbgnIO.getNetwork());
             cl.renderGraph();
