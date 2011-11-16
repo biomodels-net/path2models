@@ -8,7 +8,9 @@ import SbgnLayout.Network.Edge;
 import java.io.File;
 import javax.xml.bind.JAXBException;
 import SbgnLayout.Network.Node;
+import java.io.IOException;
 import java.util.HashMap;
+import javax.xml.stream.XMLStreamException;
 import org.sbgn.SbgnUtil;
 import org.sbgn.bindings.Arc;
 import org.sbgn.bindings.Arc.End;
@@ -38,9 +40,15 @@ public class SbgnIO {
         return sbgnIO;
     }
     
-    public static SbgnIO fromSbmlQual(File in) throws JAXBException {
-        return new SbgnIO();
-        // TODO
+    public static SbgnIO fromSbmlQual(String in) throws IOException, XMLStreamException {
+        SbmlQualIO qualIO = new SbmlQualIO(in);
+        Sbgn sbgn = qualIO.createSBGN();
+        
+        SbgnIO sbgnIO = new SbgnIO();
+        sbgnIO.map = sbgn.getMap();
+        sbgnIO.createNetworkFromMap();
+        
+        return sbgnIO;
     }
     
     public void writeToFile(File out) throws JAXBException {
