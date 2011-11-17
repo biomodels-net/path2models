@@ -19,6 +19,11 @@ public class Main {
             
             SbgnIO sbgnIO = SbgnIO.fromSbmlQual("hsa04210.sbml.xml");
             
+            KeggLayout kl = new KeggLayout(sbgnIO.getNetwork());
+            kl.applyKeggFile("hsa04210.xml");
+            kl.renderGraph();
+            sbgnIO.writeToFile("layoutKegg.sbgn");
+            
             ChisioLayout cl = new ChisioLayout(sbgnIO.getNetwork());
             cl.renderGraph();
             sbgnIO.writeToFile("layoutChiLay.sbgn");
