@@ -132,4 +132,8 @@ public class Network
 
     public Collection<Node> getNodes() { return nodes.values(); }
     public Collection<Edge> getEdges() { return edges; }
+    
+    public Node getNodeByName(String name) {
+        return nodes.get(name);
+    }
 }
