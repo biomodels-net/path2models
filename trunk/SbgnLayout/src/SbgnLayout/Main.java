@@ -20,7 +20,8 @@ public class Main {
             SbgnIO sbgnIO = SbgnIO.fromSbmlQual("hsa04210.sbml.xml");
             
             KeggLayout kl = new KeggLayout(sbgnIO.getNetwork());
-            kl.applyKeggFile("hsa04210.xml");
+            kl.applyCoordFile("hsa04210.coords.txt");
+        //    kl.applyKeggFile("hsa04210.xml");
             kl.renderGraph();
             sbgnIO.writeToFile("layoutKegg.sbgn");
             

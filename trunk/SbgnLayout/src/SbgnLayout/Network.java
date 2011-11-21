@@ -136,4 +136,15 @@ public class Network
     public Node getNodeByName(String name) {
         return nodes.get(name);
     }
+    
+    public void updateEdges() {
+        // TODO: proper edge-node crossing routine
+        for (Edge edge : getEdges()) {
+            edge.pts = new ArrayList<Point>();
+            Node src = edge.getSrc();
+            Node dest = edge.getDest();
+            edge.addPoint(src.getX(), src.getY());
+            edge.addPoint(dest.getX(), dest.getY());
+        }
+    }
 }

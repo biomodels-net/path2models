@@ -5,8 +5,10 @@
 package SbgnLayout;
 
 import SbgnLayout.Network.Node;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -30,6 +32,22 @@ public class KeggLayout {
     
     public KeggLayout(Network net) {
         this.net = net;
+    }
+    
+    void applyCoordFile(String filename) throws FileNotFoundException, IOException {
+        BufferedReader readbuffer = new BufferedReader(new FileReader(filename));
+        String line;
+        while ((line=readbuffer.readLine())!=null){
+            String elm[] = line.split("\t");
+            
+            try {
+                Node node = net.getNodeByName("qual_" + elm[0]);
+                node.setPos(Float.parseFloat(elm[1]), Float.parseFloat(elm[2]));
+                node.setSize(Float.parseFloat(elm[3]), Float.parseFloat(elm[4]));
+            }
+            catch (NullPointerException e) {}
+        }
+        readbuffer.close();
     }
     
     void applyKeggFile(String filename) throws ParserConfigurationException, 
@@ -59,6 +77,7 @@ public class KeggLayout {
             }
             catch (NullPointerException e) {}
         }
+        net.updateEdges();
     }
     
     public void renderGraph() {
