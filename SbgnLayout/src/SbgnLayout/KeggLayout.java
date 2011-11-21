@@ -48,6 +48,7 @@ public class KeggLayout {
             catch (NullPointerException e) {}
         }
         readbuffer.close();
+        net.updateEdges();
     }
     
     void applyKeggFile(String filename) throws ParserConfigurationException, 
