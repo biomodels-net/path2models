@@ -6,9 +6,9 @@ package SbgnLayout;
 
 import SbgnLayout.Network.Edge;
 import SbgnLayout.Network.Node;
-import com.mxgraph.layout.hierarchical.model.mxGraphHierarchyEdge;
 import com.mxgraph.layout.hierarchical.model.mxGraphHierarchyNode;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.layout.mxParallelEdgeLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxCellState;
@@ -66,6 +66,7 @@ public class JGraphLayout {
     
     public void applyHierarchical() {
         mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
+        // test: mxParallelEdgeLayout, mxCompactTreeLayout
         layout.execute(graph.getDefaultParent());
         
         writeLayoutToNetwork(layout);
@@ -83,7 +84,11 @@ public class JGraphLayout {
             node.setPos((float)hn.x[0]-node.getW()/2, (float)hn.y[0]-node.getH()/2);
         }
         
-        Map<Object, mxGraphHierarchyEdge> edgeMapper = layout.getModel().getEdgeMapper();
+        writeEdgesToNetwork();
+    }
+    
+    public void writeEdgesToNetwork() {
+        net.resetAllEdgePoints();
         for (Edge edge : net.getEdges()) {
             Object graphEdge = edgeLookup.get(edge.getSrc(), edge.getDest());
             mxCellState state = (mxCellState)graph.getView().getState(graphEdge);

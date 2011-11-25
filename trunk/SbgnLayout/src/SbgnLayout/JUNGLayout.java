@@ -8,7 +8,7 @@ import edu.uci.ics.jung.algorithms.layout.Layout;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import SbgnLayout.Network.Node;
 import SbgnLayout.Network.Edge;
-import edu.uci.ics.jung.algorithms.layout.CircleLayout;
+import edu.uci.ics.jung.algorithms.layout.SpringLayout;
 import edu.uci.ics.jung.graph.util.Pair;
 import edu.uci.ics.jung.visualization.BasicVisualizationServer;
 import java.awt.Dimension;
@@ -33,8 +33,8 @@ public class JUNGLayout {
         }
     }
     
-    public void applyCircle() {
-        layout = new CircleLayout(graph);
+    public void applySpring() {
+        layout = new SpringLayout(graph);
         layout.setSize(new Dimension(500,500));
         writeLayoutToNetwork();
     }
@@ -45,7 +45,8 @@ public class JUNGLayout {
             node.setPos((float)coord.getX(), (float)coord.getY());
         }
         
-        for (Edge edge : net.getEdges()) { // issue: nodes are zero-size in JUNG
+        net.resetAllEdgePoints();
+        for (Edge edge : net.getEdges()) {
             Pair<Node> pts = graph.getEndpoints(edge);
             Node start = pts.getFirst();
             edge.addPoint(start.getX(), start.getY());

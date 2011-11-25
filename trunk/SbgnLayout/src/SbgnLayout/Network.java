@@ -137,14 +137,20 @@ public class Network
         return nodes.get(name);
     }
     
+    public void resetAllEdgePoints() {
+        for (Edge edge : getEdges()) {
+            edge.pts = new ArrayList<Point>();
+        }
+    }
+    
     public void updateEdges() {
         // TODO: proper edge-node crossing routine
         for (Edge edge : getEdges()) {
             edge.pts = new ArrayList<Point>();
             Node src = edge.getSrc();
             Node dest = edge.getDest();
-            edge.addPoint(src.getX(), src.getY());
-            edge.addPoint(dest.getX(), dest.getY());
+            edge.addPoint(src.getX()+src.getW()/2, src.getY()+src.getH()/2);
+            edge.addPoint(dest.getX()+dest.getW()/2, dest.getY()+dest.getH()/2);
         }
     }
 }
