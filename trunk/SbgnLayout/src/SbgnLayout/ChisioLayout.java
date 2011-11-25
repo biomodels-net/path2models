@@ -44,10 +44,18 @@ public class ChisioLayout {
         }
     }
     
-    public ChisioLayout(Network net) {
+    public enum LayoutAlgorithm { CoSE, CiSE, Cluster, Sugiyama, SixCircular, Spring }
+    
+    public ChisioLayout(Network net, LayoutAlgorithm alg) {
         this.net = net;
-        //layout = new CoSELayout();
-        layout = new ClusterLayout();
+        switch (alg) {
+            case CoSE: layout = new CoSELayout();
+            case CiSE: layout = new CiSELayout();
+            case Cluster: layout = new ClusterLayout();
+            case Sugiyama: layout = new SgymLayout();
+            case SixCircular: layout = new SixCircularLayout();
+            case Spring: layout = new SpringLayout();
+        }
         LGraphManager gm = layout.getGraphManager();
         LGraph g1 = gm.addRoot();
         
