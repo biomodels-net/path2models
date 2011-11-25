@@ -4,8 +4,7 @@
  */
 package SbgnLayout;
 
-import org.sbml.jsbml.SBMLDocument;
-import org.sbml.jsbml.SBMLReader;
+import SbgnLayout.ChisioLayout.LayoutAlgorithm;
 
 /**
  *
@@ -14,30 +13,34 @@ import org.sbml.jsbml.SBMLReader;
 public class Main {
     public static void main(String[] args) {
         try {
-            // File f = new File("two_edges_between_two_activities.sbgn");
-            // SbgnIO sbgnIO = SbgnIO.fromSbgn(f);
-            
             SbgnIO sbgnIO = SbgnIO.fromSbmlQual("hsa04210.sbml.xml");
             
             KeggLayout kl = new KeggLayout(sbgnIO.getNetwork());
             kl.applyCoordFile("hsa04210.coords.txt");
         //    kl.applyKeggFile("hsa04210.xml");
-            kl.renderGraph();
-            sbgnIO.writeToFile("layoutKegg.sbgn");
+            sbgnIO.writeToFile("kegg.sbgn");
             
-            ChisioLayout cl = new ChisioLayout(sbgnIO.getNetwork());
-            cl.renderGraph();
-            sbgnIO.writeToFile("layoutChiLay.sbgn");
+            ChisioLayout cl1 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.CoSE);
+            sbgnIO.writeToFile("chi_cose.sbgn");
+            
+            ChisioLayout cl2 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.CiSE);
+            sbgnIO.writeToFile("chi_cise.sbgn");
+
+            ChisioLayout cl3 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.SixCircular);
+            sbgnIO.writeToFile("chi_sixcircular.sbgn");
+            
+            ChisioLayout cl4 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.Cluster);
+            sbgnIO.writeToFile("chi_cluster.sbgn");
+
+            ChisioLayout cl5 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.Sugiyama);
+            sbgnIO.writeToFile("chi_sugiyama.sbgn");
+            
+            ChisioLayout cl6 = new ChisioLayout(sbgnIO.getNetwork(), LayoutAlgorithm.Spring);
+            sbgnIO.writeToFile("chi_spring.sbgn");
 
             JGraphLayout jgf = new JGraphLayout(sbgnIO.getNetwork());
             jgf.applyHierarchical();
-            jgf.renderGraph();
-            sbgnIO.writeToFile("layoutJGraph.sbgn");
-
-     //       JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
-     //       jung.applySpring();
-     //       jung.renderGraph();
-     //       sbgnIO.writeToFile("layoutJung.sbgn");
+            sbgnIO.writeToFile("jg_hierarchical.sbgn");
         }
         catch (Exception e) {
             e.printStackTrace();
