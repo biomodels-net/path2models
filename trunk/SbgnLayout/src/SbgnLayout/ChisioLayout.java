@@ -90,6 +90,9 @@ public class ChisioLayout {
             }
             edge.addPoint(edge.getDest().getX(), edge.getDest().getY());
         }
+        
+        JGraphLayout jgl = new JGraphLayout(net);
+        jgl.writeEdgesToNetwork();
     }
     
     public void renderGraph() {
