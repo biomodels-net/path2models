@@ -34,10 +34,10 @@ public class Main {
             jgf.renderGraph();
             sbgnIO.writeToFile("layoutJGraph.sbgn");
 
-            JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
-            jung.applyCircle();
-            jung.renderGraph();
-            sbgnIO.writeToFile("layoutJung.sbgn");
+     //       JUNGLayout jung = new JUNGLayout(sbgnIO.getNetwork());
+     //       jung.applySpring();
+     //       jung.renderGraph();
+     //       sbgnIO.writeToFile("layoutJung.sbgn");
         }
         catch (Exception e) {
             e.printStackTrace();

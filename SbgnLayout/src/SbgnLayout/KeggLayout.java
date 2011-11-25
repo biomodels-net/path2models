@@ -37,7 +37,7 @@ public class KeggLayout {
     void applyCoordFile(String filename) throws FileNotFoundException, IOException {
         BufferedReader readbuffer = new BufferedReader(new FileReader(filename));
         String line;
-        while ((line=readbuffer.readLine())!=null){
+        while ((line=readbuffer.readLine()) != null){
             String elm[] = line.split("\t");
             
             try {
@@ -48,13 +48,13 @@ public class KeggLayout {
             catch (NullPointerException e) {}
         }
         readbuffer.close();
-        net.updateEdges();
+        //net.updateEdges();
     }
     
     void applyKeggFile(String filename) throws ParserConfigurationException, 
             SAXException, IOException, XPathExpressionException {
         DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
-        domFactory.setNamespaceAware(true); // never forget this!
+        domFactory.setNamespaceAware(true);
         DocumentBuilder builder = domFactory.newDocumentBuilder();
         Document doc = builder.parse(filename);
 
@@ -78,11 +78,12 @@ public class KeggLayout {
             }
             catch (NullPointerException e) {}
         }
-        net.updateEdges();
+        //net.updateEdges();
     }
     
     public void renderGraph() {
         JGraphLayout jgl = new JGraphLayout(net);
         jgl.renderGraph();
+        jgl.writeEdgesToNetwork();
     }
 }

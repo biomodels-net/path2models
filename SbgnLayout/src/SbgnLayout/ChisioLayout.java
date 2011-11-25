@@ -14,6 +14,12 @@ import org.ivis.layout.LGraphObject;
 import org.ivis.layout.LNode;
 import org.ivis.layout.Layout;
 import org.ivis.layout.Updatable;
+import org.ivis.layout.cise.CiSELayout;
+import org.ivis.layout.cluster.ClusterLayout;
+import org.ivis.layout.cose.CoSELayout;
+import org.ivis.layout.fd.FDLayout;
+import org.ivis.layout.sgym.SgymLayout;
+import org.ivis.layout.six.SixCircularLayout;
 import org.ivis.layout.spring.SpringLayout;
 import org.ivis.util.PointD;
 
@@ -41,7 +47,7 @@ public class ChisioLayout {
     public ChisioLayout(Network net) {
         this.net = net;
         //layout = new CoSELayout();
-        layout = new SpringLayout();
+        layout = new ClusterLayout();
         LGraphManager gm = layout.getGraphManager();
         LGraph g1 = gm.addRoot();
         
@@ -75,6 +81,7 @@ public class ChisioLayout {
             node.setPos(x, y);
         }
         
+        net.resetAllEdgePoints();
         for (Edge edge : net.getEdges()) {
             LEdge graphEdge = edgeLookup.get(edge.getId());
             edge.addPoint(edge.getSrc().getX(), edge.getSrc().getY());
