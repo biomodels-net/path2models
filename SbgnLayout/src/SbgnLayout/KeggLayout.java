@@ -48,7 +48,9 @@ public class KeggLayout {
             catch (NullPointerException e) {}
         }
         readbuffer.close();
-        //net.updateEdges();
+        
+        JGraphLayout jgl = new JGraphLayout(net);
+        jgl.writeEdgesToNetwork();
     }
     
     void applyKeggFile(String filename) throws ParserConfigurationException, 
@@ -78,12 +80,10 @@ public class KeggLayout {
             }
             catch (NullPointerException e) {}
         }
-        //net.updateEdges();
     }
     
     public void renderGraph() {
         JGraphLayout jgl = new JGraphLayout(net);
         jgl.renderGraph();
-        jgl.writeEdgesToNetwork();
     }
 }
