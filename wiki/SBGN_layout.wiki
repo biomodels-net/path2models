@@ -1,5 +1,14 @@
 #summary SBGN layout algorithms and implementation
 
+= Todo = 
+
+  * parser for nested logical expressions that introduce glyphs
+  * parser for layout information w/ Finja's code example
+    * how to handle partial layout information?
+  * SBFC interfaces
+    * w/ and w/o layout extension available
+  * maybe: constrained-based layout using VANTED or adaptagrams
+
 = Overview =
 
 General-purpose Java libraries were tested for layout of simple biochemical networks that were already encoded in the SBGN AF test files. From the layouts, JGraph's hierarchical is the most promising but does not take into account compartments and may not suffice. Documentation of JGraph and JUNG is lacking important parts.
@@ -102,8 +111,4 @@ Work subjects
     * Currently favoured: JGraph framework with ChiLay algorithms, on the path2models SVN for testing.
     * Implementation for subset of glyphs available
     * Continued work will use these for the conversions and may be switched at a later point in time if layout improvements can be observed.
-
-  * SBML qual input
-    * JSBML+extension set up and simple tests work
-    * SBGN object construction from SBML-qual works
-    * TODO: comparative layout with pathvisio
+    * SBML qual input works
