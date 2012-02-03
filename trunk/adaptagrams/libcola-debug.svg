@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-29.5049 -204.969 748.475 1415">
+<!-- Source code to generate this instance:
+#include <vector>
+#include <utility>
+#include "libcola/cola.h"
+using namespace cola;
+int main(void) {
+    CompoundConstraints ccs;
+    std::vector<Edge> es;
+    double defaultEdgeLength=40;
+    std::vector<vpsc::Rectangle*> rs;
+    vpsc::Rectangle *rect = NULL;
+
+    rect = new vpsc::Rectangle(241.961, 261.961, 1034.03, 1054.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(108.997, 128.997, 1002.03, 1022.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(241.961, 261.961, 1056.03, 1076.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(98.997, 138.997, 1024.03, 1064.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(592.937, 664.937, 211.742, 458.742);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(407.961, 527.961, -121.969, -77.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(340.991, 360.991, 1002.03, 1022.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 1034.03, 1054.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(399.961, 419.961, 1034.03, 1054.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(393.49, 413.49, 960.031, 980.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(393.49, 413.49, 876.031, 896.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(273.327, 293.327, 918.031, 938.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(173.661, 193.661, 918.031, 938.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(516.976, 536.976, 918.031, 938.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(312.964, 400.964, 760.031, 804.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 792.031, 812.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 728.031, 748.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 644.031, 664.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(420.957, 440.957, 506.031, 526.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(197.486, 360.486, 612.031, 656.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(349.392, 369.392, 454.031, 474.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 422.031, 442.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 325.242, 345.242);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(393.49, 413.49, 325.242, 345.242);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(514.316, 534.316, 8.03082, 28.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 200.031, 220.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, -33.9692, -13.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(349.392, 369.392, 254.031, 274.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 232.031, 252.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 254.031, 274.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(319.967, 339.967, 200.031, 220.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(268.986, 288.986, 200.031, 220.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(143.998, 163.998, 200.031, 220.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 62.0308, 82.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 40.0308, 60.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(273.327, 293.327, 52.0308, 72.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(313.327, 333.327, -75.9692, -55.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(313.327, 333.327, 20.0308, 40.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(34.4835, 295.484, -154.969, -119.969);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(224.494, 244.494, 1002.03, 1022.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 580.031, 600.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 126.031, 146.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(201.961, 221.961, 306.031, 326.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(143.998, 163.998, 338.031, 358.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(143.998, 163.998, 380.031, 400.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(241.961, 261.961, 338.031, 358.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(241.961, 261.961, 380.031, 400.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(553.943, 593.943, -1.96918, 38.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, -75.9692, -35.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 666.031, 706.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(133.998, 173.998, 52.0308, 92.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(133.998, 173.998, 244.031, 284.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(281.961, 321.961, 444.031, 484.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(281.961, 321.961, 244.031, 284.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 52.0308, 92.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 244.031, 284.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 750.031, 790.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 602.031, 642.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 538.031, 578.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(580.47, 620.47, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(263.327, 303.327, 992.031, 1032.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(504.316, 544.316, 1024.03, 1064.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(330.991, 370.991, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(330.991, 370.991, 806.031, 846.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(98.997, 138.997, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(330.991, 370.991, 1024.03, 1064.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(214.494, 254.494, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(163.661, 203.661, 992.031, 1032.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 350.963, 390.963);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(84.9948, 124.995, 328.031, 368.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(191.989, 231.989, 328.031, 368.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(191.989, 231.989, 370.031, 410.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(84.9948, 124.995, 370.031, 410.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(20.4951, 77.4951, 715.92, 879.92);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(166.996, 186.996, 760.031, 780.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(98.997, 138.997, 750.031, 790.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(399.961, 419.961, 1056.03, 1076.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(166.996, 186.996, 782.031, 802.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(457.961, 477.961, 1056.03, 1076.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(531.97, 668.97, 950.031, 985.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(470.952, 490.952, 506.031, 526.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(538.976, 558.976, 548.031, 568.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(516.976, 536.976, 538.031, 558.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(241.961, 261.961, 814.031, 834.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(494.95, 514.95, 548.031, 568.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(339.392, 379.392, 570.031, 610.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(399.961, 419.961, 612.031, 632.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(399.961, 419.961, 548.031, 568.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(447.961, 487.961, 444.031, 484.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(223.961, 279.961, 1078.03, 1118.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(28.9943, 84.9943, 992.031, 1032.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(223.961, 279.961, 1120.03, 1160.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(255.327, 311.327, 992.031, 1032.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(439.961, 495.961, 950.031, 990.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.961, 437.961, 1078.03, 1118.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(313.966, 369.966, 950.031, 990.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(437.953, 493.953, 866.031, 906.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(206.494, 262.494, 908.031, 948.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(155.661, 211.661, 824.031, 864.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(498.976, 554.976, 824.031, 864.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(489.987, 545.987, 782.031, 822.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.392, 437.392, 718.031, 758.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.392, 437.392, 634.031, 674.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(323.961, 379.961, 496.031, 536.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(331.392, 387.392, 412.031, 452.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(489.987, 545.987, 412.031, 452.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(489.987, 545.987, 315.242, 355.242);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(375.49, 431.49, 370.031, 410.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(496.316, 552.316, -75.9692, -35.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(489.987, 545.987, 190.031, 230.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.392, 437.392, -43.9692, -3.96918);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(331.392, 387.392, 148.031, 188.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, 84.0308, 124.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, 148.031, 188.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.392, 437.392, 190.031, 230.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, 190.031, 230.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(63.9908, 119.991, 190.031, 230.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, -43.9692, -3.96918);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, -85.9692, -45.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(255.327, 311.327, 84.0308, 124.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(295.327, 351.327, -117.969, -77.9692);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(295.327, 351.327, 42.0308, 82.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(206.494, 262.494, 866.031, 906.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.392, 437.392, 570.031, 610.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, -1.96918, 38.0308);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(183.961, 239.961, 190.031, 230.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(125.998, 181.998, 286.031, 326.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(125.998, 181.998, 412.478, 452.478);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(223.961, 279.961, 286.031, 326.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(223.961, 279.961, 412.478, 452.478);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(148.996, 204.996, 676.031, 716.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.961, 437.961, 992.031, 1032.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(148.996, 204.996, 718.031, 758.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(439.961, 495.961, 1120.03, 1160.03);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(514.946, 570.946, 496.031, 536.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(520.976, 576.976, 454.031, 494.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(498.976, 554.976, 602.031, 642.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(223.961, 279.961, 772.031, 812.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(560.976, 616.976, 538.031, 578.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.961, 437.961, 676.031, 716.031);
+    rs.push_back(rect);
+
+    rect = new vpsc::Rectangle(381.961, 437.961, 454.031, 494.031);
+    rs.push_back(rect);
+
+
+    AlignmentConstraint *alignment147276064 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147276064->addShape(0, 0);
+    alignment147276064->addShape(2, 0);
+    alignment147276064->addShape(45, 0);
+    alignment147276064->addShape(46, 0);
+    alignment147276064->addShape(84, 0);
+    alignment147276064->addShape(90, 0);
+    alignment147276064->addShape(92, 0);
+    alignment147276064->addShape(129, 0);
+    alignment147276064->addShape(130, 0);
+    alignment147276064->addShape(138, 0);
+    ccs.push_back(alignment147276064);
+
+    AlignmentConstraint *alignment147276408 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147276408->addShape(1, 0);
+    alignment147276408->addShape(3, 0);
+    alignment147276408->addShape(65, 0);
+    alignment147276408->addShape(76, 0);
+    ccs.push_back(alignment147276408);
+
+    AlignmentConstraint *alignment147276592 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147276592->addShape(4, 0);
+    ccs.push_back(alignment147276592);
+
+    AlignmentConstraint *alignment147276704 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147276704->addShape(5, 0);
+    alignment147276704->addShape(7, 0);
+    alignment147276704->addShape(15, 0);
+    alignment147276704->addShape(16, 0);
+    alignment147276704->addShape(17, 0);
+    alignment147276704->addShape(21, 0);
+    alignment147276704->addShape(22, 0);
+    alignment147276704->addShape(25, 0);
+    alignment147276704->addShape(26, 0);
+    alignment147276704->addShape(40, 0);
+    alignment147276704->addShape(48, 0);
+    alignment147276704->addShape(49, 0);
+    alignment147276704->addShape(54, 0);
+    alignment147276704->addShape(55, 0);
+    alignment147276704->addShape(56, 0);
+    alignment147276704->addShape(57, 0);
+    alignment147276704->addShape(58, 0);
+    alignment147276704->addShape(62, 0);
+    alignment147276704->addShape(69, 0);
+    alignment147276704->addShape(79, 0);
+    alignment147276704->addShape(89, 0);
+    alignment147276704->addShape(94, 0);
+    alignment147276704->addShape(134, 0);
+    ccs.push_back(alignment147276704);
+
+    AlignmentConstraint *alignment147277456 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147277456->addShape(6, 0);
+    alignment147277456->addShape(63, 0);
+    alignment147277456->addShape(64, 0);
+    alignment147277456->addShape(66, 0);
+    ccs.push_back(alignment147277456);
+
+    AlignmentConstraint *alignment147277640 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147277640->addShape(8, 0);
+    alignment147277640->addShape(77, 0);
+    alignment147277640->addShape(87, 0);
+    alignment147277640->addShape(88, 0);
+    alignment147277640->addShape(95, 0);
+    alignment147277640->addShape(132, 0);
+    alignment147277640->addShape(140, 0);
+    alignment147277640->addShape(141, 0);
+    ccs.push_back(alignment147277640);
+
+    AlignmentConstraint *alignment147277912 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147277912->addShape(9, 0);
+    alignment147277912->addShape(10, 0);
+    alignment147277912->addShape(23, 0);
+    alignment147277912->addShape(108, 0);
+    ccs.push_back(alignment147277912);
+
+    AlignmentConstraint *alignment147278096 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278096->addShape(11, 0);
+    alignment147278096->addShape(35, 0);
+    alignment147278096->addShape(60, 0);
+    alignment147278096->addShape(93, 0);
+    alignment147278096->addShape(120, 0);
+    ccs.push_back(alignment147278096);
+
+    AlignmentConstraint *alignment147278344 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278344->addShape(12, 0);
+    alignment147278344->addShape(68, 0);
+    alignment147278344->addShape(99, 0);
+    ccs.push_back(alignment147278344);
+
+    AlignmentConstraint *alignment147278552 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278552->addShape(13, 0);
+    alignment147278552->addShape(83, 0);
+    alignment147278552->addShape(100, 0);
+    alignment147278552->addShape(137, 0);
+    ccs.push_back(alignment147278552);
+
+    AlignmentConstraint *alignment147278736 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278736->addShape(14, 0);
+    ccs.push_back(alignment147278736);
+
+    AlignmentConstraint *alignment147278824 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278824->addShape(18, 0);
+    ccs.push_back(alignment147278824);
+
+    AlignmentConstraint *alignment147278912 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278912->addShape(19, 0);
+    alignment147278912->addShape(31, 0);
+    ccs.push_back(alignment147278912);
+
+    AlignmentConstraint *alignment147279056 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147279056->addShape(20, 0);
+    alignment147279056->addShape(27, 0);
+    alignment147279056->addShape(86, 0);
+    alignment147279056->addShape(105, 0);
+    alignment147279056->addShape(112, 0);
+    ccs.push_back(alignment147279056);
+
+    AlignmentConstraint *alignment147279280 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147279280->addShape(24, 0);
+    alignment147279280->addShape(61, 0);
+    alignment147279280->addShape(109, 0);
+    ccs.push_back(alignment147279280);
+
+    AlignmentConstraint *alignment147279416 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147279416->addShape(28, 0);
+    alignment147279416->addShape(29, 0);
+    alignment147279416->addShape(33, 0);
+    alignment147279416->addShape(34, 0);
+    alignment147279416->addShape(41, 0);
+    alignment147279416->addShape(42, 0);
+    alignment147279416->addShape(113, 0);
+    alignment147279416->addShape(114, 0);
+    alignment147279416->addShape(116, 0);
+    alignment147279416->addShape(118, 0);
+    alignment147279416->addShape(119, 0);
+    alignment147279416->addShape(125, 0);
+    alignment147279416->addShape(126, 0);
+    ccs.push_back(alignment147279416);
+
+    AlignmentConstraint *alignment147279904 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147279904->addShape(30, 0);
+    ccs.push_back(alignment147279904);
+
+    AlignmentConstraint *alignment147278480 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147278480->addShape(32, 0);
+    alignment147278480->addShape(43, 0);
+    alignment147278480->addShape(44, 0);
+    alignment147278480->addShape(50, 0);
+    alignment147278480->addShape(51, 0);
+    alignment147278480->addShape(127, 0);
+    alignment147278480->addShape(128, 0);
+    ccs.push_back(alignment147278480);
+
+    AlignmentConstraint *alignment147280312 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147280312->addShape(36, 0);
+    alignment147280312->addShape(37, 0);
+    alignment147280312->addShape(121, 0);
+    alignment147280312->addShape(122, 0);
+    ccs.push_back(alignment147280312);
+
+    AlignmentConstraint *alignment147280496 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147280496->addShape(38, 0);
+    ccs.push_back(alignment147280496);
+
+    AlignmentConstraint *alignment147280584 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147280584->addShape(39, 0);
+    alignment147280584->addShape(67, 0);
+    alignment147280584->addShape(98, 0);
+    alignment147280584->addShape(123, 0);
+    ccs.push_back(alignment147280584);
+
+    AlignmentConstraint *alignment147280784 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147280784->addShape(47, 0);
+    ccs.push_back(alignment147280784);
+
+    AlignmentConstraint *alignment147280872 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147280872->addShape(52, 0);
+    alignment147280872->addShape(53, 0);
+    ccs.push_back(alignment147280872);
+
+    AlignmentConstraint *alignment147281000 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281000->addShape(59, 0);
+    alignment147281000->addShape(80, 0);
+    ccs.push_back(alignment147281000);
+
+    AlignmentConstraint *alignment147281128 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281128->addShape(70, 0);
+    alignment147281128->addShape(73, 0);
+    ccs.push_back(alignment147281128);
+
+    AlignmentConstraint *alignment147281256 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281256->addShape(71, 0);
+    alignment147281256->addShape(72, 0);
+    ccs.push_back(alignment147281256);
+
+    AlignmentConstraint *alignment147281384 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281384->addShape(74, 0);
+    ccs.push_back(alignment147281384);
+
+    AlignmentConstraint *alignment147281472 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281472->addShape(75, 0);
+    alignment147281472->addShape(78, 0);
+    alignment147281472->addShape(131, 0);
+    alignment147281472->addShape(133, 0);
+    ccs.push_back(alignment147281472);
+
+    AlignmentConstraint *alignment147281688 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281688->addShape(81, 0);
+    ccs.push_back(alignment147281688);
+
+    AlignmentConstraint *alignment147281776 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281776->addShape(82, 0);
+    alignment147281776->addShape(136, 0);
+    ccs.push_back(alignment147281776);
+
+    AlignmentConstraint *alignment147281904 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281904->addShape(85, 0);
+    ccs.push_back(alignment147281904);
+
+    AlignmentConstraint *alignment147281992 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147281992->addShape(91, 0);
+    ccs.push_back(alignment147281992);
+
+    AlignmentConstraint *alignment147282096 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147282096->addShape(96, 0);
+    ccs.push_back(alignment147282096);
+
+    AlignmentConstraint *alignment147279992 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147279992->addShape(97, 0);
+    ccs.push_back(alignment147279992);
+
+    AlignmentConstraint *alignment147282464 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147282464->addShape(101, 0);
+    alignment147282464->addShape(106, 0);
+    alignment147282464->addShape(107, 0);
+    alignment147282464->addShape(110, 0);
+    ccs.push_back(alignment147282464);
+
+    AlignmentConstraint *alignment147282656 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147282656->addShape(102, 0);
+    alignment147282656->addShape(103, 0);
+    alignment147282656->addShape(111, 0);
+    alignment147282656->addShape(115, 0);
+    alignment147282656->addShape(124, 0);
+    ccs.push_back(alignment147282656);
+
+    AlignmentConstraint *alignment147282904 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147282904->addShape(104, 0);
+    ccs.push_back(alignment147282904);
+
+    AlignmentConstraint *alignment147282968 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147282968->addShape(117, 0);
+    ccs.push_back(alignment147282968);
+
+    AlignmentConstraint *alignment147283056 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147283056->addShape(135, 0);
+    ccs.push_back(alignment147283056);
+
+    AlignmentConstraint *alignment147283160 = new AlignmentConstraint(vpsc::XDIM, 0);
+    alignment147283160->addShape(139, 0);
+    ccs.push_back(alignment147283160);
+
+    AlignmentConstraint *alignment147283264 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147283264->addShape(0, 0);
+    alignment147283264->addShape(7, 0);
+    alignment147283264->addShape(8, 0);
+    ccs.push_back(alignment147283264);
+
+    AlignmentConstraint *alignment147283456 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147283456->addShape(1, 0);
+    alignment147283456->addShape(6, 0);
+    alignment147283456->addShape(39, 0);
+    alignment147283456->addShape(60, 0);
+    alignment147283456->addShape(68, 0);
+    alignment147283456->addShape(91, 0);
+    alignment147283456->addShape(93, 0);
+    alignment147283456->addShape(132, 0);
+    ccs.push_back(alignment147283456);
+
+    AlignmentConstraint *alignment147283752 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147283752->addShape(2, 0);
+    alignment147283752->addShape(77, 0);
+    alignment147283752->addShape(79, 0);
+    ccs.push_back(alignment147283752);
+
+    AlignmentConstraint *alignment147283912 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147283912->addShape(3, 0);
+    alignment147283912->addShape(61, 0);
+    alignment147283912->addShape(66, 0);
+    ccs.push_back(alignment147283912);
+
+    AlignmentConstraint *alignment147284072 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147284072->addShape(4, 0);
+    alignment147284072->addShape(22, 0);
+    alignment147284072->addShape(23, 0);
+    alignment147284072->addShape(107, 0);
+    ccs.push_back(alignment147284072);
+
+    AlignmentConstraint *alignment147284256 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147284256->addShape(5, 0);
+    ccs.push_back(alignment147284256);
+
+    AlignmentConstraint *alignment147284344 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147284344->addShape(9, 0);
+    alignment147284344->addShape(96, 0);
+    ccs.push_back(alignment147284344);
+
+    AlignmentConstraint *alignment147284472 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147284472->addShape(10, 0);
+    alignment147284472->addShape(97, 0);
+    alignment147284472->addShape(123, 0);
+    ccs.push_back(alignment147284472);
+
+    AlignmentConstraint *alignment147284648 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147284648->addShape(11, 0);
+    alignment147284648->addShape(12, 0);
+    alignment147284648->addShape(13, 0);
+    alignment147284648->addShape(59, 0);
+    alignment147284648->addShape(62, 0);
+    alignment147284648->addShape(63, 0);
+    alignment147284648->addShape(65, 0);
+    alignment147284648->addShape(67, 0);
+    alignment147284648->addShape(98, 0);
+    ccs.push_back(alignment147284648);
+
+    AlignmentConstraint *alignment147285040 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285040->addShape(14, 0);
+    ccs.push_back(alignment147285040);
+
+    AlignmentConstraint *alignment147285128 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285128->addShape(15, 0);
+    alignment147285128->addShape(101, 0);
+    ccs.push_back(alignment147285128);
+
+    AlignmentConstraint *alignment147285256 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285256->addShape(16, 0);
+    alignment147285256->addShape(102, 0);
+    alignment147285256->addShape(133, 0);
+    ccs.push_back(alignment147285256);
+
+    AlignmentConstraint *alignment147285432 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285432->addShape(17, 0);
+    alignment147285432->addShape(103, 0);
+    ccs.push_back(alignment147285432);
+
+    AlignmentConstraint *alignment147285544 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285544->addShape(18, 0);
+    alignment147285544->addShape(81, 0);
+    alignment147285544->addShape(104, 0);
+    alignment147285544->addShape(135, 0);
+    ccs.push_back(alignment147285544);
+
+    AlignmentConstraint *alignment147285744 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285744->addShape(19, 0);
+    ccs.push_back(alignment147285744);
+
+    AlignmentConstraint *alignment147285832 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147285832->addShape(20, 0);
+    alignment147285832->addShape(52, 0);
+    alignment147285832->addShape(89, 0);
+    ccs.push_back(alignment147285832);
+
+    AlignmentConstraint *alignment147286008 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147286008->addShape(21, 0);
+    alignment147286008->addShape(105, 0);
+    alignment147286008->addShape(106, 0);
+    ccs.push_back(alignment147286008);
+
+    AlignmentConstraint *alignment147286168 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147286168->addShape(24, 0);
+    alignment147286168->addShape(47, 0);
+    alignment147286168->addShape(125, 0);
+    ccs.push_back(alignment147286168);
+
+    AlignmentConstraint *alignment147286328 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147286328->addShape(25, 0);
+    alignment147286328->addShape(30, 0);
+    alignment147286328->addShape(31, 0);
+    alignment147286328->addShape(32, 0);
+    alignment147286328->addShape(110, 0);
+    alignment147286328->addShape(115, 0);
+    alignment147286328->addShape(116, 0);
+    alignment147286328->addShape(117, 0);
+    alignment147286328->addShape(126, 0);
+    ccs.push_back(alignment147286328);
+
+    AlignmentConstraint *alignment147286680 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147286680->addShape(26, 0);
+    alignment147286680->addShape(111, 0);
+    alignment147286680->addShape(118, 0);
+    ccs.push_back(alignment147286680);
+
+    AlignmentConstraint *alignment147286840 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147286840->addShape(27, 0);
+    alignment147286840->addShape(29, 0);
+    alignment147286840->addShape(51, 0);
+    alignment147286840->addShape(53, 0);
+    alignment147286840->addShape(55, 0);
+    ccs.push_back(alignment147286840);
+
+    AlignmentConstraint *alignment147287048 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147287048->addShape(28, 0);
+    ccs.push_back(alignment147287048);
+
+    AlignmentConstraint *alignment147287112 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147287112->addShape(33, 0);
+    alignment147287112->addShape(50, 0);
+    alignment147287112->addShape(54, 0);
+    ccs.push_back(alignment147287112);
+
+    AlignmentConstraint *alignment147287288 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147287288->addShape(34, 0);
+    ccs.push_back(alignment147287288);
+
+    AlignmentConstraint *alignment147287376 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147287376->addShape(35, 0);
+    alignment147287376->addShape(122, 0);
+    ccs.push_back(alignment147287376);
+
+    AlignmentConstraint *alignment147282200 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147282200->addShape(36, 0);
+    alignment147282200->addShape(119, 0);
+    ccs.push_back(alignment147282200);
+
+    AlignmentConstraint *alignment147282328 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147282328->addShape(37, 0);
+    ccs.push_back(alignment147282328);
+
+    AlignmentConstraint *alignment147288024 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288024->addShape(38, 0);
+    ccs.push_back(alignment147288024);
+
+    AlignmentConstraint *alignment147288088 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288088->addShape(40, 0);
+    alignment147288088->addShape(86, 0);
+    alignment147288088->addShape(124, 0);
+    ccs.push_back(alignment147288088);
+
+    AlignmentConstraint *alignment147288280 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288280->addShape(41, 0);
+    ccs.push_back(alignment147288280);
+
+    AlignmentConstraint *alignment147288368 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288368->addShape(42, 0);
+    ccs.push_back(alignment147288368);
+
+    AlignmentConstraint *alignment147288456 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288456->addShape(43, 0);
+    alignment147288456->addShape(45, 0);
+    alignment147288456->addShape(70, 0);
+    alignment147288456->addShape(71, 0);
+    ccs.push_back(alignment147288456);
+
+    AlignmentConstraint *alignment147288672 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288672->addShape(44, 0);
+    alignment147288672->addShape(46, 0);
+    alignment147288672->addShape(72, 0);
+    alignment147288672->addShape(73, 0);
+    alignment147288672->addShape(108, 0);
+    ccs.push_back(alignment147288672);
+
+    AlignmentConstraint *alignment147288920 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147288920->addShape(48, 0);
+    alignment147288920->addShape(109, 0);
+    ccs.push_back(alignment147288920);
+
+    AlignmentConstraint *alignment147289008 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289008->addShape(49, 0);
+    ccs.push_back(alignment147289008);
+
+    AlignmentConstraint *alignment147289096 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289096->addShape(56, 0);
+    alignment147289096->addShape(76, 0);
+    ccs.push_back(alignment147289096);
+
+    AlignmentConstraint *alignment147289240 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289240->addShape(57, 0);
+    alignment147289240->addShape(137, 0);
+    ccs.push_back(alignment147289240);
+
+    AlignmentConstraint *alignment147289368 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289368->addShape(58, 0);
+    alignment147289368->addShape(82, 0);
+    alignment147289368->addShape(85, 0);
+    alignment147289368->addShape(88, 0);
+    alignment147289368->addShape(139, 0);
+    ccs.push_back(alignment147289368);
+
+    AlignmentConstraint *alignment147289632 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289632->addShape(64, 0);
+    ccs.push_back(alignment147289632);
+
+    AlignmentConstraint *alignment147289696 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289696->addShape(69, 0);
+    ccs.push_back(alignment147289696);
+
+    AlignmentConstraint *alignment147289784 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289784->addShape(74, 0);
+    ccs.push_back(alignment147289784);
+
+    AlignmentConstraint *alignment147289888 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289888->addShape(75, 0);
+    ccs.push_back(alignment147289888);
+
+    AlignmentConstraint *alignment147289992 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147289992->addShape(78, 0);
+    alignment147289992->addShape(138, 0);
+    ccs.push_back(alignment147289992);
+
+    AlignmentConstraint *alignment147290136 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290136->addShape(80, 0);
+    ccs.push_back(alignment147290136);
+
+    AlignmentConstraint *alignment147290224 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290224->addShape(83, 0);
+    ccs.push_back(alignment147290224);
+
+    AlignmentConstraint *alignment147290328 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290328->addShape(84, 0);
+    ccs.push_back(alignment147290328);
+
+    AlignmentConstraint *alignment147290432 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290432->addShape(87, 0);
+    ccs.push_back(alignment147290432);
+
+    AlignmentConstraint *alignment147290536 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290536->addShape(90, 0);
+    alignment147290536->addShape(95, 0);
+    ccs.push_back(alignment147290536);
+
+    AlignmentConstraint *alignment147290680 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290680->addShape(92, 0);
+    alignment147290680->addShape(134, 0);
+    ccs.push_back(alignment147290680);
+
+    AlignmentConstraint *alignment147290808 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290808->addShape(94, 0);
+    ccs.push_back(alignment147290808);
+
+    AlignmentConstraint *alignment147290896 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147290896->addShape(99, 0);
+    alignment147290896->addShape(100, 0);
+    ccs.push_back(alignment147290896);
+
+    AlignmentConstraint *alignment147291040 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291040->addShape(112, 0);
+    alignment147291040->addShape(114, 0);
+    ccs.push_back(alignment147291040);
+
+    AlignmentConstraint *alignment147291168 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291168->addShape(113, 0);
+    alignment147291168->addShape(120, 0);
+    ccs.push_back(alignment147291168);
+
+    AlignmentConstraint *alignment147291296 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291296->addShape(121, 0);
+    ccs.push_back(alignment147291296);
+
+    AlignmentConstraint *alignment147291384 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291384->addShape(127, 0);
+    alignment147291384->addShape(129, 0);
+    ccs.push_back(alignment147291384);
+
+    AlignmentConstraint *alignment147291528 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291528->addShape(128, 0);
+    alignment147291528->addShape(130, 0);
+    ccs.push_back(alignment147291528);
+
+    AlignmentConstraint *alignment147291656 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291656->addShape(131, 0);
+    ccs.push_back(alignment147291656);
+
+    AlignmentConstraint *alignment147291744 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291744->addShape(136, 0);
+    alignment147291744->addShape(141, 0);
+    ccs.push_back(alignment147291744);
+
+    AlignmentConstraint *alignment147291888 = new AlignmentConstraint(vpsc::YDIM, 0);
+    alignment147291888->addShape(140, 0);
+    ccs.push_back(alignment147291888);
+
+    ConstrainedFDLayout alg(rs, es, defaultEdgeLength, true);
+    alg.setConstraints(ccs);
+    alg.makeFeasible();
+    alg.run();
+};
+-->
+<g inkscape:groupmode="layer" inkscape:label="Rects">
+<rect id="rect-0" x="241.961" y="1034.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-1" x="108.997" y="1002.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-2" x="241.961" y="1056.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-3" x="98.997" y="1024.03" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-4" x="592.937" y="211.742" width="72" height="247" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-5" x="407.961" y="-121.969" width="120" height="44" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-6" x="340.991" y="1002.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-7" x="457.961" y="1034.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-8" x="399.961" y="1034.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-9" x="393.49" y="960.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-10" x="393.49" y="876.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-11" x="273.327" y="918.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-12" x="173.661" y="918.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-13" x="516.976" y="918.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-14" x="312.964" y="760.031" width="88" height="44" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-15" x="457.961" y="792.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-16" x="457.961" y="728.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-17" x="457.961" y="644.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-18" x="420.957" y="506.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-19" x="197.486" y="612.031" width="163" height="44" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-20" x="349.392" y="454.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-21" x="457.961" y="422.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-22" x="457.961" y="325.242" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-23" x="393.49" y="325.242" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-24" x="514.316" y="8.03082" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-25" x="457.961" y="200.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-26" x="457.961" y="-33.9692" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-27" x="349.392" y="254.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-28" x="201.961" y="232.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-29" x="201.961" y="254.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-30" x="319.967" y="200.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-31" x="268.986" y="200.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-32" x="143.998" y="200.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-33" x="201.961" y="62.0308" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-34" x="201.961" y="40.0308" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-35" x="273.327" y="52.0308" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-36" x="313.327" y="-75.9692" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-37" x="313.327" y="20.0308" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-38" x="34.4835" y="-154.969" width="261" height="35" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-39" x="224.494" y="1002.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-40" x="457.961" y="580.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-41" x="201.961" y="126.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-42" x="201.961" y="306.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-43" x="143.998" y="338.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-44" x="143.998" y="380.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-45" x="241.961" y="338.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-46" x="241.961" y="380.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-47" x="553.943" y="-1.96918" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-48" x="447.961" y="-75.9692" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-49" x="447.961" y="666.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-50" x="133.998" y="52.0308" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-51" x="133.998" y="244.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-52" x="281.961" y="444.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-53" x="281.961" y="244.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-54" x="447.961" y="52.0308" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-55" x="447.961" y="244.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-56" x="447.961" y="750.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-57" x="447.961" y="602.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-58" x="447.961" y="538.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-59" x="580.47" y="908.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-60" x="263.327" y="992.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-61" x="504.316" y="1024.03" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-62" x="447.961" y="908.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-63" x="330.991" y="908.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-64" x="330.991" y="806.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-65" x="98.997" y="908.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-66" x="330.991" y="1024.03" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-67" x="214.494" y="908.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-68" x="163.661" y="992.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-69" x="447.961" y="350.963" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-70" x="84.9948" y="328.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-71" x="191.989" y="328.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-72" x="191.989" y="370.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-73" x="84.9948" y="370.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-74" x="20.4951" y="715.92" width="57" height="164" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-75" x="166.996" y="760.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-76" x="98.997" y="750.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-77" x="399.961" y="1056.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-78" x="166.996" y="782.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-79" x="457.961" y="1056.03" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-80" x="531.97" y="950.031" width="137" height="35" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-81" x="470.952" y="506.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-82" x="538.976" y="548.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-83" x="516.976" y="538.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-84" x="241.961" y="814.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-85" x="494.95" y="548.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-86" x="339.392" y="570.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-87" x="399.961" y="612.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-88" x="399.961" y="548.031" width="20" height="20" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-89" x="447.961" y="444.031" width="40" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-90" x="223.961" y="1078.03" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-91" x="28.9943" y="992.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-92" x="223.961" y="1120.03" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-93" x="255.327" y="992.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-94" x="439.961" y="950.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-95" x="381.961" y="1078.03" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-96" x="313.966" y="950.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-97" x="437.953" y="866.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-98" x="206.494" y="908.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-99" x="155.661" y="824.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-100" x="498.976" y="824.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-101" x="489.987" y="782.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-102" x="381.392" y="718.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-103" x="381.392" y="634.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-104" x="323.961" y="496.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-105" x="331.392" y="412.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-106" x="489.987" y="412.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-107" x="489.987" y="315.242" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-108" x="375.49" y="370.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-109" x="496.316" y="-75.9692" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-110" x="489.987" y="190.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-111" x="381.392" y="-43.9692" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-112" x="331.392" y="148.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-113" x="183.961" y="84.0308" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-114" x="183.961" y="148.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-115" x="381.392" y="190.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-116" x="183.961" y="190.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-117" x="63.9908" y="190.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-118" x="183.961" y="-43.9692" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-119" x="183.961" y="-85.9692" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-120" x="255.327" y="84.0308" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-121" x="295.327" y="-117.969" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-122" x="295.327" y="42.0308" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-123" x="206.494" y="866.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-124" x="381.392" y="570.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-125" x="183.961" y="-1.96918" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-126" x="183.961" y="190.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-127" x="125.998" y="286.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-128" x="125.998" y="412.478" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-129" x="223.961" y="286.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-130" x="223.961" y="412.478" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-131" x="148.996" y="676.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-132" x="381.961" y="992.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-133" x="148.996" y="718.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-134" x="439.961" y="1120.03" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-135" x="514.946" y="496.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-136" x="520.976" y="454.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-137" x="498.976" y="602.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-138" x="223.961" y="772.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-139" x="560.976" y="538.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-140" x="381.961" y="676.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+<rect id="rect-141" x="381.961" y="454.031" width="56" height="40" style="stroke-width: 1px; stroke: black; fill: blue; fill-opacity: 0.3;" />
+</g>
+<g inkscape:groupmode="layer" inkscape:label="Edges">
+</g>
+</svg>
