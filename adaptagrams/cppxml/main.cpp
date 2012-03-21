@@ -170,6 +170,7 @@ int main(int argc, char *argv[]) {
     vector<Species> sp;
     vector<Transition> tr;
 
+    // handle the qualitative species
     foreach(QString line, qual) {
         QStringList items = line.split("|");
         QString id = items[0], name = items[1];
@@ -180,6 +181,7 @@ int main(int argc, char *argv[]) {
         sp.push_back(Species(id, name, l[1], l[2], l[3], l[4]));
     }
 
+    // handle the qualitative transitions
     foreach(QString line, trans) {
         QStringList items = line.split("|");
         QString from = items[0], to = items[1];
