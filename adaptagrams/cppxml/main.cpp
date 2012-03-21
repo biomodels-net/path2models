@@ -255,7 +255,7 @@ int main(int argc, char *argv[]) {
         foreach(QString m, match) {
             QStringList pos = m.split("|");
             double oldX = r->getMinX(), oldY = r->getMinY();
-            r->moveMinX(pos[1].toInt()); // size should stay constant
+            r->moveMinX(pos[1].toInt());
             r->moveMinY(pos[2].toInt());
 
             ConstrainedFDLayout alg_prelim(rs,es,70,true,NULL);
