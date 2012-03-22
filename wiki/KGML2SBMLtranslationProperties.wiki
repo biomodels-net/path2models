@@ -118,9 +118,10 @@ Translated SBML for this group nodes looks like this:
 
 Initially, we wanted to create signaling maps for the signaling pathways (with a partial focus on creating nice-visualizable graphs) and metabolic maps (with the focus on kinetics and simulation, not visualization).
 
-The following applies for both models: We create SBML L3V1 code. Both contain the layout extension with layout information for all species for which we can provide layout information. Since KEGG/ KGML does not provide more layout information, we can't add more here.
+===The following applies for both models:===
+We create SBML L3V1 code. Both contain the layout extension with layout information for all species for which we can provide layout information. Since KEGG/ KGML does not provide more layout information, we can't add more here.
 
-Therefore, the following applies to the metabolic models:
+===Therefore, the following applies to the metabolic models:===
 
 1. If an entity (can be compound, enzyme, gene, etc.) occurs multiple times, we just create one instance. (For simulation, we don't need multiple instances of the same thing).
 
@@ -132,7 +133,7 @@ Therefore, the following applies to the metabolic models:
 
 5. Remove enzymes that have no real instance in the current organism (Kegg makes orthologous pathways. Therefore, some species-specific pathways contain nodes for enzymes, whos existence is not even proven for the species).
 
-For signalling maps, the following applies:
+===For signalling maps, the following applies:===
 
 1. We keep the pathway as-it-is (don't merge duplicate nodes, keep pathway-reference nodes, etc).
 
