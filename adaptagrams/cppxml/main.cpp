@@ -7,6 +7,12 @@
 #include <vector>
 #include <set>
 #include <limits>
+#include <sbgn.hxx>
+#include <memory>
+#include <fstream>
+//#include <xerces/dom/DOM.hpp>
+//#include <xercesc/util/PlatformUtils.hpp>
+//#include <xsd/cxx/xml/string.hxx>
 #include "graphlayouttest.h"
 
 #define _DEBUG_SBML_
@@ -117,6 +123,33 @@ namespace SBMLQual {
 };
 
 using namespace SBMLQual;
+
+
+
+
+void writeSbgnFile(string fname){//vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp, 
+     //   vector<Transition> tr, string fname) {
+    using namespace libsbgn::sn_0_2;
+
+    // create object
+    language l = language(language::value(2)); // activity_flow
+    libsbgn::sn_0_2::map m = libsbgn::sn_0_2::map(l);
+    sbgn s = sbgn(m);
+
+    // add glyphs and arcs
+    // TODO
+
+    // write the xml file
+    xml_schema::namespace_infomap map;
+//    map[""].name = "test"; // xmlns
+//    map[""].schema = "http://sbgn.org/libsbgn/0.2"; // xsi:noNamespaceSchemaLocation
+    ofstream ofs(fname.c_str());
+    sbgn_(ofs, s, map);
+    ofs.close();
+    //sbgn_(cout, s, map);
+}
+
+
 
 
 QStringList executeQuery(QXmlQuery *query, QString qstring) {
@@ -274,6 +307,7 @@ int main(int argc, char *argv[]) {
     }
 
     OutputFile during(rs, es, NULL, "hsa04210.during.svg");
+    writeSbgnFile("during.sbgn.xml");
     during.rects = true;
     during.generate();
 
