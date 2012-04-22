@@ -133,29 +133,28 @@ void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp,
     typedef libsbgn::sn_0_2::glyph glyph_type;
     typedef xsd::cxx::tree::sequence<glyph_type> glyph_sequence;
 
-    // create object
-    language l = language(language::value(2)); // activity_flow
-    libsbgn::sn_0_2::map m = libsbgn::sn_0_2::map(l);
-    sbgn s = sbgn(m);
-
     // add glyphs and arcs
     assert(rs.size() == sp.size());
     assert(es.size() == tr.size());
 
     glyph_sequence gs = glyph_sequence();
-    // TODO
     for(int i=0; i<rs.size(); i++) {
         Rectangle *rec = rs[i];
         Species species = sp[i];
 
-        bbox b = bbox(species.x, species.y, species.w, species.h); // get this from rec inst.
+        bbox b = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
         class_ c = class_("get class somewhere");
         glyph g = glyph(b, c, species.id);
         g.label(label(species.name));
         
         gs.push_back(g);
-        m.glyph(gs);
     }
+
+    // create object
+    language l = language(language::value(2)); // activity_flow
+    libsbgn::sn_0_2::map m = libsbgn::sn_0_2::map(l);
+    m.glyph(gs);
+    sbgn s = sbgn(m);
 
     // write the xml file
     xml_schema::namespace_infomap map;
@@ -164,7 +163,6 @@ void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp,
     ofstream ofs(fname.c_str());
     sbgn_(ofs, s, map);
     ofs.close();
-    //sbgn_(cout, s, map);
 }
 
 
