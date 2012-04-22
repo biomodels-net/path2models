@@ -101,24 +101,17 @@ namespace SBMLQual {
         int x, y, w, h;
     };
 
-    enum transitionType {
-        POSITIVE,
-        NEGATIVE,
-        UNKNOWN,
-        NECESSARY
-    };
-
     struct Transition {
-        Transition(QString qfrom, QString qto, transitionType qtype):
+        Transition(QString qfrom, QString qto, QString qtype):
             from(qfrom.toAscii().data()), to(qto.toAscii().data()),
-            type(qtype)
+            type(qtype.toAscii().data())
         {
             #ifdef _DEBUG_SBML_
             qDebug() << "Edge created: " << qfrom << qto << qtype;
             #endif
         }
         string from, to;
-        transitionType type;
+        string type;
     };
 };
 
@@ -130,30 +123,50 @@ using namespace SBMLQual;
 void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp, 
         vector<Transition> tr, string fname) {
     using namespace libsbgn::sn_0_2;
-    typedef libsbgn::sn_0_2::glyph glyph_type;
-    typedef xsd::cxx::tree::sequence<glyph_type> glyph_sequence;
+    typedef xsd::cxx::tree::sequence<glyph> glyph_sequence;
+    typedef xsd::cxx::tree::sequence<arc> arc_sequence;
+    typedef xml_schema::idref source;
+    typedef xml_schema::idref target;
 
-    // add glyphs and arcs
+    // add glyphs
     assert(rs.size() == sp.size());
-    assert(es.size() == tr.size());
-
     glyph_sequence gs = glyph_sequence();
     for(int i=0; i<rs.size(); i++) {
         Rectangle *rec = rs[i];
         Species species = sp[i];
 
-        bbox b = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
-        class_ c = class_("nucleic acid feature"); // TODO: get proper class somewhere
-        glyph g = glyph(b, c, species.id);
-        g.label(label(species.name));
+        bbox _bbox = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
+        class_ _class = class_("nucleic acid feature"); // TODO: get proper class somewhere
+        glyph _glyph = glyph(_bbox, _class, species.id);
+        _glyph.label(label(species.name));
         
-        gs.push_back(g);
+        gs.push_back(_glyph);
+    }
+
+    // add arcs
+    assert(es.size() == tr.size());
+    arc_sequence as = arc_sequence();
+    for(int i=0; i<es.size(); i++) {
+        Edge edge = es[i];
+        Transition trans = tr[i];
+
+        start _start = start(0,0); //TODO
+        end _end = end(1,1);
+        class_ _class = class_(trans.type);
+        source _source = source(trans.from);
+        target _target= target(trans.to);
+        stringstream _id;
+        _id << "tr_" << i;
+        arc _arc = arc(_start, _end, _class, _id.str(), _source, _target);
+
+        as.push_back(_arc);
     }
 
     // create object
     language l = language(language::value(2)); // activity_flow
     libsbgn::sn_0_2::map m = libsbgn::sn_0_2::map(l);
     m.glyph(gs);
+    m.arc(as);
     sbgn s = sbgn(m);
 
     // write the xml file
@@ -243,17 +256,17 @@ int main(int argc, char *argv[]) {
         QStringList items = line.split("|");
         QString from = items[0], to = items[1];
 
-        transitionType type = UNKNOWN;
+        QString type = "unknown influence";
         if (items.length() == 3) { // sboTerm is set
             QRegExp re = QRegExp("[0-9]+$");
             if (items[2].contains(re)) {
                 switch(re.cap().toInt()) {
                     case 170:
-                        type = POSITIVE; break;
+                        type = "positive influence"; break;
                     case 169:
-                        type = NEGATIVE; break;
+                        type = "negative influence"; break;
                     case 171:
-                        type = NECESSARY; break;
+                        type = "necessary stimulation"; break; //FIXME is this right?
                 }
             }
         }
