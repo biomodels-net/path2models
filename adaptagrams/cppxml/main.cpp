@@ -143,7 +143,7 @@ void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp,
         Species species = sp[i];
 
         bbox b = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
-        class_ c = class_("get class somewhere");
+        class_ c = class_("nucleic acid feature"); // TODO: get proper class somewhere
         glyph g = glyph(b, c, species.id);
         g.label(label(species.name));
         
