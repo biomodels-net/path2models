@@ -18,7 +18,7 @@
 #define _DEBUG_SBML_
 //#define _DEBUG_TRANSLATION_
 #define _DEBUG_LAYOUT_
-
+//#define QT_NO_DEBUG_OUTPUT
 
 using namespace std;
 using namespace cola;
@@ -127,9 +127,11 @@ using namespace SBMLQual;
 
 
 
-void writeSbgnFile(string fname){//vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp, 
-     //   vector<Transition> tr, string fname) {
+void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp, 
+        vector<Transition> tr, string fname) {
     using namespace libsbgn::sn_0_2;
+    typedef libsbgn::sn_0_2::glyph glyph_type;
+    typedef xsd::cxx::tree::sequence<glyph_type> glyph_sequence;
 
     // create object
     language l = language(language::value(2)); // activity_flow
@@ -137,7 +139,23 @@ void writeSbgnFile(string fname){//vector<Rectangle*> rs, vector<Edge> es, vecto
     sbgn s = sbgn(m);
 
     // add glyphs and arcs
+    assert(rs.size() == sp.size());
+    assert(es.size() == tr.size());
+
+    glyph_sequence gs = glyph_sequence();
     // TODO
+    for(int i=0; i<rs.size(); i++) {
+        Rectangle *rec = rs[i];
+        Species species = sp[i];
+
+        bbox b = bbox(species.x, species.y, species.w, species.h); // get this from rec inst.
+        class_ c = class_("get class somewhere");
+        glyph g = glyph(b, c, species.id);
+        g.label(label(species.name));
+        
+        gs.push_back(g);
+        m.glyph(gs);
+    }
 
     // write the xml file
     xml_schema::namespace_infomap map;
@@ -307,7 +325,7 @@ int main(int argc, char *argv[]) {
     }
 
     OutputFile during(rs, es, NULL, "hsa04210.during.svg");
-    writeSbgnFile("during.sbgn.xml");
+    writeSbgnFile(rs, es, sp, tr, "during.sbgn.xml");
     during.rects = true;
     during.generate();
 
