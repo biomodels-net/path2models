@@ -192,9 +192,10 @@ QStringList executeQuery(QXmlQuery *query, QString qstring) {
 
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
+    assert(argc==3);
 
     QXmlQuery query;
-    query.bindVariable("path", QVariant("hsa04210.sbml.xml"));
+    query.bindVariable("path", QVariant(argv[1]));
 
     QStringList layout = executeQuery(&query,
         "$BASE/l:listOfLayouts/l:layout/l:listOfSpeciesGlyphs"
@@ -288,9 +289,9 @@ int main(int argc, char *argv[]) {
         #endif
     }
 
-    OutputFile before(rs, es, NULL, "hsa04210.before.svg");
-    before.rects = true;
-    before.generate();
+//    OutputFile before(rs, es, NULL, "hsa04210.before.svg");
+//    before.rects = true;
+//    before.generate();
 
     // handle nodes with ambiguous positions
     foreach(QStringList match, ambiguousMatches) {
@@ -322,10 +323,10 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    OutputFile during(rs, es, NULL, "hsa04210.during.svg");
-    writeSbgnFile(rs, es, sp, tr, "during.sbgn.xml");
-    during.rects = true;
-    during.generate();
+//    OutputFile during(rs, es, NULL, "hsa04210.during.svg");
+    writeSbgnFile(rs, es, sp, tr, argv[2]);
+//    during.rects = true;
+//    during.generate();
 
     // apply constraints
     CompoundConstraints ccs;
@@ -382,9 +383,9 @@ int main(int argc, char *argv[]) {
 
     removeoverlaps(rs, true);
 
-    OutputFile after(rs, es, NULL, "hsa04210.after.svg");
-    after.rects = true;
-    after.generate();
+//    OutputFile after(rs, es, NULL, "hsa04210.after.svg");
+//    after.rects = true;
+//    after.generate();
     
     foreach(Rectangle *r, rs) {
         delete r;

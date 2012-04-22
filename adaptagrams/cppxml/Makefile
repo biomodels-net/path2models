@@ -5,8 +5,10 @@ LIBS = -lQtCore -lQtXml -lQtXmlPatterns -lcola -lvpsc -ltopology -lcairomm-1.0 -
 ALL_SOURCE = $(wildcard *.cpp)
 ALL_OBJ = $(ALL_SOURCE:%.cpp=%.o)
 ALL_EXEC = $(ALL_SOURCE:%.cpp=%.app)
+ALL_SBML = $(wildcard *.sbml.xml)
+ALL_SBGN = $(ALL_SBML:%.sbml.xml=%.sbgn.xml)
 
-all: $(ALL_EXEC)
+all: $(ALL_EXEC) $(ALL_SBGN)
 
 %.app: %.o
 	$(CC) -o $@ $^ $(LIBS)
@@ -17,3 +19,5 @@ all: $(ALL_EXEC)
 clean:
 	rm -f $(ALL_OBJ) $(ALL_EXEC)
 
+%.sbgn.xml: %.sbml.xml
+	./main.app $^ $@
