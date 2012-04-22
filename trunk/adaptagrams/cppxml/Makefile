@@ -7,8 +7,9 @@ ALL_OBJ = $(ALL_SOURCE:%.cpp=%.o)
 ALL_EXEC = $(ALL_SOURCE:%.cpp=%.app)
 ALL_SBML = $(wildcard *.sbml.xml)
 ALL_SBGN = $(ALL_SBML:%.sbml.xml=%.sbgn.xml)
+ALL_PNG = $(ALL_SBGN:%.sbgn.xml=%.png)
 
-all: $(ALL_EXEC) $(ALL_SBGN)
+all: $(ALL_EXEC) $(ALL_SBGN) $(ALL_PNG)
 
 %.app: %.o
 	$(CC) -o $@ $^ $(LIBS)
@@ -21,3 +22,6 @@ clean:
 
 %.sbgn.xml: %.sbml.xml
 	./main.app $^ $@
+
+%.png: %.sbgn.xml
+	java -jar sbgn2png/SBGN.jar $^ $@ 
