@@ -18,7 +18,7 @@ all: $(ALL_EXEC) $(ALL_SBGN) $(ALL_PNG)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -f $(ALL_OBJ) $(ALL_EXEC)
+	rm -f $(ALL_OBJ) $(ALL_EXEC) $(ALL_SBGN) $(ALL_PNG)
 
 %.sbgn.xml: %.sbml.xml
 	./main.app $^ $@
