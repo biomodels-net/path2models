@@ -146,11 +146,11 @@ void writeSbgnFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp,
     // add arcs
     assert(es.size() == tr.size());
     arc_sequence as = arc_sequence();
-    for(int i=0; i<es.size(); i++) {
+    for(int i=0; i<es.size(); i++) { // so far, i don't need the edges at all
         Edge edge = es[i];
         Transition trans = tr[i];
 
-        start _start = start(0,0); //TODO
+        start _start = start(0,0); //TODO: libavoid?
         end _end = end(1,1);
         class_ _class = class_(trans.type);
         source _source = source(trans.from);

@@ -126,7 +126,7 @@ vector<Edge> random_dag(unsigned depth, unsigned maxbranch, unsigned &V,
 	return edges;
 }
 void removeoverlaps(vpsc::Rectangles &rs, bool bothaxes) {
-	double xBorder=0, yBorder=0;
+	double xBorder=1, yBorder=1;
     static const double EXTRA_GAP=1e-5;
 	unsigned n=rs.size();
 	try {
@@ -271,7 +271,7 @@ void makeFeasible(vpsc::Rectangles& rs, vector<cola::Edge>& edges,
 
     }
     writeFile(topologyNodes,routes,"beautify0.svg");
-    assert(topology::assertNoSegmentRectIntersection(topologyNodes,routes));
+//    assert(topology::assertNoSegmentRectIntersection(topologyNodes,routes));
     double libavoidtime=double(clock()-libavoidstarttime)/double(CLOCKS_PER_SEC);
     cout << "done. Libavoid ran in " << libavoidtime << " seconds" << endl;
     delete router;
