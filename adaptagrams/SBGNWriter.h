@@ -2,8 +2,9 @@
 #define _SBGNWriter_h_
 
 #include <string>
+#include <libcola/cola.h>
+#include <libvpsc/rectangle.h>
 #include "SBMLQualParser.h"
-#include "graphlayouttest.h"
 
 using std::string;
 using vpsc::Rectangle;
