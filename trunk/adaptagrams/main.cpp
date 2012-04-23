@@ -1,4 +1,7 @@
-#include <limits>
+//#define QT_NO_DEBUG_OUTPUT
+
+#include <Qt/qcoreapplication.h>
+#include <Qt/qdebug.h>
 #include "SBMLQualParser.h"
 #include "AdaptagramsLayout.h"
 #include "SBGNWriter.h"
@@ -35,10 +38,8 @@ int main(int argc, char* argv[]) {
             }
             else {
                 oldStress = newStress;
-                #ifdef _DEBUG_LAYOUT_
-                qDebug() << l[0] << "moved to (" << r->getMinX() << "," << \
-                    r->getMinY() << "); new stress:" << newStress;
-                #endif
+                qDebug() << QString(am.id.c_str()) << "moved to (" << r->getMinX() \
+                    << "," << r->getMinY() << "); new stress:" << newStress;
             }
         }
     }
