@@ -39,6 +39,12 @@ namespace SBMLQual {
         string type;
     };
 
+    struct AmbiguousMatch {
+        string id;
+        vector<double> x;
+        vector<double> y;
+    };
+
     class Parser {
     public:
         Parser(int, char**);
@@ -47,13 +53,16 @@ namespace SBMLQual {
         vector<Species> getSpecies() const { return sp; }
         vector<Transition> getTransitions() const { return tr; }
 
+        vector<AmbiguousMatch> getAmbiguousPositions() const { return ambiguousMatches; }
+
     private:
         void readFile(char*);
         QStringList executeQuery(QXmlQuery*, QString);
 
         vector<Species> sp;
         vector<Transition> tr;
-        QList<QStringList> ambiguousMatches;
+
+        vector<AmbiguousMatch> ambiguousMatches;
     };
 };
 
