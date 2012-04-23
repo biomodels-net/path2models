@@ -9,7 +9,7 @@ ALL_SBML = $(wildcard *.sbml.xml)
 ALL_SBGN = $(ALL_SBML:%.sbml.xml=%.sbgn.xml)
 ALL_PNG = $(ALL_SBGN:%.sbgn.xml=%.png)
 
-all: build $(ALL_PNG)
+all: build $(ALL_SBGN) $(ALL_PNG)
 
 build: $(ALL_OBJ)
 	$(CC) -o SBMLQual2SBGN *.o $(LIBS)
