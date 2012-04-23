@@ -23,6 +23,9 @@
  *
 */
 
+#ifndef _graphlayouttest_h_
+#define _graphlayouttest_h_
+
 #include <sstream>
 #include <ctime>
 
@@ -271,4 +274,5 @@ void writeDunnartFile(const topology::Nodes& vs, const vector<std::pair<unsigned
 #endif
 }
 
+#endif _graphlayouttest_h_
 // vim: filetype=cpp:expandtab:shiftwidth=4:tabstop=4:softtabstop=4:encoding=utf-8:textwidth=99 :

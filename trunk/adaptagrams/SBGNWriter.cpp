@@ -33,7 +33,7 @@ void SBGNWriter::writeFile(vector<Rectangle*> rs, vector<Edge> es, vector<Specie
         class_ _class = class_(trans.type);
         source _source = source(trans.from);
         target _target= target(trans.to);
-        stringstream _id;
+        std::stringstream _id;
         _id << "tr_" << i;
         arc _arc = arc(_start, _end, _class, _id.str(), _source, _target);
 
