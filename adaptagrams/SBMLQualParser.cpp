@@ -61,7 +61,6 @@ namespace SBMLQual {
                 "data(q:listOfInputs/q:input/@sboTerm)), '|')");
 
         // handle the qualitative species
-        ambiguousMatches = QList<QStringList>();
         foreach(QString line, qual) {
             QStringList items = line.split("|");
             QString id = items[0], name = items[1];
@@ -72,7 +71,14 @@ namespace SBMLQual {
             sp.push_back(Species(id, name, l[1], l[2], l[3], l[4]));
 
             if (match.size() > 1) {
-                ambiguousMatches.append(match);
+                AmbiguousMatch am = AmbiguousMatch();
+                am.id = id.toAscii().data();
+                foreach(QString node, match) {
+                    QStringList data = node.split("|");
+                    am.x.push_back(data[1].toDouble());
+                    am.y.push_back(data[2].toDouble());
+                }
+                ambiguousMatches.push_back(am);
             }
         }
 

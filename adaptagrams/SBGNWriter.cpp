@@ -1,9 +1,11 @@
 #include <fstream>
-#include <sbgn.hxx>
 #include "SBGNWriter.h"
 
-void SBGNWriter::writeFile(vector<Rectangle*> rs, vector<Edge> es, vector<Species> sp,
-        vector<Transition> tr, string fname) {
+SBGNWriter::SBGNWriter(vector<Rectangle*> r, vector<Edge> e, vector<Species> s,
+    vector<Transition> t): rs(r), es(e), sp(s), tr(t) {
+}
+
+void SBGNWriter::writeFile(char* fname) {
     using namespace libsbgn::sn_0_2;
 
     // add glyphs
@@ -51,7 +53,7 @@ void SBGNWriter::writeFile(vector<Rectangle*> rs, vector<Edge> es, vector<Specie
     xml_schema::namespace_infomap map;
 //    map[""].name = "test"; // xmlns
 //    map[""].schema = "http://sbgn.org/libsbgn/0.2"; // xsi:noNamespaceSchemaLocation
-    std::ofstream ofs(fname.c_str());
+    std::ofstream ofs(fname);
     sbgn_(ofs, s, map);
     ofs.close();
 }
