@@ -14,13 +14,19 @@ using SBMLQual::Transition;
 
 class AdaptagramsLayout {
 public:
-    AdaptagramsLayout();
-    ~AdaptagramsLayout();
+    AdaptagramsLayout() {}
+    AdaptagramsLayout(vector<Species> sp, vector<Transition> tr) {
+        constructFromSBMLQual(sp, tr);
+    }
+    ~AdaptagramsLayout() {}
 
     void constructFromSBMLQual(vector<Species>, vector<Transition>);
     double computeStress();
 
     void setNodePositionByIndex(int idx, double x, double y);
+    std::pair<double, double> getNodePositionByIndex(int idx);
+
+    vector<double> computeEdgePoints(int i, int j);
 
     vector<Rectangle*> getRectangles() const { return rs; }
     vector<Edge> getEdges() const { return es; }

@@ -30,8 +30,11 @@ void SBGNWriter::writeFile(char* fname) {
         Edge edge = es[i];
         Transition trans = tr[i];
 
-        start _start = start(0,0); //TODO: libavoid?
-        end _end = end(1,1);
+        int npts = trans.x.size();
+        assert(npts==trans.y.size());
+        start _start = start(trans.x[0], trans.y[0]);
+        end _end = end(trans.x[npts-1], trans.y[npts-1]);
+
         class_ _class = class_(trans.type);
         source _source = source(trans.from);
         target _target= target(trans.to);

@@ -1,6 +1,5 @@
 //#define QT_NO_DEBUG_OUTPUT
 
-#include <Qt/qcoreapplication.h>
 #include <Qt/qdebug.h>
 #include "SBMLQualParser.h"
 #include "AdaptagramsLayout.h"
@@ -46,6 +45,15 @@ int main(int argc, char* argv[]) {
 
     vector<Rectangle*> rs = layout.getRectangles();
     vector<Edge> es = layout.getEdges();
+
+    assert(es.size()==tr.size());
+    for(int i=0; i<es.size(); i++) {
+        Edge e = es[i];
+        Rectangle* from = rs[e.first];
+        Rectangle* to = rs[e.second];
+        tr[i].addPoint(from->getMinX(), from->getMinY());
+        tr[i].addPoint(to->getMinX(), to->getMinY());
+    }
 
     SBGNWriter writer = SBGNWriter(rs, es, sp, tr);
     writer.writeFile(argv[2]);

@@ -1,19 +1,11 @@
 #include "AdaptagramsLayout.h"
 
-AdaptagramsLayout::AdaptagramsLayout() {
-}
-
-AdaptagramsLayout::~AdaptagramsLayout() {
-}
-
 void AdaptagramsLayout::constructFromSBMLQual(vector<Species> sp, vector<Transition> tr) {
-    // (1) rectangles
     foreach(Species s, sp) {
         rs.push_back(new Rectangle(s.x, s.x+s.w, s.y, s.y+s.h));
         qDebug() << "Rectangle(" << s.x << "," << s.y << ")";
     }
 
-    // (2) edges
     foreach(Transition t, tr) {
         int from = -1, to = -1;
         for(int i=0; i<sp.size(); i++) {
@@ -39,3 +31,23 @@ void AdaptagramsLayout::setNodePositionByIndex(int idx, double x, double y) {
     r->moveMinX(x);
     r->moveMinY(y);
 }
+
+std::pair<double, double> AdaptagramsLayout::getNodePositionByIndex(int idx) {
+    std::pair<double, double> pos;
+    pos.first = rs[idx]->getMinX();
+    pos.second = rs[idx]->getMinY();
+    return pos;
+}
+/*
+vector<double> AdaptagramsLayout::computeEdgePoints(int i, int j) {
+    vector<double> line();
+    std::pair<double, double> pos;
+    pos = getNodePositionByIndex(i);
+    line.push_back(pos.first);
+    line.push_back(pos.second);
+    pos = getNodePositionByIndex(j);
+    line.push_back(pos.first);
+    line.push_back(pos.second);
+    return line; //TODO: get proper intersections, not just corner
+}*/
+

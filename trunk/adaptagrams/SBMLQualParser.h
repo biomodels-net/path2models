@@ -35,8 +35,11 @@ namespace SBMLQual {
             qDebug() << "Edge created: " << qfrom << qto << qtype;
             #endif
         }
+        void addPoint(double px, double py) { x.push_back(px); y.push_back(py); }
         string from, to;
         string type;
+        vector<double> x;
+        vector<double> y;
     };
 
     struct AmbiguousMatch {
