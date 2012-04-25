@@ -7,9 +7,8 @@
 #include <QtXmlPatterns/qxmlquery.h>
 #include <vector>
 #include <string>
+#include "util.h"
 
-using std::vector;
-using std::string;
 
 namespace SBMLQual {
     struct Species {
@@ -35,17 +34,15 @@ namespace SBMLQual {
             qDebug() << "Edge created: " << qfrom << qto << qtype;
             #endif
         }
-        void addPoint(double px, double py) { x.push_back(px); y.push_back(py); }
+        void addPoint(point_type p) { line.push_back(p); }
         string from, to;
         string type;
-        vector<double> x;
-        vector<double> y;
+        linestring_type line;
     };
 
     struct AmbiguousMatch {
         string id;
-        vector<double> x;
-        vector<double> y;
+        linestring_type pts;
     };
 
     class Parser {

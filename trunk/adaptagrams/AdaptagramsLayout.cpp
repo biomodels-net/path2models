@@ -1,5 +1,6 @@
+#include <boost/geometry.hpp>
 #include "AdaptagramsLayout.h"
-#include "util.h"
+
 
 void AdaptagramsLayout::constructFromSBMLQual(vector<Species> sp, vector<Transition> tr) {
     foreach(Species s, sp) {
@@ -46,12 +47,11 @@ void AdaptagramsLayout::iterateAmbiguousPositions(vector<Species> sp, vector<Amb
         Rectangle *r = getRectangleByIndex(idx);
 
         double oldStress = computeStress();
-        assert(am.x.size()==am.y.size());
-        for(int i=1; i<am.x.size(); i++) {
-            setNodePositionByIndex(idx, am.x[i], am.y[i]);
+        for(int i=1; i<am.pts.size(); i++) {
+            setNodePositionByIndex(idx, am.pts[i].x(), am.pts[i].y());
             double newStress = computeStress();
             if (newStress > oldStress) {
-                setNodePositionByIndex(idx, am.x[i-1], am.y[i-1]);
+                setNodePositionByIndex(idx, am.pts[i-1].x(), am.pts[i-1].y());
             }
             else {
                 oldStress = newStress;
@@ -64,13 +64,50 @@ void AdaptagramsLayout::iterateAmbiguousPositions(vector<Species> sp, vector<Amb
 
 vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
     assert(es.size()==tr.size());
-    for(int i=0; i<es.size(); i++) { //TODO: boost dist stuff
-        Edge e = es[i];
-        Rectangle* from = rs[e.first];
-        Rectangle* to = rs[e.second];
-        tr[i].addPoint(from->getMinX(), from->getMinY());
-        tr[i].addPoint(to->getMinX(), to->getMinY());
+
+    // construct anchor points for all rectangles
+    vector<linestring_type> anchors;
+    foreach(Rectangle *r, rs) {
+        linestring_type line;
+
+        for(double x=0.25; x<0.9; x+=0.25) {
+            line.push_back(point_type(r->getMinX()+x*r->width(), r->getMinY()));
+            line.push_back(point_type(r->getMinX()+x*r->width(), r->getMaxY()));
+        }
+        line.push_back(point_type(r->getMinX(), r->getMinY()+0.5*r->width()));
+        line.push_back(point_type(r->getMaxX(), r->getMinY()+0.5*r->width()));
+
+        anchors.push_back(line);
     }
+
+    for(int i=0; i<es.size(); i++) {
+        Rectangle *from = rs[es[i].first];
+        Rectangle *to = rs[es[i].second];
+
+        linestring_type centerLine;
+        centerLine.push_back(point_type(from->getCentreX(), from->getCentreY()));
+        centerLine.push_back(point_type(to->getCentreX(), to->getCentreY()));
+
+        tr[i].addPoint(getClosestPointToLine(anchors[es[i].first], centerLine));
+        tr[i].addPoint(getClosestPointToLine(anchors[es[i].second], centerLine));
+    }
+
     return tr;
+}
+
+point_type AdaptagramsLayout::getClosestPointToLine(linestring_type points, linestring_type centerLine) {
+    using boost::geometry::distance;
+    point_type closest(0,0);
+    double dist = 1e5;
+
+    foreach(point_type pt, points) {
+        double new_dist = distance(pt, centerLine);
+        if (new_dist < dist) {
+            dist = new_dist;
+            closest = pt;
+        }
+    }
+
+    return closest;
 }
 

@@ -26,20 +26,17 @@ void SBGNWriter::writeFile(char* fname) {
     // add arcs
     assert(es.size() == tr.size());
     arc_sequence as = arc_sequence();
-    for(int i=0; i<es.size(); i++) { // so far, i don't need the edges at all
-        Edge edge = es[i];
-        Transition trans = tr[i];
-
-        int npts = trans.x.size();
-        assert(npts==trans.y.size());
-        start _start = start(trans.x[0], trans.y[0]);
-        end _end = end(trans.x[npts-1], trans.y[npts-1]);
+    int i = 0;
+    foreach(Transition trans, tr) {
+        int npts = trans.line.size();
+        start _start = start(trans.line[0].x(), trans.line[0].y());
+        end _end = end(trans.line[npts-1].x(), trans.line[npts-1].y());
 
         class_ _class = class_(trans.type);
         source _source = source(trans.from);
         target _target= target(trans.to);
         std::stringstream _id;
-        _id << "tr_" << i;
+        _id << "tr_" << i++;
         arc _arc = arc(_start, _end, _class, _id.str(), _source, _target);
 
         as.push_back(_arc);
