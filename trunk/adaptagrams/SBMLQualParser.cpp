@@ -96,7 +96,7 @@ namespace SBMLQual {
                         case 169:
                             type = "negative influence"; break;
                         case 171:
-                            type = "necessary stimulation"; break; //FIXME is this right?
+                            type = "necessary stimulation"; break;
                     }
                 }
             }
