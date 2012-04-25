@@ -75,8 +75,7 @@ namespace SBMLQual {
                 am.id = id.toAscii().data();
                 foreach(QString node, match) {
                     QStringList data = node.split("|");
-                    am.x.push_back(data[1].toDouble());
-                    am.y.push_back(data[2].toDouble());
+                    am.pts.push_back(point_type(data[1].toDouble(), data[2].toDouble()));
                 }
                 ambiguousMatches.push_back(am);
             }

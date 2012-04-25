@@ -5,6 +5,7 @@
 #include <libcola/cola.h>
 #include <libvpsc/rectangle.h>
 #include "SBMLQualParser.h"
+#include "util.h"
 
 using std::vector;
 using vpsc::Rectangle;
@@ -12,6 +13,7 @@ using cola::Edge;
 using SBMLQual::Species;
 using SBMLQual::Transition;
 using SBMLQual::AmbiguousMatch;
+
 
 class AdaptagramsLayout {
 public:
@@ -37,6 +39,8 @@ public:
     vector<Transition> anchorEdges(vector<Transition> tr);
 
 private:
+    point_type getClosestPointToLine(linestring_type points, linestring_type centerLine);
+
     vector<Rectangle*> rs;
     vector<Edge> es;
 };

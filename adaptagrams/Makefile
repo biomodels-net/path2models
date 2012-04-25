@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -I/usr/include/cairomm-1.0 -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/cairo -I/usr/include/freetype2 -I.
-LIBS = -lQtCore -lQtXml -lQtXmlPatterns -lcola -lvpsc -ltopology -lcairomm-1.0 -lxerces-c -lsbgn
+LIBS = -lQtCore -lQtXml -lQtXmlPatterns -lcola -lvpsc -ltopology -lcairomm-1.0 -lxerces-c -lsbgn -lboost_graph
 
 ALL_SOURCE = $(wildcard *.cpp)
 ALL_OBJ = $(ALL_SOURCE:%.cpp=%.o)
