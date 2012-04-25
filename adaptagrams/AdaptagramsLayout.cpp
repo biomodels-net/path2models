@@ -74,8 +74,8 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
             line.push_back(point_type(r->getMinX()+x*r->width(), r->getMinY()));
             line.push_back(point_type(r->getMinX()+x*r->width(), r->getMaxY()));
         }
-        line.push_back(point_type(r->getMinX(), r->getMinY()+0.5*r->width()));
-        line.push_back(point_type(r->getMaxX(), r->getMinY()+0.5*r->width()));
+        line.push_back(point_type(r->getMinX(), r->getMinY()+0.5*r->height()));
+        line.push_back(point_type(r->getMaxX(), r->getMinY()+0.5*r->height()));
 
         anchors.push_back(line);
     }
