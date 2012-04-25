@@ -1,4 +1,5 @@
 #include "AdaptagramsLayout.h"
+#include "util.h"
 
 void AdaptagramsLayout::constructFromSBMLQual(vector<Species> sp, vector<Transition> tr) {
     foreach(Species s, sp) {
@@ -38,16 +39,38 @@ std::pair<double, double> AdaptagramsLayout::getNodePositionByIndex(int idx) {
     pos.second = rs[idx]->getMinY();
     return pos;
 }
-/*
-vector<double> AdaptagramsLayout::computeEdgePoints(int i, int j) {
-    vector<double> line();
-    std::pair<double, double> pos;
-    pos = getNodePositionByIndex(i);
-    line.push_back(pos.first);
-    line.push_back(pos.second);
-    pos = getNodePositionByIndex(j);
-    line.push_back(pos.first);
-    line.push_back(pos.second);
-    return line; //TODO: get proper intersections, not just corner
-}*/
+
+void AdaptagramsLayout::iterateAmbiguousPositions(vector<Species> sp, vector<AmbiguousMatch> ams) {
+    foreach(AmbiguousMatch am, ams) {
+        int idx = getIndexById(sp, am.id);
+        Rectangle *r = getRectangleByIndex(idx);
+
+        double oldStress = computeStress();
+        assert(am.x.size()==am.y.size());
+        for(int i=1; i<am.x.size(); i++) {
+            setNodePositionByIndex(idx, am.x[i], am.y[i]);
+            double newStress = computeStress();
+            if (newStress > oldStress) {
+                setNodePositionByIndex(idx, am.x[i-1], am.y[i-1]);
+            }
+            else {
+                oldStress = newStress;
+                qDebug() << QString(am.id.c_str()) << "moved to (" << r->getMinX() \
+                    << "," << r->getMinY() << "); new stress:" << newStress;
+            }
+        }
+    }
+}
+
+vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
+    assert(es.size()==tr.size());
+    for(int i=0; i<es.size(); i++) { //TODO: boost dist stuff
+        Edge e = es[i];
+        Rectangle* from = rs[e.first];
+        Rectangle* to = rs[e.second];
+        tr[i].addPoint(from->getMinX(), from->getMinY());
+        tr[i].addPoint(to->getMinX(), to->getMinY());
+    }
+    return tr;
+}
 

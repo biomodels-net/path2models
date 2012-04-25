@@ -11,6 +11,7 @@ using vpsc::Rectangle;
 using cola::Edge;
 using SBMLQual::Species;
 using SBMLQual::Transition;
+using SBMLQual::AmbiguousMatch;
 
 class AdaptagramsLayout {
 public:
@@ -26,13 +27,14 @@ public:
     void setNodePositionByIndex(int idx, double x, double y);
     std::pair<double, double> getNodePositionByIndex(int idx);
 
-    vector<double> computeEdgePoints(int i, int j);
-
     vector<Rectangle*> getRectangles() const { return rs; }
     vector<Edge> getEdges() const { return es; }
 
     Rectangle* getRectangleByIndex(int idx) { return rs[idx]; }
     Edge getEdgeByIndex(int idx) { return es[idx]; }
+
+    void iterateAmbiguousPositions(vector<Species>, vector<AmbiguousMatch>);
+    vector<Transition> anchorEdges(vector<Transition> tr);
 
 private:
     vector<Rectangle*> rs;
