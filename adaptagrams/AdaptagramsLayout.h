@@ -7,7 +7,6 @@
 #include "SBMLQualParser.h"
 #include "util.h"
 
-using std::vector;
 using vpsc::Rectangle;
 using cola::Edge;
 using SBMLQual::Species;

@@ -14,8 +14,7 @@ typedef boost::geometry::model::linestring<point_type> linestring_type;
 
 
 template<class T> int getIndexById(T iterable, string id) {
-    return find(iterable.begin(), iterable.end(), 
-id.c_str())-iterable.begin();
+    return find(iterable.begin(), iterable.end(), id.c_str())-iterable.begin();
 }
 
 template<class T> T getObjectById(std::vector<T> iterable, string id) {
