@@ -34,11 +34,12 @@ public:
     Rectangle* getRectangleByIndex(int idx) { return rs[idx]; }
     Edge getEdgeByIndex(int idx) { return es[idx]; }
 
-    void iterateAmbiguousPositions(vector<Species>, vector<AmbiguousMatch>);
+    void iterateAmbiguousPositions(vector<Species> sp, vector<AmbiguousMatch> am);
     vector<Transition> anchorEdges(vector<Transition> tr);
 
 private:
     point_type getClosestPointToLine(linestring_type points, linestring_type centerLine);
+    point_type intersection(Rectangle* r, linestring_type line);
 
     vector<Rectangle*> rs;
     vector<Edge> es;

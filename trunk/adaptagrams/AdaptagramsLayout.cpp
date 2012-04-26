@@ -88,6 +88,9 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
         centerLine.push_back(point_type(from->getCentreX(), from->getCentreY()));
         centerLine.push_back(point_type(to->getCentreX(), to->getCentreY()));
 
+        centerLine[0] = intersection(from, centerLine);
+        centerLine[1] = intersection(to, centerLine);
+
         tr[i].addPoint(getClosestPointToLine(anchors[es[i].first], centerLine));
         tr[i].addPoint(getClosestPointToLine(anchors[es[i].second], centerLine));
     }
@@ -96,12 +99,11 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
 }
 
 point_type AdaptagramsLayout::getClosestPointToLine(linestring_type points, linestring_type centerLine) {
-    using boost::geometry::distance;
     point_type closest(0,0);
     double dist = 1e5;
 
     foreach(point_type pt, points) {
-        double new_dist = distance(pt, centerLine);
+        double new_dist = boost::geometry::distance(pt, centerLine);
         if (new_dist < dist) {
             dist = new_dist;
             closest = pt;
@@ -109,5 +111,19 @@ point_type AdaptagramsLayout::getClosestPointToLine(linestring_type points, line
     }
 
     return closest;
+}
+
+point_type AdaptagramsLayout::intersection(Rectangle *r, linestring_type line) {
+    linestring_type rec;
+    rec.push_back(point_type(r->getMinX(), r->getMinY()));
+    rec.push_back(point_type(r->getMaxX(), r->getMinY()));
+    rec.push_back(point_type(r->getMaxX(), r->getMaxY()));
+    rec.push_back(point_type(r->getMinX(), r->getMaxY()));
+    rec.push_back(point_type(r->getMinX(), r->getMinY()));
+
+    vector<point_type> intersections;
+    boost::geometry::intersection(rec, line, intersections);
+    assert(intersections.size()==1);
+    return intersections[0];
 }
 
