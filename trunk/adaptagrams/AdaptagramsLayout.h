@@ -36,6 +36,8 @@ public:
 
     void iterateAmbiguousPositions(vector<Species> sp, vector<AmbiguousMatch> am);
     vector<Transition> anchorEdges(vector<Transition> tr);
+    
+    void removeoverlaps(bool bothaxes);
 
 private:
     point_type getClosestPointToLine(linestring_type points, linestring_type centerLine);
