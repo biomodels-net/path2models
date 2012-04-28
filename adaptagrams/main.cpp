@@ -14,6 +14,8 @@ int main(int argc, char* argv[]) {
     AdaptagramsLayout layout = AdaptagramsLayout();
     layout.constructFromSBMLQual(sp, tr);
     layout.iterateAmbiguousPositions(sp, parser.getAmbiguousPositions());
+    
+    layout.removeoverlaps(true);
 
     vector<Rectangle*> rs = layout.getRectangles();
     vector<Edge> es = layout.getEdges();

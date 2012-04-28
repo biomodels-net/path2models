@@ -88,8 +88,10 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
         centerLine.push_back(point_type(from->getCentreX(), from->getCentreY()));
         centerLine.push_back(point_type(to->getCentreX(), to->getCentreY()));
 
-        centerLine[0] = intersection(from, centerLine);
-        centerLine[1] = intersection(to, centerLine);
+        if (from != to) { // TODO: better routing for this case
+            centerLine[0] = intersection(from, centerLine);
+            centerLine[1] = intersection(to, centerLine);
+        }
 
         tr[i].addPoint(getClosestPointToLine(anchors[es[i].first], centerLine));
         tr[i].addPoint(getClosestPointToLine(anchors[es[i].second], centerLine));
@@ -123,7 +125,67 @@ point_type AdaptagramsLayout::intersection(Rectangle *r, linestring_type line) {
 
     vector<point_type> intersections;
     boost::geometry::intersection(rec, line, intersections);
-//    assert(intersections.size()==1); // this does not always have to be true
+    assert(intersections.size()>=1);
     return intersections[0];
 }
 
+void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
+    using namespace vpsc;
+    using std::for_each;
+    
+    double xBorder=5, yBorder=5; // use this to make rectangles bigger
+    static const double EXTRA_GAP=15; // use this for rectangle spacing
+    unsigned n=rs.size();
+    try {
+        // The extra gap avoids numerical imprecision problems
+        Rectangle::setXBorder(xBorder+EXTRA_GAP);
+        Rectangle::setYBorder(yBorder+EXTRA_GAP);
+        Variables vs(n);
+        unsigned i=0;
+        for(Variables::iterator v=vs.begin();v!=vs.end();++v,++i) {
+            *v=new Variable(i,0,1);
+        }
+        Constraints cs;
+        generateXConstraints(rs,vs,cs,bothaxes);
+        IncSolver vpsc_x(vs,cs);
+        vpsc_x.solve();
+        Rectangles::iterator r=rs.begin();
+        for(Variables::iterator v=vs.begin();v!=vs.end();++v,++r) {
+            assert((*v)->finalPosition==(*v)->finalPosition);
+            (*r)->moveCentreX((*v)->finalPosition);
+        }
+        assert(r==rs.end());
+        for_each(cs.begin(),cs.end(),delete_object());
+        cs.clear();
+        if(bothaxes) {
+            // Removing the extra gap here ensures things that were moved to be adjacent to one another above are not considered overlapping
+      //      Rectangle::setXBorder(Rectangle::xBorder-EXTRA_GAP);
+            generateYConstraints(rs,vs,cs);
+            IncSolver vpsc_y(vs,cs);
+            vpsc_y.solve();
+            r=rs.begin();
+            for(Variables::iterator v=vs.begin();v!=vs.end();++v,++r) {
+                (*r)->moveCentreY((*v)->finalPosition);
+            }
+            for_each(cs.begin(),cs.end(),delete_object());
+            cs.clear();
+       //     Rectangle::setYBorder(Rectangle::yBorder-EXTRA_GAP);
+            generateXConstraints(rs,vs,cs,false);
+            IncSolver vpsc_x2(vs,cs);
+            vpsc_x2.solve();
+            r=rs.begin();
+            for(Variables::iterator v=vs.begin();v!=vs.end();++v,++r) {
+                (*r)->moveCentreX((*v)->finalPosition);
+            }
+            for_each(cs.begin(),cs.end(),delete_object());
+        }
+        for_each(vs.begin(),vs.end(),delete_object());
+    } catch (char *str) {
+        std::cerr<<str<<std::endl;
+        for(Rectangles::iterator r=rs.begin();r!=rs.end();++r) {
+            std::cerr << **r <<std::endl;
+        }
+    }
+    Rectangle::setXBorder(xBorder);
+    Rectangle::setYBorder(yBorder);
+}
