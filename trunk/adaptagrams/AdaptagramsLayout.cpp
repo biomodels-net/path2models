@@ -10,7 +10,7 @@ void AdaptagramsLayout::constructFromSBMLQual(vector<Species> sp, vector<Transit
 
     foreach(Transition t, tr) {
         int from = -1, to = -1;
-        for(int i=0; i<sp.size(); i++) {
+        for(unsigned int i=0; i<sp.size(); i++) {
             if (sp[i].id.compare(t.from) == 0) { // inefficient
                 from = i;
             }
@@ -47,7 +47,7 @@ void AdaptagramsLayout::iterateAmbiguousPositions(vector<Species> sp, vector<Amb
         Rectangle *r = getRectangleByIndex(idx);
 
         double oldStress = computeStress();
-        for(int i=1; i<am.pts.size(); i++) {
+        for(unsigned int i=1; i<am.pts.size(); i++) {
             setNodePositionByIndex(idx, am.pts[i].x(), am.pts[i].y());
             double newStress = computeStress();
             if (newStress > oldStress) {
@@ -80,7 +80,7 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
         anchors.push_back(line);
     }
 
-    for(int i=0; i<es.size(); i++) {
+    for(unsigned int i=0; i<es.size(); i++) {
         Rectangle *from = rs[es[i].first];
         Rectangle *to = rs[es[i].second];
 
@@ -123,7 +123,7 @@ point_type AdaptagramsLayout::intersection(Rectangle *r, linestring_type line) {
 
     vector<point_type> intersections;
     boost::geometry::intersection(rec, line, intersections);
-    assert(intersections.size()==1);
+//    assert(intersections.size()==1); // this does not always have to be true
     return intersections[0];
 }
 
