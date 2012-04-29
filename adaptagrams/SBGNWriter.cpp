@@ -11,7 +11,7 @@ void SBGNWriter::writeFile(char* fname) {
     // add glyphs
     assert(rs.size() == sp.size());
     glyph_sequence gs = glyph_sequence();
-    for(unsigned int i=0; i<rs.size(); i++) {
+    for(unsigned i=0; i<rs.size(); i++) {
         Rectangle *rec = rs[i];
         Species species = sp[i];
 

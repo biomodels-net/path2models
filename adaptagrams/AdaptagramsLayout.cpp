@@ -10,8 +10,8 @@ void AdaptagramsLayout::constructFromSBMLQual(vector<Species> sp, vector<Transit
 
     foreach(Transition t, tr) {
         int from = -1, to = -1;
-        for(unsigned int i=0; i<sp.size(); i++) {
-            if (sp[i].id.compare(t.from) == 0) { // inefficient
+        for(unsigned i=0; i<sp.size(); i++) {
+            if (sp[i].id.compare(t.from) == 0) {
                 from = i;
             }
             if (sp[i].id.compare(t.to) == 0) {
@@ -47,7 +47,7 @@ void AdaptagramsLayout::iterateAmbiguousPositions(vector<Species> sp, vector<Amb
         Rectangle *r = getRectangleByIndex(idx);
 
         double oldStress = computeStress();
-        for(unsigned int i=1; i<am.pts.size(); i++) {
+        for(unsigned i=1; i<am.pts.size(); i++) {
             setNodePositionByIndex(idx, am.pts[i].x(), am.pts[i].y());
             double newStress = computeStress();
             if (newStress > oldStress) {
@@ -80,7 +80,7 @@ vector<Transition> AdaptagramsLayout::anchorEdges(vector<Transition> tr) {
         anchors.push_back(line);
     }
 
-    for(unsigned int i=0; i<es.size(); i++) {
+    for(unsigned i=0; i<es.size(); i++) {
         Rectangle *from = rs[es[i].first];
         Rectangle *to = rs[es[i].second];
 
@@ -130,17 +130,17 @@ point_type AdaptagramsLayout::intersection(Rectangle *r, linestring_type line) {
 }
 
 void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
+//TODO: would be good if i could add a custom constraint here:
+//if edge exists and centers are less then 5p apart in any dim, align them
     using namespace vpsc;
     using std::for_each;
     
     double xBorder=5, yBorder=5; // use this to make rectangles bigger
     static const double EXTRA_GAP=15; // use this for rectangle spacing
-    unsigned n=rs.size();
     try {
-        // The extra gap avoids numerical imprecision problems
         Rectangle::setXBorder(xBorder+EXTRA_GAP);
         Rectangle::setYBorder(yBorder+EXTRA_GAP);
-        Variables vs(n);
+        Variables vs(rs.size());
         unsigned i=0;
         for(Variables::iterator v=vs.begin();v!=vs.end();++v,++i) {
             *v=new Variable(i,0,1);
@@ -151,15 +151,12 @@ void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
         vpsc_x.solve();
         Rectangles::iterator r=rs.begin();
         for(Variables::iterator v=vs.begin();v!=vs.end();++v,++r) {
-            assert((*v)->finalPosition==(*v)->finalPosition);
             (*r)->moveCentreX((*v)->finalPosition);
         }
         assert(r==rs.end());
         for_each(cs.begin(),cs.end(),delete_object());
         cs.clear();
         if(bothaxes) {
-            // Removing the extra gap here ensures things that were moved to be adjacent to one another above are not considered overlapping
-      //      Rectangle::setXBorder(Rectangle::xBorder-EXTRA_GAP);
             generateYConstraints(rs,vs,cs);
             IncSolver vpsc_y(vs,cs);
             vpsc_y.solve();
@@ -169,7 +166,6 @@ void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
             }
             for_each(cs.begin(),cs.end(),delete_object());
             cs.clear();
-       //     Rectangle::setYBorder(Rectangle::yBorder-EXTRA_GAP);
             generateXConstraints(rs,vs,cs,false);
             IncSolver vpsc_x2(vs,cs);
             vpsc_x2.solve();
