@@ -1,0 +1,1751 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created by KEGGtranslator version 2.0.0 on 2012-01-22 00:47 with jsbml version 0.8-rc1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" qual:required="true" level="3" xmlns:qual="http://www.sbml.org/sbml/level3/version1/qual/version1" version="1" layout:required="false">
+  <model id="path_hsa04962" name="Vasopressin-regulated water reabsorption" metaid="meta_path_hsa04962">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Model of “Vasopressin-regulated water reabsorption” in “Homo sapiens (human)”</h1>
+        In the kidney, the antidiuretic hormone vasopressin (AVP) is a critical regulator of water homeostasis by controlling the water movement from lumen to the interstitium for water reabsorption and adjusting the urinary water excretion. In normal physiology, AVP is secreted into the circulation by the posterior pituitary gland, in response to an increase in serum osmolality or a decrease in effective circulating volume. When reaching the kidney, AVP binds to V2 receptors on the basolateral surface of the collecting duct epithelium, triggering a G-protein-linked signaling cascade, which leads to water channel aquaporin-2 (AQP2) vesicle insertion into the apical plasma membrane. This results in higher water permeability in the collecting duct and, driven by an osmotic gradient, pro-urinary water then passes the membrane through AQP2 and leaves the cell on the basolateral side via AQP3 and AQP4 water channels, which are constitutively expressed on the basolateral side of these cells. When isotonicity is restored, reduced blood AVP levels results in AQP2 internalization, leaving the apical membrane watertight again.    <br/>
+            <a href="http://www.genome.jp/kegg/pathway/hsa/hsa04962.png">      <img src="http://www.genome.jp/kegg/pathway/hsa/hsa04962.png" alt="http://www.genome.jp/kegg-bin/show_pathway?hsa04962"/>
+                </a>
+            <br/>
+            <a href="http://www.genome.jp/kegg-bin/show_pathway?hsa04962">Original Entry</a>
+            <br/>
+            <p>KGML comment: “Creation date: Jul 21, 2010 12:06:32 +0900 (GMT+09:00)”      <br/>
+          KGML version was: 0.71      <br/>
+                </p>
+            </body>
+      
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/">
+        <rdf:Description rdf:about="#meta_path_hsa04962">
+          <dc:creator>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <vCard:ORG rdf:parseType="Resource">
+                  <vCard:Orgname>ZBIT, University of Tübingen, WSI-CogSys</vCard:Orgname>
+                </vCard:ORG>
+              </rdf:li>
+            </rdf:Bag>
+          </dc:creator>
+          <dcterms:created rdf:parseType="Resource">
+            <dcterms:W3CDTF>2012-01-21T23:47:00Z</dcterms:W3CDTF>
+          </dcterms:created>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2012-01-21T23:47:00Z</dcterms:W3CDTF>
+          </dcterms:modified>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2012-01-21T23:47:00Z</dcterms:W3CDTF>
+          </dcterms:modified>
+          <bqmodel:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="urn:miriam:kegg.pathway:hsa04962"/>
+            </rdf:Bag>
+          </bqmodel:is>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="urn:miriam:taxonomy:9606"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+      <listOfCompartments>
+      <compartment id="default" constant="true" name="Vasopressin-regulated water reabsorption" size="1"/>
+    </listOfCompartments>
+      <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
+      <layout:layout>
+        <layout:listOfSpeciesGlyphs>
+          <layout:speciesGlyph layout:species="qual_Tight_junction">
+            <layout:boundingBox>
+              <layout:position layout:x="252" layout:y="117" layout:z="0"/>
+              <layout:dimensions layout:width="115" layout:height="25" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_cAMP">
+            <layout:boundingBox>
+              <layout:position layout:x="519" layout:y="364" layout:z="0"/>
+              <layout:dimensions layout:width="8" layout:height="8" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AVP">
+            <layout:boundingBox>
+              <layout:position layout:x="664" layout:y="308" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AVPR2">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="307" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_GNAS">
+            <layout:boundingBox>
+              <layout:position layout:x="530" layout:y="333" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_ADCY">
+            <layout:boundingBox>
+              <layout:position layout:x="582" layout:y="365" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_PRK">
+            <layout:boundingBox>
+              <layout:position layout:x="463" layout:y="365" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_CREB">
+            <layout:boundingBox>
+              <layout:position layout:x="464" layout:y="429" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="370" layout:y="365" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="398" layout:y="631" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="293" layout:y="444" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="159" layout:y="534" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_H2O">
+            <layout:boundingBox>
+              <layout:position layout:x="105" layout:y="531" layout:z="0"/>
+              <layout:dimensions layout:width="8" layout:height="8" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_Endocytosis">
+            <layout:boundingBox>
+              <layout:position layout:x="286" layout:y="580" layout:z="0"/>
+              <layout:dimensions layout:width="92" layout:height="25" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="244" layout:y="628" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP4">
+            <layout:boundingBox>
+              <layout:position layout:x="579" layout:y="516" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_H2O">
+            <layout:boundingBox>
+              <layout:position layout:x="637" layout:y="514" layout:z="0"/>
+              <layout:dimensions layout:width="8" layout:height="8" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP3">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="547" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_H2O">
+            <layout:boundingBox>
+              <layout:position layout:x="637" layout:y="548" layout:z="0"/>
+              <layout:dimensions layout:width="8" layout:height="8" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP2">
+            <layout:boundingBox>
+              <layout:position layout:x="106" layout:y="631" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_ARHGDI">
+            <layout:boundingBox>
+              <layout:position layout:x="400" layout:y="273" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_AQP3">
+            <layout:boundingBox>
+              <layout:position layout:x="465" layout:y="718" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_H2O">
+            <layout:boundingBox>
+              <layout:position layout:x="655" layout:y="748" layout:z="0"/>
+              <layout:dimensions layout:width="8" layout:height="8" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_RAB11">
+            <layout:boundingBox>
+              <layout:position layout:x="386" layout:y="343" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_RAB5">
+            <layout:boundingBox>
+              <layout:position layout:x="409" layout:y="606" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_STX4">
+            <layout:boundingBox>
+              <layout:position layout:x="159" layout:y="445" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_VAMP2">
+            <layout:boundingBox>
+              <layout:position layout:x="227" layout:y="445" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_NSF">
+            <layout:boundingBox>
+              <layout:position layout:x="200" layout:y="462" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_DCTN">
+            <layout:boundingBox>
+              <layout:position layout:x="335" layout:y="331" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:species="qual_DYN">
+            <layout:boundingBox>
+              <layout:position layout:x="335" layout:y="314" layout:z="0"/>
+              <layout:dimensions layout:width="46" layout:height="17" layout:depth="1"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+        </layout:listOfSpeciesGlyphs>
+      </layout:layout>
+    </layout:listOfLayouts>
+      <qual:listOfQualitativeSpecies xmlns:qual="http://www.sbml.org/sbml/level3/version1/qual/version1">
+      <qual:qualitativeSpecies metaid="meta_qual_Tight_junction" qual:compartment="default" sboTerm="SBO:0000552" qual:name="Tight junction" qual:id="qual_Tight_junction">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa04530">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Tight junction - Homo sapiens (human)</b>
+                        </p>
+                    <img src="http://www.kegg.jp/kegg/misc/thumbnail/map04530.gif"/>
+                    <br/>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_Tight_junction">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.pathway:hsa04530"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isDescribedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.go:GO:0005923"/>
+                </rdf:Bag>
+              </bqbiol:isDescribedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_cAMP" qual:compartment="default" sboTerm="SBO:0000247" qual:name="cAMP" qual:id="qual_cAMP">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?C00575">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>cAMP</b>
+                        </p>
+                    <p>          <b>All given names:</b>
+                        <br/>
+              3',5'-Cyclic AMP          <br/>
+              Cyclic adenylic acid          <br/>
+              Cyclic AMP          <br/>
+              Adenosine 3',5'-phosphate          <br/>
+              Adenosine 3',5'-cyclic phosphate          <br/>
+              cAMP          </p>
+                    <p>          <b>Formula:</b>
+              C10H12N5O6P          </p>
+                    <img src="http://www.kegg.jp/Fig/compound/C00575.gif"/>
+                    <br/>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_cAMP">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.compound:C00575"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.chebi:CHEBI%3A17489"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:pubchem.substance:3854"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:3dmet:B01289"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_AVP" qual:compartment="default" sboTerm="SBO:0000354" qual:name="AVP" qual:id="qual_AVP">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:551">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “AVP, ADH, ARVP, AVP-NPII, AVRP, VP”:</b>
+              arginine vasopressin          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_AVP">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A551"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:551"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:192340"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000101200"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P01185"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A894"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_AVPR2" qual:compartment="default" sboTerm="SBO:0000354" qual:name="AVPR2" qual:id="qual_AVPR2">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:554">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “AVPR2, ADHR, DI1, DIR, DIR3, MGC126533, MGC138386, NDI, V2R”:</b>
+              arginine vasopressin receptor 2          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_AVPR2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A554"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:554"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:300538"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000126895"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P30518"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:C5HF20"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A897"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_GNAS" qual:compartment="default" sboTerm="SBO:0000354" qual:name="GNAS" qual:id="qual_GNAS">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:2778">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “GNAS, AHO, C20orf45, GNAS1, GPSA, GSA, GSP, MGC33735, NESP, PHP1A, PHP1B, PHP1C, POH”:</b>
+              GNAS complex locus          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_GNAS">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A2778"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:2778"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:139320"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000087460"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P63092"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P84996"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O95467"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q5JWF2"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:A6NI00"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A4392"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_ADCY" qual:compartment="default" sboTerm="SBO:0000354" qual:name="ADCY" qual:id="qual_ADCY">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:109+hsa:112+hsa:115">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “ADCY3, AC3, KIAA0511”:</b>
+              adenylate cyclase 3 (EC:4.6.1.1)          </p>
+                    <p>          <b>Description for “ADCY6, AC6, DKFZp779F075, KIAA0422”:</b>
+              adenylate cyclase 6 (EC:4.6.1.1)          </p>
+                    <p>          <b>Description for “ADCY9, AC9, FLJ12046”:</b>
+              adenylate cyclase 9 (EC:4.6.1.1)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_ADCY">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A109"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A112"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A115"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:109"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:112"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:115"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:600291"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:600294"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:603302"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000138031"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000174233"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000162104"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O60266"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B3KT86"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O43306"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O60503"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A234"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A237"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A240"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ec-code:4.6.1.1"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_PRK" qual:compartment="default" sboTerm="SBO:0000354" qual:name="PRK" qual:id="qual_PRK">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568+hsa:5613">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “PRKACA, MGC102831, MGC48865, PKACA”:</b>
+              protein kinase, cAMP-dependent, catalytic, alpha (EC:2.7.11.11)          </p>
+                    <p>          <b>Description for “PRKACB, DKFZp781I2452, MGC41879, MGC9320, PKACB”:</b>
+              protein kinase, cAMP-dependent, catalytic, beta (EC:2.7.11.11)          </p>
+                    <p>          <b>Description for “PRKACG, KAPG, PKACg”:</b>
+              protein kinase, cAMP-dependent, catalytic, gamma (EC:2.7.11.11)          </p>
+                    <p>          <b>Description for “PRKX, PKX1”:</b>
+              protein kinase, X-linked (EC:2.7.11.1)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_PRK">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5566"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5567"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5568"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5613"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5566"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5567"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5568"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5613"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:601639"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:176892"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:176893"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:300083"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000072062"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000142875"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000165059"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000183943"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P17612"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P22694"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B4DKB0"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B1APG4"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B7ZA00"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B2RB89"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P22612"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P51817"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9380"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9381"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9382"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9441"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ec-code:2.7.11.11"/>
+                  <rdf:li rdf:resource="urn:miriam:ec-code:2.7.11.1"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_CREB" qual:compartment="default" sboTerm="SBO:0000354" qual:name="CREB" qual:id="qual_CREB">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:10488+hsa:1385+hsa:148327+hsa:64764+hsa:84699+hsa:90993+hsa:9586">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “CREB3, LUMAN, LZIP, MGC15333, MGC19782”:</b>
+              cAMP responsive element binding protein 3          </p>
+                    <p>          <b>Description for “CREB1, CREB, MGC9284”:</b>
+              cAMP responsive element binding protein 1          </p>
+                    <p>          <b>Description for “CREB3L4, AIBZIP, ATCE1, CREB3, CREB4, JAL, hJAL”:</b>
+              cAMP responsive element binding protein 3-like 4          </p>
+                    <p>          <b>Description for “CREB3L2, BBF2H7, MGC131709, MGC71006”:</b>
+              cAMP responsive element binding protein 3-like 2          </p>
+                    <p>          <b>Description for “CREB3L3, CREB-H, CREBH, MGC126553, MGC126557”:</b>
+              cAMP responsive element binding protein 3-like 3          </p>
+                    <p>          <b>Description for “CREB3L1, OASIS”:</b>
+              cAMP responsive element binding protein 3-like 1          </p>
+                    <p>          <b>Description for “CREB5, CRE-BPA”:</b>
+              cAMP responsive element binding protein 5          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_CREB">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A10488"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1385"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A148327"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A64764"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A84699"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A90993"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A9586"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:10488"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1385"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:148327"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:64764"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:84699"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:90993"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:9586"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:606443"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:123810"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:607138"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:608834"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:611998"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000107175"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000118260"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000143578"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000182158"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000060566"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000157613"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000146592"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O43889"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P16220"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q53X93"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q5U0J5"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q8TEY5"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q70SY1"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q68CJ9"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q96BA8"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q02930"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B4DU13"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q59G47"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2347"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2345"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A18854"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A23720"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A18855"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A18856"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A16844"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_AQP2" qual:compartment="default" sboTerm="SBO:0000354" qual:name="AQP2" qual:id="qual_AQP2">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:359">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “AQP2, AQP-CD, MGC34501, WCH-CD”:</b>
+              aquaporin 2 (collecting duct)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_AQP2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A359"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:359"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:107777"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000167580"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P41181"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A634"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_H2O" qual:compartment="default" sboTerm="SBO:0000247" qual:name="H2O" qual:id="qual_H2O">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?C00001">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Water</b>
+                        </p>
+                    <p>          <b>All given names:</b>
+                        <br/>
+              H2O          <br/>
+              Water          </p>
+                    <p>          <b>Formula:</b>
+              H2O          </p>
+                    <img src="http://www.kegg.jp/Fig/compound/C00001.gif"/>
+                    <br/>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_H2O">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.compound:C00001"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.chebi:CHEBI%3A15377"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:pubchem.substance:3303"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:3dmet:B01124"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_Endocytosis" qual:compartment="default" sboTerm="SBO:0000552" qual:name="Endocytosis" qual:id="qual_Endocytosis">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa04144">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Endocytosis - Homo sapiens (human)</b>
+                        </p>
+                    <img src="http://www.kegg.jp/kegg/misc/thumbnail/map04144.gif"/>
+                    <br/>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_Endocytosis">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.pathway:hsa04144"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isDescribedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.go:GO:0006897"/>
+                </rdf:Bag>
+              </bqbiol:isDescribedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_AQP4" qual:compartment="default" sboTerm="SBO:0000354" qual:name="AQP4" qual:id="qual_AQP4">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:361">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “AQP4, HMIWC2, MGC22454, MIWC”:</b>
+              aquaporin 4          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_AQP4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A361"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:361"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:600308"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000171885"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P55087"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:F1DSG4"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A637"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_AQP3" qual:compartment="default" sboTerm="SBO:0000354" qual:name="AQP3" qual:id="qual_AQP3">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:360">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “AQP3, AQP-3, GIL”:</b>
+              aquaporin 3 (Gill blood group)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_AQP3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A360"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:360"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:600170"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000165272"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q92482"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A636"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_ARHGDI" qual:compartment="default" sboTerm="SBO:0000354" qual:name="ARHGDI" qual:id="qual_ARHGDI">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:396+hsa:397">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “ARHGDIA, GDIA1, MGC117248, RHOGDI, RHOGDI-1”:</b>
+              Rho GDP dissociation inhibitor (GDI) alpha          </p>
+                    <p>          <b>Description for “ARHGDIB, D4, GDIA2, GDID4, LYGDI, Ly-GDI, RAP1GN1, RhoGDI2”:</b>
+              Rho GDP dissociation inhibitor (GDI) beta          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_ARHGDI">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A396"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A397"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:396"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:397"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:601925"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:602843"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000141522"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000111348"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P52565"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B4DUV9"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P52566"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A678"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A679"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_RAB11" qual:compartment="default" sboTerm="SBO:0000354" qual:name="RAB11" qual:id="qual_RAB11">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:8766+hsa:9230">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “RAB11A, MGC1490, YL8”:</b>
+              RAB11A, member RAS oncogene family          </p>
+                    <p>          <b>Description for “RAB11B, H-YPT3, MGC133246”:</b>
+              RAB11B, member RAS oncogene family          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_RAB11">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A8766"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A9230"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:8766"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:9230"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:605570"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:604198"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000103769"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000185236"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P62491"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B4DT13"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q15907"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9760"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9761"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_RAB5" qual:compartment="default" sboTerm="SBO:0000354" qual:name="RAB5" qual:id="qual_RAB5">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:5868+hsa:5869+hsa:5878">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “RAB5A, RAB5”:</b>
+              RAB5A, member RAS oncogene family          </p>
+                    <p>          <b>Description for “RAB5B”:</b>
+              RAB5B, member RAS oncogene family          </p>
+                    <p>          <b>Description for “RAB5C, L1880, MGC117217, MGC138857, RAB5CL, RAB5L, RABL”:</b>
+              RAB5C, member RAS oncogene family          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_RAB5">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5868"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5869"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A5878"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5868"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5869"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:5878"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:179512"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:179514"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:604037"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000144566"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000111540"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000108774"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P20339"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q6FI44"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P61020"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P51148"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9783"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9784"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A9785"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_STX4" qual:compartment="default" sboTerm="SBO:0000354" qual:name="STX4" qual:id="qual_STX4">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:6810">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “STX4, STX4A, p35-2”:</b>
+              syntaxin 4          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_STX4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A6810"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:6810"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:186591"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000103496"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q12846"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A11439"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_VAMP2" qual:compartment="default" sboTerm="SBO:0000354" qual:name="VAMP2" qual:id="qual_VAMP2">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:6844">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “VAMP2, FLJ11460, SYB2, VAMP-2”:</b>
+              vesicle-associated membrane protein 2 (synaptobrevin 2)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_VAMP2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A6844"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:6844"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:185881"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000220205"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P63027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A12643"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_NSF" qual:compartment="default" sboTerm="SBO:0000354" qual:name="NSF" qual:id="qual_NSF">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:4905">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “NSF, SKD2”:</b>
+              N-ethylmaleimide-sensitive factor (EC:3.6.4.6)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_NSF">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A4905"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:4905"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:601633"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000073969"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P46459"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A8016"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ec-code:3.6.4.6"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_DCTN" qual:compartment="default" sboTerm="SBO:0000354" qual:name="DCTN" qual:id="qual_DCTN">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:10540+hsa:10671+hsa:1639+hsa:51164+hsa:84516">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “DCTN2, DCTN50, DYNAMITIN, RBP50”:</b>
+              dynactin 2 (p50)          </p>
+                    <p>          <b>Description for “DCTN6, WS-3, WS3, p27”:</b>
+              dynactin 6          </p>
+                    <p>          <b>Description for “DCTN1, DAP-150, DP-150, P135”:</b>
+              dynactin 1          </p>
+                    <p>          <b>Description for “DCTN4”:</b>
+              dynactin 4 (p62)          </p>
+                    <p>          <b>Description for “DCTN5, MGC3248”:</b>
+              dynactin 5 (p25)          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_DCTN">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A10540"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A10671"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1639"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A51164"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A84516"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:10540"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:10671"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1639"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:51164"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:84516"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:607376"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:612963"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:601143"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:612962"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000175203"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000104671"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000204843"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000132912"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000166847"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q13561"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O00399"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q14203"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:E9PGE1"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q6IQ37"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:B4DM45"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:E9PFS5"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:A8MY36"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q6MZZ3"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q9UJW0"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q9NSJ5"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q9BTE1"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2712"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A16964"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2711"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A15518"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A24594"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+      <qual:qualitativeSpecies metaid="meta_qual_DYN" qual:compartment="default" sboTerm="SBO:0000354" qual:name="DYN" qual:id="qual_DYN">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://www.kegg.jp/dbget-bin/www_bget?hsa:140735+hsa:1778+hsa:1780+hsa:1781+hsa:1783+hsa:51143+hsa:51626+hsa:79659+hsa:8655">Original Kegg Entry</a>
+                    <br/>
+                    <p>          <b>Description for “DYNLL2, DNCL1B, Dlc2, MGC17810, RSPH22”:</b>
+              dynein, light chain, LC8-type 2          </p>
+                    <p>          <b>Description for “DYNC1H1, CMT20, DHC1, DHC1a, DKFZp686P2245, DNCH1, DNCL, DNECL, DYHC, Dnchc1, HL-3, KIAA0325, p22”:</b>
+              dynein, cytoplasmic 1, heavy chain 1          </p>
+                    <p>          <b>Description for “DYNC1I1, DNCI1, DNCIC1”:</b>
+              dynein, cytoplasmic 1, intermediate chain 1          </p>
+                    <p>          <b>Description for “DYNC1I2, DNCI2, FLJ21089, FLJ90842, IC2, MGC104199, MGC111094, MGC9324”:</b>
+              dynein, cytoplasmic 1, intermediate chain 2          </p>
+                    <p>          <b>Description for “DYNC1LI2, DNCLI2, LIC2”:</b>
+              dynein, cytoplasmic 1, light intermediate chain 2          </p>
+                    <p>          <b>Description for “DYNC1LI1, DNCLI1, FLJ10219, LIC1”:</b>
+              dynein, cytoplasmic 1, light intermediate chain 1          </p>
+                    <p>          <b>Description for “DYNC2LI1, D2LIC, DKFZp564A033, LIC3”:</b>
+              dynein, cytoplasmic 2, light intermediate chain 1          </p>
+                    <p>          <b>Description for “DYNC2H1, ATD3, DHC1b, DHC2, DNCH2, DYH1B, FLJ11756, hdhc11”:</b>
+              dynein, cytoplasmic 2, heavy chain 1          </p>
+                    <p>          <b>Description for “DYNLL1, DLC1, DLC8, DNCL1, DNCLC1, LC8, LC8a, MGC126137, MGC126138, PIN, hdlc1”:</b>
+              dynein, light chain, LC8-type 1          </p>
+                    </body>
+          
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_qual_DYN">
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A140735"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1778"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1780"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1781"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A1783"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A51143"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A51626"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A79659"/>
+                  <rdf:li rdf:resource="urn:miriam:kegg.genes:hsa%3A8655"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:140735"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1778"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1780"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1781"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:1783"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:51143"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:51626"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:79659"/>
+                  <rdf:li rdf:resource="urn:miriam:entrez.gene:8655"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasProperty>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:omim:608942"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:600112"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:603772"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:603331"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:611406"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:603297"/>
+                  <rdf:li rdf:resource="urn:miriam:omim:601562"/>
+                </rdf:Bag>
+              </bqbiol:hasProperty>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000121083"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000197102"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000158560"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000077380"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000135720"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000144635"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000138036"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000187240"/>
+                  <rdf:li rdf:resource="urn:miriam:ensembl:ENSG00000088986"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:hasVersion>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q96FJ2"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q14204"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O14576"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:A4D1I7"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q8N542"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q13409"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:O43237"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q63HJ8"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q9Y6G9"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q8TCX1"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q8NCM8"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:P63167"/>
+                  <rdf:li rdf:resource="urn:miriam:uniprot:Q6FGH9"/>
+                </rdf:Bag>
+              </bqbiol:hasVersion>
+              <bqbiol:isEncodedBy>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A24596"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2961"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2963"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2964"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2966"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A18745"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A24595"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A2962"/>
+                  <rdf:li rdf:resource="urn:miriam:hgnc:HGNC%3A15476"/>
+                </rdf:Bag>
+              </bqbiol:isEncodedBy>
+              <bqbiol:unknownQualifier>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:obo.eco:ECO%3A0000313"/>
+                </rdf:Bag>
+              </bqbiol:unknownQualifier>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                            </qual:qualitativeSpecies>
+    </qual:listOfQualitativeSpecies>
+    <qual:listOfTransitions xmlns:qual="http://www.sbml.org/sbml/level3/version1/qual/version1">
+      <qual:transition metaid="_28b9935d-d878-458f-8b08-8c38b8c248a3" sboTerm="SBO:0000170" qual:id="tr">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_28b9935d-d878-458f-8b08-8c38b8c248a3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_AVP" qual:id="in"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_AVPR2" qual:id="out"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_addb4f39-c711-4413-b415-3729df199732" sboTerm="SBO:0000170" qual:id="tr_1">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_addb4f39-c711-4413-b415-3729df199732">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_1" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_AVPR2" qual:id="in_1"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_GNAS" qual:id="out_1"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_9c358b58-5837-4ead-af76-12f128a986b2" sboTerm="SBO:0000170" qual:id="tr_2">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_9c358b58-5837-4ead-af76-12f128a986b2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_2" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_GNAS" qual:id="in_2"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_ADCY" qual:id="out_2"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_c13c6a38-55c3-4fa1-b75e-af7d78bcfc6c" sboTerm="SBO:0000170" qual:id="tr_3">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_c13c6a38-55c3-4fa1-b75e-af7d78bcfc6c">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_3" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_ADCY" qual:id="in_3"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_cAMP" qual:id="out_3"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_f54aa457-04f3-4bd2-ad7b-2fb2b36c146e" sboTerm="SBO:0000170" qual:id="tr_4">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_f54aa457-04f3-4bd2-ad7b-2fb2b36c146e">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_4" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_cAMP" qual:id="in_4"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_PRK" qual:id="out_4"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_079f6a74-b4d3-4b93-9abd-b6502d19d793" sboTerm="SBO:0000170" qual:id="tr_5">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_079f6a74-b4d3-4b93-9abd-b6502d19d793">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_5" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_PRK" qual:id="in_5"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_ARHGDI" qual:id="out_5"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_10972f29-334e-4dbc-a1e8-b61cea428254" sboTerm="SBO:0000170" qual:id="tr_6">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_10972f29-334e-4dbc-a1e8-b61cea428254">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_6" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_PRK" qual:id="in_6"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_CREB" qual:id="out_6"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_b2e4bea9-b1df-4de6-b060-8dcb2eafc907" sboTerm="SBO:0000170" qual:id="tr_7">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_b2e4bea9-b1df-4de6-b060-8dcb2eafc907">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_7" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_CREB" qual:id="in_7"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_AQP2" qual:id="out_7"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_81825c54-3c7e-4530-b77a-18d7af8db669" sboTerm="SBO:0000216" qual:id="tr_8">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_81825c54-3c7e-4530-b77a-18d7af8db669">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000216"/>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000170"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_8" qual:transitionEffect="none" qual:sign="positive" sboTerm="SBO:0000170" qual:qualitativeSpecies="qual_PRK" qual:id="in_8"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_AQP2" qual:id="out_8"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+      <qual:transition metaid="_a90c3db8-4b17-41e5-a134-73ecd12d411d" sboTerm="SBO:0000177" qual:id="tr_9">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#_a90c3db8-4b17-41e5-a134-73ecd12d411d">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="urn:miriam:biomodels.sbo:SBO%3A0000177"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+                      <qual:listOfInputs>
+          <qual:input metaid="meta_in_9" qual:transitionEffect="none" qual:sign="unknown" qual:qualitativeSpecies="qual_VAMP2" qual:id="in_9"/>
+        </qual:listOfInputs>
+        <qual:listOfOutputs>
+          <qual:output qual:transitionEffect="assignmentLevel" qual:qualitativeSpecies="qual_STX4" qual:id="out_9"/>
+        </qual:listOfOutputs>
+      </qual:transition>
+    </qual:listOfTransitions>
+  </model>
+</sbml>
