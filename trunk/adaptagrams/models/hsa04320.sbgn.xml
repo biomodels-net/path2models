@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<p1:sbgn xmlns:p1="http://sbgn.org/libsbgn/0.2">
+
+  <p1:map language="activity flow">
+    <p1:glyph class="nucleic acid feature" id="qual_SPIRE" orientation="horizontal">
+      <p1:label text="SPIRE"/>
+      <p1:bbox h="27" w="56" x="467" y="426"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_FMN2" orientation="horizontal">
+      <p1:label text="FMN2"/>
+      <p1:bbox h="27" w="56" x="553" y="369"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_PIWIL" orientation="horizontal">
+      <p1:label text="PIWIL"/>
+      <p1:bbox h="27" w="56" x="254" y="541"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_CPEB1" orientation="horizontal">
+      <p1:label text="CPEB1"/>
+      <p1:bbox h="27" w="56" x="168" y="484"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_NOTCH" orientation="horizontal">
+      <p1:label text="NOTCH"/>
+      <p1:bbox h="27" w="56" x="159" y="286"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_ETV" orientation="horizontal">
+      <p1:label text="ETV"/>
+      <p1:bbox h="27" w="56" x="620.667" y="186"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_ETS" orientation="horizontal">
+      <p1:label text="ETS"/>
+      <p1:bbox h="27" w="56" x="534.667" y="129"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MAPK" orientation="horizontal">
+      <p1:label text="MAPK"/>
+      <p1:bbox h="27" w="56" x="515.778" y="243"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MAP2K1" orientation="horizontal">
+      <p1:label text="MAP2K1"/>
+      <p1:bbox h="27" w="56" x="429.778" y="186"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_KRAS" orientation="horizontal">
+      <p1:label text="KRAS"/>
+      <p1:bbox h="27" w="56" x="343.778" y="224.25"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_SOS" orientation="horizontal">
+      <p1:label text="SOS"/>
+      <p1:bbox h="27" w="56" x="257.778" y="167.25"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_GRB2" orientation="horizontal">
+      <p1:label text="GRB2"/>
+      <p1:bbox h="27" w="56" x="171.778" y="110.25"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_EGFR" orientation="horizontal">
+      <p1:label text="EGFR"/>
+      <p1:bbox h="27" w="56" x="85.7778" y="167.25"/>
+    </p1:glyph>
+    <p1:arc class="positive influence" id="tr_0" source="qual_EGFR" target="qual_GRB2">
+      <p1:start x="127.778" y="167.25"/>
+      <p1:end x="185.778" y="137.25"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_1" source="qual_SOS" target="qual_GRB2">
+      <p1:start x="271.778" y="167.25"/>
+      <p1:end x="213.778" y="137.25"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_2" source="qual_KRAS" target="qual_GRB2">
+      <p1:start x="357.778" y="224.25"/>
+      <p1:end x="213.778" y="137.25"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_3" source="qual_MAP2K1" target="qual_MAPK">
+      <p1:start x="471.778" y="213"/>
+      <p1:end x="529.778" y="243"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_4" source="qual_MAPK" target="qual_ETS">
+      <p1:start x="543.778" y="243"/>
+      <p1:end x="562.667" y="156"/>
+    </p1:arc>
+    <p1:arc class="negative influence" id="tr_5" source="qual_MAPK" target="qual_ETV">
+      <p1:start x="557.778" y="243"/>
+      <p1:end x="634.667" y="213"/>
+    </p1:arc>
+  </p1:map>
+
+</p1:sbgn>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<p1:sbgn xmlns:p1="http://sbgn.org/libsbgn/0.2">
+
+  <p1:map language="activity flow">
+    <p1:glyph class="nucleic acid feature" id="qual_NRAS" orientation="horizontal">
+      <p1:label text="NRAS"/>
+      <p1:bbox h="27" w="56" x="350.344" y="132"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_PPARG" orientation="horizontal">
+      <p1:label text="PPARG"/>
+      <p1:bbox h="27" w="56" x="721.325" y="474"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_BRAF" orientation="horizontal">
+      <p1:label text="BRAF"/>
+      <p1:bbox h="27" w="56" x="436.344" y="189"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MAPK" orientation="horizontal">
+      <p1:label text="MAPK"/>
+      <p1:bbox h="27" w="56" x="608.344" y="303"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MAP2K" orientation="horizontal">
+      <p1:label text="MAP2K"/>
+      <p1:bbox h="27" w="56" x="522.344" y="246"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_PAX8" orientation="horizontal">
+      <p1:label text="PAX8"/>
+      <p1:bbox h="27" w="56" x="694.344" y="360"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_TP53" orientation="horizontal">
+      <p1:label text="TP53"/>
+      <p1:bbox h="27" w="56" x="721.325" y="605"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_RXR" orientation="horizontal">
+      <p1:label text="RXR"/>
+      <p1:bbox h="27" w="56" x="807.325" y="417"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_CTNNB1" orientation="horizontal">
+      <p1:label text="CTNNB1"/>
+      <p1:bbox h="27" w="56" x="492.325" y="671"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MYC" orientation="horizontal">
+      <p1:label text="MYC"/>
+      <p1:bbox h="27" w="56" x="807.325" y="662"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_CDH1" orientation="horizontal">
+      <p1:label text="CDH1"/>
+      <p1:bbox h="27" w="56" x="217" y="678"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_CCND1" orientation="horizontal">
+      <p1:label text="CCND1"/>
+      <p1:bbox h="27" w="56" x="893.325" y="719"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_CCDC6" orientation="horizontal">
+      <p1:label text="CCDC6"/>
+      <p1:bbox h="27" w="56" x="264.344" y="108"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_NTRK1" orientation="horizontal">
+      <p1:label text="NTRK1"/>
+      <p1:bbox h="27" w="56" x="178.344" y="165"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_TCF7" orientation="horizontal">
+      <p1:label text="TCF7"/>
+      <p1:bbox h="27" w="56" x="721.325" y="678"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_MAPK_signaling_pathway" orientation="horizontal">
+      <p1:label text="MAPK signaling pathway"/>
+      <p1:bbox h="44" w="113" x="608.344" y="172"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_PPAR_signaling_pathway" orientation="horizontal">
+      <p1:label text="PPAR signaling pathway"/>
+      <p1:bbox h="44" w="113" x="480" y="390"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_p53_signaling_pathway" orientation="horizontal">
+      <p1:label text="p53 signaling pathway"/>
+      <p1:bbox h="44" w="113" x="807.325" y="531"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_Adherens_junction" orientation="horizontal">
+      <p1:label text="Adherens junction"/>
+      <p1:bbox h="44" w="113" x="349.325" y="728"/>
+    </p1:glyph>
+    <p1:glyph class="nucleic acid feature" id="qual_Wnt_signaling_pathway" orientation="horizontal">
+      <p1:label text="Wnt signaling pathway"/>
+      <p1:bbox h="44" w="113" x="578.325" y="721"/>
+    </p1:glyph>
+    <p1:arc class="unknown influence" id="tr_0" source="qual_CCDC6" target="qual_NRAS">
+      <p1:start x="320.344" y="121.5"/>
+      <p1:end x="350.344" y="145.5"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_1" source="qual_NTRK1" target="qual_NRAS">
+      <p1:start x="234.344" y="178.5"/>
+      <p1:end x="350.344" y="145.5"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_2" source="qual_NRAS" target="qual_BRAF">
+      <p1:start x="392.344" y="159"/>
+      <p1:end x="450.344" y="189"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_3" source="qual_BRAF" target="qual_MAP2K">
+      <p1:start x="478.344" y="216"/>
+      <p1:end x="536.344" y="246"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_4" source="qual_BRAF" target="qual_MAP2K">
+      <p1:start x="478.344" y="216"/>
+      <p1:end x="536.344" y="246"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_5" source="qual_MAP2K" target="qual_MAPK">
+      <p1:start x="564.344" y="273"/>
+      <p1:end x="622.344" y="303"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_6" source="qual_BRAF" target="qual_MAP2K">
+      <p1:start x="478.344" y="216"/>
+      <p1:end x="536.344" y="246"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_7" source="qual_MAP2K" target="qual_MAPK">
+      <p1:start x="564.344" y="273"/>
+      <p1:end x="622.344" y="303"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_8" source="qual_NRAS" target="qual_BRAF">
+      <p1:start x="392.344" y="159"/>
+      <p1:end x="450.344" y="189"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_9" source="qual_PAX8" target="qual_RXR">
+      <p1:start x="736.344" y="387"/>
+      <p1:end x="821.325" y="417"/>
+    </p1:arc>
+    <p1:arc class="unknown influence" id="tr_10" source="qual_CTNNB1" target="qual_CDH1">
+      <p1:start x="492.325" y="684.5"/>
+      <p1:end x="273" y="691.5"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_11" source="qual_CTNNB1" target="qual_TCF7">
+      <p1:start x="548.325" y="684.5"/>
+      <p1:end x="721.325" y="691.5"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_12" source="qual_TCF7" target="qual_MYC">
+      <p1:start x="777.325" y="691.5"/>
+      <p1:end x="807.325" y="675.5"/>
+    </p1:arc>
+    <p1:arc class="positive influence" id="tr_13" source="qual_TCF7" target="qual_CCND1">
+      <p1:start x="777.325" y="691.5"/>
+      <p1:end x="893.325" y="732.5"/>
+    </p1:arc>
+  </p1:map>
+
+</p1:sbgn>
