@@ -136,7 +136,7 @@ void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
     using std::for_each;
     
     double xBorder=5, yBorder=5; // use this to make rectangles bigger
-    static const double EXTRA_GAP=15; // use this for rectangle spacing
+    static const double EXTRA_GAP=10; // use this for rectangle spacing
     try {
         Rectangle::setXBorder(xBorder+EXTRA_GAP);
         Rectangle::setYBorder(yBorder+EXTRA_GAP);
@@ -184,4 +184,22 @@ void AdaptagramsLayout::removeoverlaps(bool bothaxes) {
     }
     Rectangle::setXBorder(xBorder);
     Rectangle::setYBorder(yBorder);
+
+    setMinXY(30, 30);
+}
+
+void AdaptagramsLayout::setMinXY(int x, int y) {
+    int minx = 1e5, miny = 1e5;
+    foreach(Rectangle *r, rs) {
+        int mx = r->getMinX(), my = r->getMinY();
+        if (mx < minx)
+            minx = mx;
+        if (my < miny)
+            miny = my;
+    }
+
+    foreach(Rectangle *r, rs) {
+        r->moveMinX(r->getMinX() - minx + x);
+        r->moveMinY(r->getMinY() - miny + y);
+    }
 }

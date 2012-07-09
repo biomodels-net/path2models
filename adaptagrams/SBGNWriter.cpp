@@ -16,9 +16,10 @@ void SBGNWriter::writeFile(char* fname) {
         Species species = sp[i];
 
         bbox _bbox = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
-        class_ _class = class_("nucleic acid feature"); // TODO: get proper class somewhere
+        class_ _class = class_(classes(rec));
+
         glyph _glyph = glyph(_bbox, _class, species.id);
-        _glyph.label(label(species.name));
+        _glyph.label(label(linebreaks(species.name)));
 
         gs.push_back(_glyph);
     }
@@ -58,3 +59,14 @@ void SBGNWriter::writeFile(char* fname) {
     ofs.close();
 }
 
+string SBGNWriter::linebreaks(string s) {
+    // TODO
+    return string(s);
+}
+
+string SBGNWriter::classes(Rectangle *r) {
+    // TODO: if small->small molecule, large->(?), medium->nucl
+    // note: this is not the best place to do this bc the sizes will already be changed
+    // by the layout algorithm
+    return string("nucleic acid feature");
+}
