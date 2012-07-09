@@ -42,6 +42,7 @@ public:
 private:
     point_type getClosestPointToLine(linestring_type points, linestring_type centerLine);
     point_type intersection(Rectangle* r, linestring_type line);
+    void setMinXY(int x, int y);
 
     vector<Rectangle*> rs;
     vector<Edge> es;

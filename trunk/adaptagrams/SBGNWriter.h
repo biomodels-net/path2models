@@ -28,6 +28,9 @@ private:
     typedef xml_schema::idref source;
     typedef xml_schema::idref target;
 
+    string linebreaks(string s);
+    string classes(Rectangle *r);
+
     vector<Rectangle*> rs;
     vector<Edge> es;
     vector<Species> sp;

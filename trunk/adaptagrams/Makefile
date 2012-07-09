@@ -5,13 +5,14 @@ LIBS = -lQtCore -lQtXml -lQtXmlPatterns -lcola -lvpsc -ltopology -lcairomm-1.0 -
 ALL_SOURCE = $(wildcard *.cpp)
 ALL_OBJ = $(ALL_SOURCE:%.cpp=%.o)
 ALL_SBML = $(wildcard models/*.sbml.xml)
+#ALL_SBML = $(shell find /home/mschu/Dokumente/EBI/path2models/path2models/non-metabolic -name "*.sbml.xml")
 ALL_SBGN = $(ALL_SBML:%.sbml.xml=%.sbgn.xml)
 ALL_PNG = $(ALL_SBGN:%.sbgn.xml=%.png)
 
 all: $(ALL_OBJ)
 	$(CC) -o SBMLQual2SBGN $(ALL_OBJ) $(LIBS)
 
-convert: $(ALL_SBGN) $(ALL_PNG)
+convert: all $(ALL_SBGN) $(ALL_PNG)
 
 clean:
 	rm -f $(ALL_OBJ) $(ALL_SBGN) $(ALL_PNG) SBMLQual2SBGN
