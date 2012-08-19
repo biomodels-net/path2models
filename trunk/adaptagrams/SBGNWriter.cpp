@@ -51,22 +51,33 @@ void SBGNWriter::writeFile(char* fname) {
     sbgn s = sbgn(m);
 
     // write the xml file
-    xml_schema::namespace_infomap map;
+//    xml_schema::namespace_infomap map;
 //    map[""].name = "test"; // xmlns
 //    map[""].schema = "http://sbgn.org/libsbgn/0.2"; // xsi:noNamespaceSchemaLocation
     std::ofstream ofs(fname);
-    sbgn_(ofs, s, map);
+    sbgn_(ofs, s);
     ofs.close();
 }
 
 string SBGNWriter::linebreaks(string s) {
-    // TODO
-    return string(s);
+    if (s.size() < 15)
+        return string(s);
+
+    size_t start = 12;
+    size_t space = s.find(" ", start);
+    while (space != std::string::npos) {
+        s.replace(space, 1, "\n");
+        start += 12;
+        space = s.find(" ", start);
+    }
+    return s;
 }
 
 string SBGNWriter::classes(Rectangle *r) {
-    // TODO: if small->small molecule, large->(?), medium->nucl
-    // note: this is not the best place to do this bc the sizes will already be changed
-    // by the layout algorithm
-    return string("nucleic acid feature");
+    // note: this is not the best place to do this bc the sizes will 
+    // already be changed by the layout algorithm
+    if (r->width() > 85 || r->height() > 85)
+        return string("phenotype");
+    else
+        return string("biological activity");
 }
