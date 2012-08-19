@@ -16,10 +16,12 @@ void SBGNWriter::writeFile(char* fname) {
         Species species = sp[i];
 
         bbox _bbox = bbox(rec->getMinX(), rec->getMinY(), rec->width(), rec->height());
-        class_ _class = class_(classes(rec));
+        class_ _class = class_(species.glyph);
 
         glyph _glyph = glyph(_bbox, _class, species.id);
         _glyph.label(label(linebreaks(species.name)));
+        if (species.h > species.w)
+            _glyph.orientation(orientation("vertical"));
 
         gs.push_back(_glyph);
     }
@@ -71,13 +73,4 @@ string SBGNWriter::linebreaks(string s) {
         space = s.find(" ", start);
     }
     return s;
-}
-
-string SBGNWriter::classes(Rectangle *r) {
-    // note: this is not the best place to do this bc the sizes will 
-    // already be changed by the layout algorithm
-    if (r->width() > 85 || r->height() > 85)
-        return string("phenotype");
-    else
-        return string("biological activity");
 }
