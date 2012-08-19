@@ -19,9 +19,20 @@ namespace SBMLQual {
             #ifdef _DEBUG_SBML_
             qDebug() << "Node created: " << qid << qname << qx << qy << qw << qh;
             #endif
+
+            if (w > 60 || h > 60)
+                glyph = string("phenotype");
+            else
+                glyph = string("biological activity");
+
+            if (w < 20) {
+                w += 10;
+                w += name.size() * 5;
+                h += 5;
+            }
         }
         const bool operator==(const string s) const { return s.compare(id) == 0; }
-        string id, name;
+        string id, name, glyph;
         int x, y, w, h;
     };
 
