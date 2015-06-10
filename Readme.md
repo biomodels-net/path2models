@@ -1,8 +1,15 @@
-DISCLAIMER: The initial phase of the Path2Models project is over. People interested in the outcome can visit: http://www.ebi.ac.uk/biomodels-main/path2models and/or read the following publication:
+# DISCLAIMER:
+**The initial phase of the Path2Models project is over.** People interested in the outcome can visit: <http://www.ebi.ac.uk/biomodels-main/path2models> and/or read the following publication:
 
 Finja Büchel, Nicolas Rodriguez, Neil Swainston, Clemens Wrzodek, Tobias Czauderna, Roland Keller, Florian Mittag, Michael Schubert, Mihai Glont, Martin Golebiewski, Martijn van Iersel, Sarah Keating, Matthias Rall, Michael Wybrow, Henning Hermjakob, Michael Hucka, Douglas B Kell, Wolfgang Müller, Pedro Mendes, Andreas Zell, Claudine Chaouiya, Julio Saez-Rodriguez, Falk Schreiber, Laibe, Camille, Andreas Dräger and Nicolas Le Novère
-**Path2Models: large-scale generation of computational models from biochemical pathway maps.** _BMC Systems Biology_ 2013, 7:116 [BioMed Central](http://www.biomedcentral.com/1752-0509/7/116)[Europe PMC](http://europepmc.org/abstract/MED/24180668)
+**[Path2Models: large-scale generation of computational models from biochemical pathway maps](http://www.biomedcentral.com/1752-0509/7/116).** _BMC Systems Biology_ 2013, 7:116.
 
+\[[BioMed Central link](http://www.biomedcentral.com/1752-0509/7/116)\] \[[Europe PMC link](http://europepmc.org/abstract/MED/24180668)\]
+
+
+** You will find below a short description of the project. **
+
+# Systematic creation of quantitative models from pathway databases
 
 ## Background ##
 
