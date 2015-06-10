@@ -7,7 +7,7 @@ Finja Büchel, Nicolas Rodriguez, Neil Swainston, Clemens Wrzodek, Tobias Czaude
 \[[BioMed Central link](http://www.biomedcentral.com/1752-0509/7/116)\] \[[Europe PMC link](http://europepmc.org/abstract/MED/24180668)\]
 
 
-** You will find below a short description of the project. **
+**You will find below a short description of the project.**
 
 # Systematic creation of quantitative models from pathway databases
 
